@@ -11,9 +11,15 @@ public class IntegerInput {
         // 3
         // You gave the number 3
         System.out.println("Give a number:");
-        int number = Integer.parseInt(scanner.nextLine()); // Read an integer input as a string and convert it to an int
-        scanner.close(); // Close the scanner to prevent resource leaks
+        int number = Integer.valueOf(scanner.nextLine()); // Read an integer input as a string and convert it to an int
+        System.out.println("You gave the number ");
         System.out.println("You gave the number " + number);
+         number = (int) scanner.nextDouble(); //this stripped the decimal part if any
+
+        System.out.println("You gave the number " + number);
+        scanner.close(); // Close the scanner to prevent resource leaks
+
+        
     }
 
 }

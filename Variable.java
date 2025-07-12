@@ -22,8 +22,8 @@ public class Variable {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("Enter your age:");
-        int userAge = sc.nextLine(); // Read an integer input
-        System.out.println(userAge);
+        // // int userAge = sc.nextLine(); // Read an integer input
+        // System.out.println(userAge);
         
     }
 }
