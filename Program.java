@@ -30,6 +30,8 @@ public class Program {
         ) ;
 
         inputFunc();
+        sc.close();
+
     }
 
     static public void inputFunc (){
