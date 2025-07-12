@@ -16,16 +16,12 @@ public class Greetings {
         System.out.println("Oh, how interesting. Tell me more!");
 
         String moreUpdates = sc.nextLine();
+       
 
         System.out.println("Thanks for sharing!");
-        /*
-         * Sample output
-Greetings! How are you doing?
- Good thanks! 
-Oh, how interesting. Tell me more!
- Well, there's really nothing to tell. 
-Thanks for sharing!
-         */
+
+         sc.close();
+        System.out.println("The end.");
 
 
     }
