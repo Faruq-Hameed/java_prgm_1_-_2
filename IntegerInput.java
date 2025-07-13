@@ -19,7 +19,11 @@ public class IntegerInput {
         System.out.println("You gave the number " + number);
         scanner.close(); // Close the scanner to prevent resource leaks
 
-        
+        System.out.println("Write a boolean value:");
+
+        boolean booleanInput = scanner.nextBoolean(); // Read a boolean input
+
+        System.out.println("You gave the boolean value: " + booleanInput);
     }
 
 }

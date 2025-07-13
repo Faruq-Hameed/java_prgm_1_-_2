@@ -40,6 +40,10 @@ public class Program {
 
         String userTexts = sc.nextLine(); // read the input from the user
 
+        String text = sc.nextLine();
+        int integer = Integer.valueOf(sc.nextLine());
+        double floatingPoint = Double.valueOf(sc.nextLine());
+        boolean trueOrFalse = Boolean.valueOf(sc.nextLine());
         System.out.println(userTexts);
         sc.close();
     }

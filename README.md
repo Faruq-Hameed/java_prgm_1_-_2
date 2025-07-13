@@ -11,3 +11,6 @@ A variable's value can be joined to a string using the + sign, as seen in the fo
 an integer can be assigned to a variable of the double type, since Java knows how to convert an integer to a double during assignment.
 A floating-point value cannot, however, be assigned to an integer variable. The reason for this is that those who develop the language aim to prevent developers from making errors that lead to a loss of information.
 A variable's type determines the types of values that can be assigned to it
+The Integer.valueOfcommand converts a string to an integer and the Double.valueOfconverts it to a floating-point. 
+The evaluation of an expression is always performed before its value is assigned to a variable.
+An expression is evaluated where it occurs in the program's source code
