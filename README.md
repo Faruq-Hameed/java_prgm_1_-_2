@@ -14,3 +14,6 @@ A variable's type determines the types of values that can be assigned to it
 The Integer.valueOfcommand converts a string to an integer and the Double.valueOfconverts it to a floating-point. 
 The evaluation of an expression is always performed before its value is assigned to a variable.
 An expression is evaluated where it occurs in the program's source code
+
+if all of the variables in the division expression are integers, the resulting value is an integer as well.
+If the dividend or divisor (or both!) of the division is a floating point number, the result is a floating point number as well.
