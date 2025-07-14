@@ -18,3 +18,6 @@ An expression is evaluated where it occurs in the program's source code
 if all of the variables in the division expression are integers, the resulting value is an integer as well.
 If the dividend or divisor (or both!) of the division is a floating point number, the result is a floating point number as well.
 An integer can be converted into a floating point number by placing a type-casting operation (double)before it:
+
+Even though we can compare integers, floating point numbers, and boolean values using two equals signs (variable1 == variable2), we cannot compare the equality of strings using two equals signs.
+When comparing strings we use the equals-command, which is related to string variables.
