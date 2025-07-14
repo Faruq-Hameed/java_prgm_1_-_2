@@ -9,6 +9,11 @@ public class Day {
         int oneDayInSeconds = 24 * 60 * 60; // Calculate seconds in one day
         int totalSecondsInProvidedDays = days * oneDayInSeconds; // Calculate total seconds in the provided days
         System.out.println(totalSecondsInProvidedDays);
+
+        System.out.println("enter user age");
+        int userAge =(int) sc.nextDouble();
+
+        System.out.println("enter user age is "+ userAge);
     }
     
 }

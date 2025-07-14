@@ -17,3 +17,4 @@ An expression is evaluated where it occurs in the program's source code
 
 if all of the variables in the division expression are integers, the resulting value is an integer as well.
 If the dividend or divisor (or both!) of the division is a floating point number, the result is a floating point number as well.
+An integer can be converted into a floating point number by placing a type-casting operation (double)before it:
