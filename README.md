@@ -21,3 +21,5 @@ An integer can be converted into a floating point number by placing a type-casti
 
 Even though we can compare integers, floating point numbers, and boolean values using two equals signs (variable1 == variable2), we cannot compare the equality of strings using two equals signs.
 When comparing strings we use the equals-command, which is related to string variables.
+
+You can calculate the square root of an integer with the command Math.sqrt
