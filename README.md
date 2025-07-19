@@ -21,3 +21,8 @@ An integer can be converted into a floating point number by placing a type-casti
 
 Even though we can compare integers, floating point numbers, and boolean values using two equals signs (variable1 == variable2), we cannot compare the equality of strings using two equals signs.
 When comparing strings we use the equals-command, which is related to string variables.
+
+Methods cannot be defined eg inside other methods.
+The names of methods begin with a word written entirely with lower-case letters, and the rest of the words begin with an upper-case letter - this style of writing is known as camelCase. Additionally, the code inside methods is indented by four characters.
+If an expression is used as a parameter for a method, the expression is evaluated prior to the method call.
+The keyword voidmeans that the method returns nothing.
