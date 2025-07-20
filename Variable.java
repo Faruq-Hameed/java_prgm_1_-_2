@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Variable {
     static public void main (String [] args){
@@ -6,6 +7,7 @@ public class Variable {
         Boolean isStudent = true;
         String school = "Unibadan";
 
+        ArrayList<Boolean> ages = new ArrayList<>();
         // school = 7; // This will cause an error because school is a String, not an int
         school = "7";
         String userProfile =  String.valueOf(age) + isStudent + school + age + String.valueOf(isStudent) +  age + String.valueOf(isStudent);
