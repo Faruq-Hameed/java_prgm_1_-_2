@@ -23,3 +23,11 @@ Even though we can compare integers, floating point numbers, and boolean values 
 When comparing strings we use the equals-command, which is related to string variables.
 
 You can calculate the square root of an integer with the command Math.sqrt
+
+Methods cannot be defined eg inside other methods.
+The names of methods begin with a word written entirely with lower-case letters, and the rest of the words begin with an upper-case letter - this style of writing is known as camelCase. Additionally, the code inside methods is indented by four characters.
+If an expression is used as a parameter for a method, the expression is evaluated prior to the method call.
+The keyword voidmeans that the method returns nothing.
+The lines of source code following the command returnare never executed. If a programmer adds source code after the return to a place which can never be reached during the method's execution, the IDE will produce an error message.
+If a method has the form public static void nameOfMethod() it is possible to return from it — in other words, to stop its execution in that place — with the return command that is not followed by a value.
+Variables defined in a method are only visible inside that method.  other methods can be called from within methods. 
