@@ -26,14 +26,24 @@ public class IndexOfSmallest {
                 smallestNumber = currentNumber;
             }
         }
-        if (smallestNumber == 9999) { // i.e nothing was added
-            return;
-        }
+        // if (smallestNumber == 9999) { // i.e nothing was added
+        //     return;
+        // }
         for (int i = 0; i < list.size(); i++) {
             int currentNumber = list.get(i);
             if (smallestNumber == currentNumber) {
                 System.out.println("Smallest number: " + smallestNumber + " Found at index: " + i);
             }
+        }
+        ArrayList<String> teachers = new ArrayList<>();
+
+        teachers.add("Simon");
+        teachers.add("Samuel");
+        teachers.add("Ann");
+        teachers.add("Anna");
+
+        for(String teacher: teachers){
+            System.out.println(teacher);
         }
 
         // and its index -- the smallest number
