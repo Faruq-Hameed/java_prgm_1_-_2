@@ -12,7 +12,7 @@ public class Day {
 
         System.out.println("enter user age");
         int userAge =(int) sc.nextDouble();
-
+        sc.close();
         System.out.println("enter user age is "+ userAge);
     }
     

@@ -11,6 +11,6 @@ public class BooleanInput {
         System.out.println("you wrote " + booleanInput);
                 Boolean booleanInput2 = Boolean.valueOf(sc.nextLine());
         System.out.println("you wrote " + booleanInput2);
-
+        sc.close();
     }
 }
