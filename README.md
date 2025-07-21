@@ -38,3 +38,5 @@ When defining the type of values that a list can include, the first letter of th
  Variables in Java can be divided into two categories: value type (primitive which hold their actual values) and reference type (reference type which contain a reference to the location that contains the value(s) relating to that variable.) variables.
 If you don't need to keep track of the index as you're going through a list's values, you can make use of the for-each loop. 
  The expression is defined in the following format: for (TypeOfVariable nameOfVariable: nameOfList), where TypeOfVariableis the list's element type, and nameOfVariableis the variable that is used to store each value in the list as we go through it.
+ The list's remove method removes the value that is located at the index that's given as the parameter. The parameter is an integer.
+ If the parameter given to removeis the same type as the values in the list, but not an integer, (integers are used to remove from a given index), it can be used to remove a value directly from the list.
