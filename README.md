@@ -36,3 +36,8 @@ For an ArrayList to be used, it first needs to be imported into the program. The
 Creating a new list is done with the command ArrayList<Type> list = new ArrayList<>()
 When defining the type of values that a list can include, the first letter of the element type has to be capitalized. A list that includes int-type variables has to be defined in the form ArrayList<Integer>; and a list that includes double-type variables is defined in the form ArrayList<Double>
  Variables in Java can be divided into two categories: value type (primitive which hold their actual values) and reference type (reference type which contain a reference to the location that contains the value(s) relating to that variable.) variables.
+ Addition is done with the list method add and you use the list method get for retrieval
+ The number of values on a list is provided by the list's size method which returns the number of elements the list contains
+ The list's remove method removes the value that is located at the index that's given as the parameter. The parameter is an integer.
+ If the parameter given to remove is the same type as the values in the list, but not an integer, (integers are used to remove from a given index), it can be used to remove a value directly from the list.
+ If the list contains integers, you cannot remove a number value by giving an int type parameter to the remove method. This would remove the number from the index that the parameter indicates, instead of an element on the list that has the same value as the parameter. To remove an integer type value you can convert the parameter to Integer type; this is achieved by the valueOf method of the Integer class.
