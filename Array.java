@@ -13,6 +13,9 @@ public class Array {
 
         wordList.add("First");
         wordList.add("Second");
+        numbers.add(10);
+        numbers.set(0, 20);
+        System.out.println("numbers is = : " + numbers);
 
         System.out.println(wordList.get(1));
         System.out.println(wordList);
@@ -20,6 +23,14 @@ public class Array {
         ArrayList<Boolean> boolList = new ArrayList<>();
         System.out.println(boolList.size());
         // Attempt to add a double value to the ArrayList
+
+        int[] arrayList = new int[10];
+        int[] arrayListB = new int[10];
+        arrayList[8] = 9;
+        arrayListB[4] = 1;
+        System.out.println(arrayList[0]);
+
+        System.out.println(arrayListB[7]);
     }
 
 }

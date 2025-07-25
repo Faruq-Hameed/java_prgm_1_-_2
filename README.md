@@ -50,3 +50,8 @@ When you create a list, a limited space is reserved in the memory of the compute
 Even though the ArrayList is simple to use, sometimes we need the ancestor of the ArrayList, the Array.
 
 An Array contains a limited amount of numbered spots (indices) for values. The length (or size) of an Array is the amount of these spots, i.e. how many values can you place in the Array. The values in an Array are called elements.
+There are two ways to create an Array. In the first one you have to explicitly define the size upon the creating.
+An array is declared by adding square brackets after the type of the elements it contains (typeofelements[]). A new Array is created by calling new followed by the type of the elements, square brackets and the number of the elements in the square brackets.
+ # Differences between Array and ArrayList
+An array is a basic functionality provided by Java. ArrayList is part of the collection framework in Java. Therefore array members are accessed using [], while ArrayList has a set of methods to access elements and modify them
+The array is a fixed-size data structure while ArrayList is not. One need not mention the size of the ArrayList while creating its object. Even if we specify some initial capacity, we can add more elements.
