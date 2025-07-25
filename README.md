@@ -55,3 +55,13 @@ An array is declared by adding square brackets after the type of the elements it
  # Differences between Array and ArrayList
 An array is a basic functionality provided by Java. ArrayList is part of the collection framework in Java. Therefore array members are accessed using [], while ArrayList has a set of methods to access elements and modify them
 The array is a fixed-size data structure while ArrayList is not. One need not mention the size of the ArrayList while creating its object. Even if we specify some initial capacity, we can add more elements.
+An array can contain both primitive data types as well as objects of a class depending on the definition of the array. However, ArrayList only supports object entries, not primitive data types.
+The array is a sequential data structure while ArrayList is a linked list. Therefore, the array is more efficient in terms of time complexity. However, ArrayList is more flexible in terms of space complexity.
+The array is a static data structure while ArrayList is a dynamic data structure. Therefore, the array is more efficient in terms of space complexity. However, ArrayList is more flexible in terms of time complexity.
+The array is a primitive data structure while ArrayList is a reference data structure. Therefore, the array is more efficient in terms of time complexity. However, ArrayList is more flexible in terms of space complexity.
+The array is a linear data structure while
+Adding element to ArrayList is from the end while adding element to an array is from any index. 
+_______________________________________________________________________________________________________
+_______________________________________________________________________________________________________
+
+You can find the size of the array through the associated variable length
