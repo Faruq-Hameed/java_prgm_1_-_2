@@ -30,12 +30,16 @@ If an expression is used as a parameter for a method, the expression is evaluate
 The keyword voidmeans that the method returns nothing.
 The lines of source code following the command returnare never executed. If a programmer adds source code after the return to a place which can never be reached during the method's execution, the IDE will produce an error message.
 If a method has the form public static void nameOfMethod() it is possible to return from it — in other words, to stop its execution in that place — with the return command that is not followed by a value.
-Variables defined in a method are only visible inside that method.  other methods can be called from within methods. 
+Variables defined in a method are only visible inside that method.  other methods can be called from within methods.
 
 For an ArrayList to be used, it first needs to be imported into the program. The type of the ArrayList variable is ArrayList. When a list variable is initialized, the type of the values to be stored is also defined in addition to the variable type — all the variables stored in a given list are of the same type . As such, the type of an ArrayList that stores strings is ArrayList<String>. A new list is created with the command new ArrayList<>()
 Creating a new list is done with the command ArrayList<Type> list = new ArrayList<>()
 When defining the type of values that a list can include, the first letter of the element type has to be capitalized. A list that includes int-type variables has to be defined in the form ArrayList<Integer>; and a list that includes double-type variables is defined in the form ArrayList<Double>
  Variables in Java can be divided into two categories: value type (primitive which hold their actual values) and reference type (reference type which contain a reference to the location that contains the value(s) relating to that variable.) variables.
+If you don't need to keep track of the index as you're going through a list's values, you can make use of the for-each loop. 
+ The expression is defined in the following format: for (TypeOfVariable nameOfVariable: nameOfList), where TypeOfVariableis the list's element type, and nameOfVariableis the variable that is used to store each value in the list as we go through it.
+ The list's remove method removes the value that is located at the index that's given as the parameter. The parameter is an integer.
+ If the parameter given to removeis the same type as the values in the list, but not an integer, (integers are used to remove from a given index), it can be used to remove a value directly from the list.
  Addition is done with the list method add and you use the list method get for retrieval
  The number of values on a list is provided by the list's size method which returns the number of elements the list contains
  The list's remove method removes the value that is located at the index that's given as the parameter. The parameter is an integer.
