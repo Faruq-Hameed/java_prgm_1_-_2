@@ -1,3 +1,4 @@
+package Part1_1_to_3;
 
 public class StarSign {
 

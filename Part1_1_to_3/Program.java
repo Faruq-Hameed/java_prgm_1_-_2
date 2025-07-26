@@ -1,3 +1,4 @@
+package Part1_1_to_3;
 //importing Scanner class for input from user
 import java.util.Scanner;
 

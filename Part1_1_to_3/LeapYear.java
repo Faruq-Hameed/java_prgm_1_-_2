@@ -1,3 +1,4 @@
+package Part1_1_to_3;
 import java.util.Scanner;
 
 public class LeapYear {

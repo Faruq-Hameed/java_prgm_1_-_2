@@ -1,3 +1,4 @@
+package Part1_1_to_3;
 
 //This exercise is about printing a Christmas tree using stars and spaces.
 // The tree should have a specified height, and the trunk should be centered below the tree.
