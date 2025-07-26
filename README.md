@@ -79,3 +79,4 @@ When comparing strings, you should make sure the string variable has some value 
  a boolean value can be inverted through negation - !.
  You can split a string to multiple pieces with the split-method of the String class. The method takes as a parameter a string denoting the place around which the string should be split. The split method returns an array of the resulting sub-parts.
  You can get a character at a specified index of a string with the charAt method.
+ You can find out the length of a string with length()-method

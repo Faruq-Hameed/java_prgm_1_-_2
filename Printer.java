@@ -8,4 +8,18 @@ public class Printer {
         String[] array = {"apple", "orange"};
        
     }
+
+       public static void printOldest(int[] ages) {
+        int oldest = -1;
+        int counter = 0;
+
+        while (counter> oldest) {
+            if (ages[counter] > oldest) {
+                oldest = ages[counter];
+            }
+            counter++;
+        }
+        System.out.println(oldest);
+
+    }
 }
