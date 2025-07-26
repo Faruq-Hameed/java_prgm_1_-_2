@@ -65,3 +65,4 @@ ________________________________________________________________________________
 _______________________________________________________________________________________________________
 
 You can find the size of the array through the associated variable length
+So apart from calling for new, we can also initialize an array with a block, that contains comma-separated values to be assigned in the array. This works for all the types

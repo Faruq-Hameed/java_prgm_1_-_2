@@ -35,15 +35,6 @@ public class Example {
         numbers[3] = 7;
         numbers[4] = 1;
 
-        System.out.println("Which index should we access? ");
-        int index = Integer.valueOf(reader.nextLine());
-        int tempHolder = numbers[0];
-        System.out.println(Arrays.toString(numbers));
-
-        numbers[0] = numbers[1];
-        numbers[1] = tempHolder;
-        numbers[-1] = tempHolder;
-        System.out.println(Arrays.toString(numbers));
-        System.out.println("The element there is : " + numbers[index]);
+      
     }
 }
