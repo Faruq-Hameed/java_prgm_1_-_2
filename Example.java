@@ -27,13 +27,12 @@ public class Example {
         ArrayList<String> strArray1 = new ArrayList<String>();
         System.out.println("strArray.length : " + strArray.length);
         Scanner reader = new Scanner(System.in);
+        String input = reader.nextLine();
+        int counter = 0;
+        while(counter < 3){
 
-        int[] numbers = new int[5];
-        numbers[0] = 42;
-        numbers[1] = 13;
-        numbers[2] = 12;
-        numbers[3] = 7;
-        numbers[4] = 1;
+        }
+
 
       
     }

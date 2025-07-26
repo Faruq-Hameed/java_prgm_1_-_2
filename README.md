@@ -68,3 +68,13 @@ You can find the size of the array through the associated variable length
 So apart from calling for new, we can also initialize an array with a block, that contains comma-separated values to be assigned in the array. This works for all the types
 When you initialize an array with a block, the length of the array is precisely the number of the values specified in the block. The values of the block are assigned to the array in the order, eg. the first value is assigned to index 0, the second value to index 1 etc.
 Just like in ArrayLists, you can't access an index outside of the array
+
+_______________________________________________________________________________________________________
+_______________________________________________________________________________________________________
+## String
+You can read a string using the nextLine-method offered by Scanner.
+Strings can also be concatenated. If you place a +-operator between two strings, you get a new string that's a combination of those two strings.
+Strings can't be compared with with the equals operator - ==. For strings, there exists a separate equals-command, which is always appended to the end of the string that we want to compare.
+When comparing strings, you should make sure the string variable has some value assigned to it. If it doesn't have a value, the program will produce a NullPointerException error, which means that no value has been assigned to the variable, or that it is empty (null).
+ a boolean value can be inverted through negation - !.
+ You can split a string to multiple pieces with the split-method of the String class. The method takes as a parameter a string denoting the place around which the string should be split. The split method returns an array of the resulting sub-parts.
