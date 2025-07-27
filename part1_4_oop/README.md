@@ -5,3 +5,21 @@ As an example, ArrayListis a class offered by Java, and we've made use of object
 
 # The Relationship Between a Class and an Object
 A class lays out a blueprint for any objects that are instantiated from it. A class is a blueprint. In other words, it specifies what kinds of objects can be instantiated from it
+
+## Creating Classes
+A class specifies what the objects instantiated from it are like.
+A class is defined to represent some Meaningful entity, where a "meaningful entity" often refers to a real-world object or concept.
+A class defines the attributes and behaviors of objects that are created from it.
+The object's variables (instance variables) specify the internal state of the object
+The object's methods specify what the object does
+The object's constructor specifies how the object is created
+Variables defined inside a class are called instance variables , or object fields or object attributes. Other names also seem to exist.
+The methods defined inside a class are called object methods or object functions or object operations or object behaviors. Other names also seem to 
+Instance variables are written on the lines following the class definition
+private key word is used to hide the instance variables in the class such that it can only be accessed from within the class. This is what encapsulation is all about.
+In the class diagram, the variables associated with the class are defined as "variableName: variableType". The minus sign before the variable name indicates that the variable is Encapsulated (it has the keyword private).
+
+## Defining a Constructor
+We want to set an initial state for an object that's created. Custom objects are created the same way as objects from pre-made Java classes, such as ArrayList, using the newkeyword.This is achieved by defining the method that creates the object, ie, its constructor. The constructor is defined after the instance variables. 
+The constructor's name is always the same as the class name.
+Objects are always created using a constructor.
