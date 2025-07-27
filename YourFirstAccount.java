@@ -3,8 +3,8 @@ public class YourFirstAccount {
     private double balance;
 
     public YourFirstAccount(String owner, double balance) {
-        this.balance = balance;
         this.owner = owner;
+        this.balance = balance;
     }
 
     public static void main(String[] args) {
@@ -18,11 +18,16 @@ public class YourFirstAccount {
         faruqAccount.deposit(20.0);
         System.out.println("get final balance");
         faruqAccount.printBalance();
+        System.out.println(faruqAccount);
 
     }
 
     public void deposit(double amount) {
         this.balance = this.balance + amount;
+    }
+
+    public void withdraw(double amount) {
+        this.balance = this.balance - amount;
     }
 
     public void printBalance() {
