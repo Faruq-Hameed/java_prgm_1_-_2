@@ -9,6 +9,7 @@ public class PaymentCard {
 
     public void eatAffordably() {
         this.balance -= 2.60;
+        
     }
 
     public void eatHeartily() {
