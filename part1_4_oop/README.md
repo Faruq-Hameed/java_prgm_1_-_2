@@ -34,3 +34,4 @@ The staticmodifier indicates that the method in question does not belong to an o
 
 It is the convention in Java to name a method that returns an instance variable exactly this way, i.e., getVariableName. Such methods are often referred to as "getters".
 The method returning the string representation is always toString
+The call to the toString method returning the string representation does not have to be written explicitly, as Java adds it automatically.
