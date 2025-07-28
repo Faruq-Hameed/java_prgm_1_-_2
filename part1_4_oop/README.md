@@ -18,8 +18,19 @@ The methods defined inside a class are called object methods or object functions
 Instance variables are written on the lines following the class definition
 private key word is used to hide the instance variables in the class such that it can only be accessed from within the class. This is what encapsulation is all about.
 In the class diagram, the variables associated with the class are defined as "variableName: variableType". The minus sign before the variable name indicates that the variable is Encapsulated (it has the keyword private).
+Instance variables are referred to with the prefix this. All of the object's variables are visible and available from within the method.
 
 ## Defining a Constructor
 We want to set an initial state for an object that's created. Custom objects are created the same way as objects from pre-made Java classes, such as ArrayList, using the newkeyword.This is achieved by defining the method that creates the object, ie, its constructor. The constructor is defined after the instance variables. 
 The constructor's name is always the same as the class name.
 Objects are always created using a constructor.
+If the programmer does not define a constructor for a class, Java automatically creates a default one for it
+A default constructor is a constructor that doesn't do anything apart from creating the object. The object's variables remain uninitialized (generally, the value of any object References will be null, meaning that they do not point to anything, and the values of primitives will be 0)
+
+A method is written inside the class beneath the constructor. The method name is preceded by public void(if it returns nothing), since the method is intended to be visible to the outside world ( public), and it does not return a value ( void).
+
+# Objects and the Static Modifier
+The staticmodifier indicates that the method in question does not belong to an object and thus cannot be used to access any variables that belong to objects.
+
+It is the convention in Java to name a method that returns an instance variable exactly this way, i.e., getVariableName. Such methods are often referred to as "getters".
+The method returning the string representation is always toString
