@@ -6,11 +6,13 @@ public class FilesReader {
 
     public static void main(String[] args) {
         // scanner for user input
-        Scanner inputcScanner = new Scanner(System.in);
+        Scanner inputScanner = new Scanner(System.in);
+        System.out.println("Name of the file:");
+        String fileName = inputScanner.nextLine();
         // firstly loop all the names into an array list where we then be checking from
         ArrayList<String> names = new ArrayList<>();
 
-        try (Scanner file = new Scanner(Paths.get("guestList.txt"))) {
+        try (Scanner file = new Scanner(Paths.get(fileName))) {
 
             // // firstly loop all the names into the list
             while (file.hasNextLine()) {
@@ -18,10 +20,10 @@ public class FilesReader {
             }
 
             for (int i = 0; i < names.size(); i++) {
-                System.out.println("Enter names, an empty line quits");
-                String name = inputcScanner.nextLine();
+                // System.out.println("Enter names, an empty line quits");
+                String name = inputScanner.nextLine();
                 if (name.isEmpty()) {
-                    System.out.println("Thank you!");
+                    // System.out.println("Thank you!");
                     break;
                 }
                 if (names.contains(name)) {
@@ -29,12 +31,14 @@ public class FilesReader {
                 } else {
                     System.out.println("The name is not on the list.");
                 }
-                // if ()F
+                System.out.println("Thank you!");
+
             }
 
         } catch (Exception e) {
             // TODO: handle exception
         }
+        inputScanner.close();
     }
 
 }
