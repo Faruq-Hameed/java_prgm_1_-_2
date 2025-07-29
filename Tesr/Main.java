@@ -18,10 +18,11 @@ public class Main {
             }
 
             System.out.println("Pages:");
-            int pages = scanner.nextInt();
+            int pages = Integer.parseInt(scanner.nextLine());
 
             System.out.println("Publication year:");
             int year = scanner.nextInt();
+            scanner.nextLine(); // consume leftover newline character
 
             // create book object
             Book book = new Book(title, pages, year);
