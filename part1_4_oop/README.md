@@ -35,3 +35,16 @@ The staticmodifier indicates that the method in question does not belong to an o
 It is the convention in Java to name a method that returns an instance variable exactly this way, i.e., getVariableName. Such methods are often referred to as "getters".
 The method returning the string representation is always toString
 The call to the toString method returning the string representation does not have to be written explicitly, as Java adds it automatically. However, it doesn't itself print anything but instead returns a string representation, which the calling method can execute for printing as needed.
+
+______________________________________________________________________________________
+_________________________________________________________________________________________________________
+
+## Files and the Filesystem
+Files are collections of data that live in computers. The Concrete File Storage Format
+Files exist on the hard drive of a computer, which is, in reality, a large set of ones and zeros, i.e., bits. Information is made up of these bits, e.g., one variable of type int takes up 32 bits (i.e., 32 ones or zeros). Modern terabyte-sized hard drives hold about 8 trillion bits (written out the number is 8,000,000,000,000). On this scale, a single integer is very small.
+
+Files can exist practically anywhere on a hard drive, even separated into multiple pieces. The computer's filesystem has the responsibility of keeping track of the locations of files on the hard drive as well as providing the ability to create new files and modify them. The filesystem's main responsibility is abstracting the true structure of the hard drive; a user or a program using a file doesn't need to care about how, or where, the file is actually stored.
+Reading From a File
+Reading a file is done using the Scanner-class. When we want to read a file using the Scanner-class, we give the path for the file we want to read as a parameter to the constructor of the class. The path to the file can be acquired using Java's Paths.get command, which is given the file's name in string format as a parameter: Paths.get("filename.extension").
+
+When the Scanner-object that reads the file has been created, the file can be read using a while-loop. The reading proceeds until all the lines of the file have been read, i.e., until the scanner finds no more lines to read. Reading a file may result in an error, and it's for this reason that the process requires separate blocks - one for the try, and another to catch potential errors.
