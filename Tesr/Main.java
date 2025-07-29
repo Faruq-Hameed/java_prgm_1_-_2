@@ -35,8 +35,8 @@ public class Main {
         for (Book book : books) {
             if (neededInfo.equals("everything")) {
                 System.out.println(book.toString());
-            } else if (neededInfo.equals("title")) {
-                System.out.println(book.getTitle());
+            } else if (neededInfo.equals("name")) {
+                System.out.println(book.getName());
             } else if (neededInfo.equals("pages")) {
                 System.out.println(book.getPages());
             } else if (neededInfo.equals("year")) {
