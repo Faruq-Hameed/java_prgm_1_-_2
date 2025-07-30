@@ -1,3 +1,4 @@
+package part1_4_oop;
 public class Gauge{
     private int value;
 

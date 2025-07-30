@@ -1,3 +1,4 @@
+package part1_4_oop;
 public class MainB {
     private String name;
     private int age;
