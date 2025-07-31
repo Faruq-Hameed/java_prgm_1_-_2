@@ -5,3 +5,11 @@ Generally, each object has clearly defined boundaries and behaviors and is only 
 
 ## Class
 A class defines the types of objects that can be created from it. It contains instance variables describing the object's data, a constructor or constructors used to create it, and methods that define its behavior. Objects are created from the class through constructors by using the new command.
+
+## Constructor Overloading
+With Constructor Overloading We can have multiple  alternative ways to create objects from a class. This is possible since a class may have multiple constructors. The technique of having two (or more) constructors in a class is known as constructor overloading. A class can have multiple constructors that differ in the number and/or type of their parameters. It's not, however, possible to have two constructors with the exact same parameters.
+
+A constructor can be called from another constructor using the this keyword, which refers to this object in question!. If a constructor calls another constructor, the constructor call must be the first command in the constructor. If any Constructor call must be the first statement in a constructor
+
+# Method Overloading
+
