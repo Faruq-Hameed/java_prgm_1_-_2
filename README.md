@@ -36,3 +36,17 @@ The value of a reference variable — i.e., the reference — points to a locati
 
 # Primitive and Reference Variable as Method Parameters
  Regardless of whether the variable is primitive or reference type, the value passed to the method as an argument is copied for the called method to use. With primitive variables, the value of the variable is conveyed to the method. With reference variables, it's a reference.
+
+ ## Variables and Computer Memory
+ In the course's material, concrete details related to variables and computer memory are simplified. Topics related to memory are dealt with on a level of abstraction that's suitable for learning programming. As an example, the description that the statement int number = 5 reserves a location for the variable number in the memory, and copies the value 5 into it, is sufficient with regard to the learning objectives of this course.
+
+From the perspective of the operating system, a lot more happens when the statement int number = 5 is executed. A locker of size 32-bits is reserved in memory for the value 5, and another one for the number variable. The size of the location is determined by the type of variable in question. Once this is done, the contents of the memory location storing the value 5 are copied into the memory location of the number variable.
+
+To add to the above, the number variable is technically not a memory location or a container. The value of the variable number is an address in memory — information attached to the variable about its type specifies how much data should be retrieved from its address. As an example, this is 32 bits for an integer.
+----------------------------------------------------------------------------------------------------------------
+
+## Objects and references
+
+Calling a constructor with the command new causes several things to happen. First, space is reserved in the computer memory for storing object variables. Then default or initial values are set to object variables (e.g. an int type variable receives an initial value of 0). Lastly, the source code in the constructor is executed.
+
+A constructor call returns a reference to an object. A reference is information about the location of object data.
