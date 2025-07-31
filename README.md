@@ -12,4 +12,20 @@ With Constructor Overloading We can have multiple  alternative ways to create ob
 A constructor can be called from another constructor using the this keyword, which refers to this object in question!. If a constructor calls another constructor, the constructor call must be the first command in the constructor. If any Constructor call must be the first statement in a constructor
 
 # Method Overloading
+Methods can be overloaded in the same way as constructors, i.e., multiple versions of a given method can be created. Once again, the parameters of the different versions must be different. The one that gets executed depends on the number of parameters provided.
 
+## Primitive and reference variables
+Variables in Java are classified into primitive and reference variables. From the programmer's perspective, a primitive variable's information is stored as the value of that variable, whereas a reference variable holds a reference to information related to that variable. reference variables are practically always objects in Java.
+A reference to an object is returned by the constructor of the Name class when we call it, and this reference is stored as the value of the variable. 
+The previous situation applies whenever the programmer has not altered an object's default print format. You can modify the default print by defining the toString method within the class of the given object, where you specify what the objects print should look like
+
+# Primitive Variables
+Java has eight different primitive variables. These are: boolean (a truth value: either true or false), byte (a byte containing 8 bits, between the values -128 and 127), char (a 16-bit value representing a single character), short (a 16-bit value that represents a small integer, between the values -32768 and 32767), int (a 32-bit value that represents a medium-sized integer, between the values -231 and 231-1), long (a 64-bit value that represents a large integer, between values -263 and 263-1), float (a floating-point number that uses 32 bits), and double (a floating-point number that uses 64 bits).
+Declaring a primitive variable causes the computer to reserve some memory where the value assigned to the variable can be stored. The size of the storage container reserved depends on type of the primitive. 
+The name of the variable tells the memory location where its value is stored. When you assign a value to a primitive variable with an equality sign, the value on the right side is copied to the memory location indicated by the name of the variable. For example, the statement int first = 10 reserves a location called first for the variable, and then copies the value 10 into it.
+
+Similarly, the statement int second = first; reserves in memory a location called second for the variable being created and then copies into it the value stored in the location of variable first.The values of variables are also copied whenever they're used in method calls. What this means in practice is that the value of a variable that's passed as a parameter during a method call is not mutated in the calling method by the method called.
+
+# Reference Variables
+
+All of the variables provided by Java (other than the eight primitive variables mentioned above) are reference type. A programmer is also free to create their own variable types by defining new classes. In practice, any object instanced from a class is a reference variable.

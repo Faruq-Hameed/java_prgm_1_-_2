@@ -18,9 +18,14 @@ public class Book {
     }
 
     public int getPages() {
+        short num = -32767;
+        byte by = 127;
+        char ch;
         return this.pages;
+
     }
 
+    @Override
     public String toString() {
         return this.author + ", " + this.name + ", " + this.pages + " pages.";
     }
