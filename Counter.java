@@ -1,10 +1,21 @@
 public class Counter {
     private int number;
+    private int age;
+
 
     public Counter(int startValue) {
         this.number = startValue;
+        this.age = 0;
     }
 
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public int getAge() {
+        return age;
+    }
+    
     public Counter() {
         this(0);
     }

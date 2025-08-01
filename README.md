@@ -49,4 +49,18 @@ To add to the above, the number variable is technically not a memory location or
 
 Calling a constructor with the command new causes several things to happen. First, space is reserved in the computer memory for storing object variables. Then default or initial values are set to object variables (e.g. an int type variable receives an initial value of 0). Lastly, the source code in the constructor is executed.
 
-A constructor call returns a reference to an object. A reference is information about the location of object data.
+A constructor call returns a reference to an object. A reference is information about the location of object data. So the value of the variable is set to be a reference, i.e. knowledge about the location of related object data. 
+Assigning a reference type variable copies the reference. An object's internal state is not copied when a variable's value is assigned. A new object is not being created when a variable's value is assigned. Instead, a new reference is being created, which points to the same object as the reference variable that was assigned. The value of the variable is not changed. The value of the variable is assigned to be the copy as a reference to an object.
+# null value of a reference variable
+The null reference can be set as the value of any reference type variable. Printing a null reference prints "null". If we were to try and call a method on an object that refers to nothing i.e whose value is null, there occurred an error indicating that we called a method on a variable that refers to nothing we get the NullPointerException.
+The object whose name was not referred to by nobody has become a garbage object. The garbage collector will eventually remove it from the computer's memory. 
+# Garbage Collection
+The garbage collector is a program that runs in the background and removes unused objects from the computer's memory.
+In the Java programming language the programmer need not worry about the program's memory use. From time to time, the automatic garbage collector of the Java language cleans up the objects that have become garbage. If the garbage collection did not happen, the garbage objects would reserve a memory location until the end of the program execution. 
+
+# Assisted creation of constructors, getters, and setters
+Development environments can help the programmer. If you have created object variables for a class, creating constructors, getters, and setters can be done almost automatically.
+
+Go inside the code block of the class, but outside of all the methods, and simultaneously press ctrl and space. If your class has e.g. an object variable balance, NetBeans offers the option to generate the getter and setter methods for the object variable, and a constructor that assigns an initial value for that variable.
+
+On some Linux machines, like on the ones on the Kumpula campus (University of Helsinki), this feature is triggered by simultaneously pressing ctrl, alt, and space.

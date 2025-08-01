@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Person faruq = new Person("faruq", 30, 1.8, 55.5);
+        Person faruq = new Person("faruq", 30, 18, 55.5);
 
         Person emptyPerson = new Person();
 
@@ -33,5 +33,9 @@ public class Main {
         System.out.println(ch);
 
         System.out.println(listB);
+        listB = null;
+        listB.toString();
+        System.out.println(listB);
+    
     }
 }
