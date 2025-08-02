@@ -67,7 +67,16 @@ public class Main {
         System.out.println(a1.largerThan(a2));
         System.out.println(a2.priceDifference(a1));
 
-        System.out.println("________________________ \n __________________________");
         System.out.println(a1.equals(a2));
+        System.out.println("________________________ \n __________________________");
+
+        Bird parrot = new Bird("parrot");
+        ArrayList<Bird> birds = new ArrayList<>();
+        birds.add(parrot);
+        
+        System.out.println(birds.contains(parrot));
+        System.out.println(birds);
+
     }
+
 }

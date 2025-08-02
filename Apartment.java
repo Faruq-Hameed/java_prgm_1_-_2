@@ -31,6 +31,7 @@ public class Apartment {
         if (!(compare instanceof Apartment)) {
             return false;
         }
+        //type cast the object and then inspect the variables for equality
         Apartment compareApartment = (Apartment) compare;
         // check if pricePerSquare and room are equal to each other
         if (this.pricePerSquare == compareApartment.pricePerSquare && this.room == compareApartment.room
