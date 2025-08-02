@@ -22,4 +22,22 @@ public class Apartment {
         return (Math.abs(currentAptPrice - comparedAptPrice));
 
     }
+
+    public boolean isApartmentEqual(Object compare) {
+        // first check if address are equal to each other
+        if (this !=compare) {
+            return false;
+        }
+        if (!(compare instanceof Apartment)) {
+            return false;
+        }
+        Apartment compareApartment = (Apartment) compare;
+        // check if pricePerSquare and room are equal to each other
+        if (this.pricePerSquare == compareApartment.pricePerSquare && this.room == compareApartment.room
+                && this.squares == compareApartment.squares) {
+            return true;
+        }
+        //else false
+        return false;
+    }
 }

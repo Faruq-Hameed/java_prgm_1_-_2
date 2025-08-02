@@ -39,8 +39,9 @@ public class Main {
         // listB.toString(); java.lang.NullPointerException
         System.out.println(listB);
 
-        System.out.println("________________________________________" + " \n" + "________________________________________");
-        
+        System.out.println(
+                "________________________________________" + " \n" + "________________________________________");
+
         SimpleDate faruqBirthDay = new SimpleDate(01, 10, 1995);
         Person faruqBd = new Person("faruq", faruqBirthDay);
 
@@ -58,11 +59,15 @@ public class Main {
         // faruq.height
         faruq.olderPerson(akaPerson);
 
-        System.out.println("today is  " + day + "." + month + "." + year + " week is " + week + "day of the year is " + dayOfYear);
-        // System.out.println("today is  " + day + "." + month + "." + year + 
+        System.out.println(
+                "today is  " + day + "." + month + "." + year + " week is " + week + "day of the year is " + dayOfYear);
+        // System.out.println("today is " + day + "." + month + "." + year +
         Apartment a1 = new Apartment(10, 50, 100);
         Apartment a2 = new Apartment(40, 500, 40);
         System.out.println(a1.largerThan(a2));
         System.out.println(a2.priceDifference(a1));
+
+        System.out.println("________________________ \n __________________________");
+        System.out.println(a1.equals(a2));
     }
 }
