@@ -1,9 +1,12 @@
+import java.time.LocalDate;
+
 public class Person {
     // declaring instance variables
     private String name;
     private int age;
     private int weight;
     private double height;
+    private SimpleDate birthday;
 
     // constructor for instantiating objects and
     public Person(String name, int age, int weight, double height) {
@@ -27,9 +30,22 @@ public class Person {
         this.height = height;
     }
 
-    public Person(){
+    public Person() {
         this("NA", 0, 0, 0);
     }
+
+    // constructor that allows for setting the birthday
+    public Person(String name, SimpleDate date) {
+        this.name = name;
+        this.birthday = date;
+    }
+
+    // constructor where the birthday was given as integers.
+    public Person(String name, int day, int month, int year) {
+        this.name = name;
+        this.birthday = new SimpleDate(day, month, year);
+    }
+
     public double getHeight() {
         return height;
     }
@@ -54,9 +70,28 @@ public class Person {
         return 206.3 - (0.711 * this.age);
     }
 
+    public void olderPerson(Person other){
+        if(this.age == other.age){
+            System.out.println("You guys are mate");
+        }
+        else if(this.age > other.age){
+            System.out.println(this.name + " is older than " + other.name);
+        }
+        else{
+            System.out.println(other.name + " is younger than " + this.name);
+        }
+    }
+
     public String toString() {
         return this.name + ", BMI: " + this.bodyMassIndex() + " age: " + this.age
                 + ", maximum heart rate: " + this.maximumHeartRate() + "height: " + this.height + " weight: "
                 + this.weight;
     }
+
+    // LocalDate now = LocalDate.now();
+    //     int year = now.getYear();
+    //     int month = now.getMonthValue();
+    //     int day = now.getDayOfMonth();
+
+    //     System.out.println("today is  " + day + "." + month + "." + year);
 }

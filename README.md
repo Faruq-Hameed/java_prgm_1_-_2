@@ -54,6 +54,8 @@ Assigning a reference type variable copies the reference. An object's internal s
 # null value of a reference variable
 The null reference can be set as the value of any reference type variable. Printing a null reference prints "null". If we were to try and call a method on an object that refers to nothing i.e whose value is null, there occurred an error indicating that we called a method on a variable that refers to nothing we get the NullPointerException.
 The object whose name was not referred to by nobody has become a garbage object. The garbage collector will eventually remove it from the computer's memory. 
+Object as object variable
+Objects may contain References to objects.
 # Garbage Collection
 The garbage collector is a program that runs in the background and removes unused objects from the computer's memory.
 In the Java programming language the programmer need not worry about the program's memory use. From time to time, the automatic garbage collector of the Java language cleans up the objects that have become garbage. If the garbage collection did not happen, the garbage objects would reserve a memory location until the end of the program execution. 
@@ -64,3 +66,9 @@ Development environments can help the programmer. If you have created object var
 Go inside the code block of the class, but outside of all the methods, and simultaneously press ctrl and space. If your class has e.g. an object variable balance, NetBeans offers the option to generate the getter and setter methods for the object variable, and a constructor that assigns an initial value for that variable.
 
 On some Linux machines, like on the ones on the Kumpula campus (University of Helsinki), this feature is triggered by simultaneously pressing ctrl, alt, and space.
+
+Object of same type as method parameter is also possible. This is called a constructor call with a reference to an object as a parameter. The reference to the object is passed to the method as a parameter. The value of the reference is copied to the parameter, and the value of the parameter is used as a reference to the object. The value of the reference variable is not changed. The value of the parameter is the reference to the object.
+
+# Abstraction
+Abstraction, one of the principles of object-oriented programming. The idea behind abstraction is to conceptualize the programming code so that each concept has its own clear responsibilities. 
+Even though the if the object variables are Encapsulated ( private) object variables, we can read their values by writing compared.*variableName*. This is because a privatev ariable can be accessed from all the methods contained by that class. Notice that the syntax here matches calling some object method. Unlike when calling a method, we refer to a field of an object, so the parentheses that indicate a method call are not written.
