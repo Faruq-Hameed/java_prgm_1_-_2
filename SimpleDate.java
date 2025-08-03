@@ -34,7 +34,7 @@ public class SimpleDate {
     }
 
     public void advance() {
-        //if today is last then then day will be 1 and month got increased
+        // if today is last then then day will be 1 and month got increased
         if (this.day == 30) {
             this.day = 1;
 
@@ -50,13 +50,14 @@ public class SimpleDate {
         }
     }
 
-    //incraase the day in loop
+    // increase the day in loop
     public void advance(int howManyDays) {
         for (int day = 1; day <= howManyDays; day++) {
             advance();
         }
     }
 
+    // create a new date by adding number of days
     public SimpleDate afterNumberOfDays(int days) {
         SimpleDate newDate = new SimpleDate(this.day, this.month, this.year);
         newDate.advance(days);
