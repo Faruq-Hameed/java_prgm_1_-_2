@@ -33,7 +33,8 @@ public class Money {
     }
 
     public Money plus(Money addition) {
-        Money newMoney = new Money(this.euros, this.cents);
+        Money newMoney = new Money(this.euros + addition.euros, this.cents + addition.cents);
+
         return newMoney;
     }
 
@@ -45,5 +46,22 @@ public class Money {
             return true;
         }
         return false;
+    }
+
+    public Money minus(Money decreaser) {
+        int euro = this.euros - decreaser.euros;
+        int cent = this.cents - decreaser.cents;
+
+        // setting any negative values to 0
+        if (euro < 0) {
+            euro = 0;
+        }
+        if (cent < 0) {
+            cent = 0;
+        }
+
+        Money newMoney = new Money(euro, cent);
+
+        return newMoney;
     }
 }
