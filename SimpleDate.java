@@ -1,4 +1,6 @@
+
 public class SimpleDate {
+
     private int day;
     private int month;
     private int year;
@@ -9,20 +11,56 @@ public class SimpleDate {
         this.year = year;
     }
 
-    public int getDay() {
-        return this.day;
-    }
-
-    public int getMonth() {
-        return this.month;
-    }
-
-    public int getYear() {
-        return this.year;
-    }
-
     @Override
     public String toString() {
         return this.day + "." + this.month + "." + this.year;
     }
+
+    public boolean before(SimpleDate compared) {
+        if (this.year < compared.year) {
+            return true;
+        }
+
+        if (this.year == compared.year && this.month < compared.month) {
+            return true;
+        }
+
+        if (this.year == compared.year && this.month == compared.month
+                && this.day < compared.day) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public void advance() {
+        //if today is last then then day will be 1 and month got increased
+        if (this.day == 30) {
+            this.day = 1;
+
+            if (this.month == 12) {
+                this.month = 1;
+                this.year = this.year + 1;
+
+            } else {
+                this.month = this.month + 1;
+            }
+        } else {
+            this.day += 1;
+        }
+    }
+
+    //incraase the day in loop
+    public void advance(int howManyDays) {
+        for (int day = 1; day <= howManyDays; day++) {
+            advance();
+        }
+    }
+
+    public SimpleDate afterNumberOfDays(int days) {
+        SimpleDate newDate = new SimpleDate(this.day, this.month, this.year);
+        newDate.advance(days);
+        return newDate;
+    }
+
 }
