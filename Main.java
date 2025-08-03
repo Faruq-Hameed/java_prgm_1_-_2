@@ -77,6 +77,19 @@ public class Main {
         System.out.println(birds.contains(parrot));
         System.out.println(birds);
 
+        Song orin = new Song("art", "dorme", 30);
+
+        Song cloneSong = orin.clone();
+
+        System.out.println(cloneSong.toString());
+        System.out.println("clone song var is : " + cloneSong + " orin var is : " + orin);
+        orin.setDurationInSeconds(500);
+
+        System.out.println("clone song var is : " + cloneSong + " orin var is : " + orin);
+        cloneSong.setName(faruqB);
+
+        System.out.println("clone song var is : " + cloneSong + " orin var is : " + orin);
+
     }
 
 }

@@ -28,9 +28,26 @@ public class Song {
 
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDurationInSeconds(int durationInSeconds) {
+        this.durationInSeconds = durationInSeconds;
+    }
+
+
     @Override
     public String toString() {
         return this.artist + ": " + this.name + " (" + this.durationInSeconds + " s)";
     }
 
+    public Song copy(){
+        return this;
+    }
+
+    public Song clone (){
+        Song copySong = new Song(this.artist, this.name, this.durationInSeconds);
+        return copySong;
+    }
 }
