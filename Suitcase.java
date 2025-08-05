@@ -36,6 +36,10 @@ public class Suitcase {
         return suitWeight;
     }
 
+    public int getMaxHeight() {
+        return maxHeight;
+    }
+
     public String toString() {
         int itemsSize = this.items.size();
         String response = itemsSize + " items (" + this.totalWeight() + " kg)";
@@ -49,11 +53,9 @@ public class Suitcase {
     }
 
     public void printItems() {
-        System.out.println("The suitcase contains the following items:");
         for (Item item : items) {
             System.out.println(item);
         }
-        System.out.println("Total Weight: " + this.totalWeight() + " kg");
     }
 
     public Item heaviestItem() {
