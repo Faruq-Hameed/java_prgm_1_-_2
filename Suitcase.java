@@ -10,6 +10,11 @@ public class Suitcase {
     }
 
     public void add(Item item) {
+        int currentSuitWeight = 0; // create a variable to hold the current weight of the suitcase
+        for (Item i : items) { 
+            
+
+        }// loop through the items in the suitcase
         this.items.add(item); //
     }
 
