@@ -55,4 +55,21 @@ public class Suitcase {
         }
         System.out.println("Total Weight: " + this.totalWeight() + " kg");
     }
+
+    public Item heaviestItem() {
+        if (items.isEmpty()) {
+            return null;
+        }
+
+        Item heaviestItem = items.get(0);
+        int heaviesItemWeight = heaviestItem.getWeight();
+
+        for (Item item : items) {
+            if (item.getWeight() > heaviesItemWeight) {
+                heaviestItem = item;
+                heaviesItemWeight = heaviestItem.getWeight();
+            }
+        }
+        return heaviestItem;
+    }
 }
