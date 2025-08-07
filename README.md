@@ -30,3 +30,8 @@ Try to separate the program into several sub-problems and work on only one sub-p
 - Replace the "bad" and unclean parts of your code with clean code
 - If needed, take a step back and assess the program as a whole. If it doesn't work, it might be a good idea to return into a previous state where the code still worked. As a corollary, we might say that a program that's broken is rarely fixed by adding more code to it.
 Programmers follow these conventions so that programming can be made easier. Following them also makes it easier to read programs, to keep them up, and to edit them in teams.
+
+- It is best in separating the user interface from program logic
+- Combining the solutions to sub-problems
+- We should see Objects as a natural part of problem solving
+- We have to separate a distinct concept into a class of its own, All the "dirty details" have been encapsulated neatly inside an object. If we make any changes inside the a class without changing the names of the methods that it uses uses, we don't have to modify other classes that uses the method by a class. The exposed method of a class are called its public interfaces.

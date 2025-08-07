@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         TodoList todoList = new TodoList();
-        UserInterface ui = new UserInterface(scanner, todoList);
+        UserInterface ui = new UserInterface(todoList, scanner );
         ui.start();
         todoList.add("Sample Task 1");
         todoList.add("Sample Task 2");
