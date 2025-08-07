@@ -35,3 +35,6 @@ Programmers follow these conventions so that programming can be made easier. Fol
 - Combining the solutions to sub-problems
 - We should see Objects as a natural part of problem solving
 - We have to separate a distinct concept into a class of its own, All the "dirty details" have been encapsulated neatly inside an object. If we make any changes inside the a class without changing the names of the methods that it uses uses, we don't have to modify other classes that uses the method by a class. The exposed method of a class are called its public interfaces.
+
+Program logic
+Program logic includes parts that are crucial for the execution of the program, like functionalities that store information. we can separate the parts that store grade information. Separating the program logic is a major benefit for the maintenance of the program.
