@@ -37,4 +37,27 @@ Programmers follow these conventions so that programming can be made easier. Fol
 - We have to separate a distinct concept into a class of its own, All the "dirty details" have been encapsulated neatly inside an object. If we make any changes inside the a class without changing the names of the methods that it uses uses, we don't have to modify other classes that uses the method by a class. The exposed method of a class are called its public interfaces.
 
 Program logic
-Program logic includes parts that are crucial for the execution of the program, like functionalities that store information. we can separate the parts that store grade information. Separating the program logic is a major benefit for the maintenance of the program.
+Program logic includes parts that are crucial for the execution of the program, like functionalities that store information. we can separate the parts that store object information. Separating the program logic is a major benefit for the maintenance of the program.
+User interface
+Typically each program has its own user interface. The user interface receives two parameters in its constructor: a object register for storing the object values, and a Scanner object used for reading input.
+
+## Introduction to testing
+# Error Situations and Step-By-Step Problem Resolving
+- Errors end up in the programs that we write. Sometimes the errors are not serious and cause headache mostly to users of the program. Occasionally, however, mistakes can lead to very serious consequences. In any case, it's certain that a person learning to program makes many mistakes.
+
+- We should never be afraid of or avoid making mistakes since that is the best way to learn. For this reason, try to break the program that you're working on from time to time to investigate error messages, and to see if those messages tell you something about the error(s) you've made.
+As programs grow in their complexity, finding errors becomes even more challenging.
+
+# Stack Trace
+When an error occurs in a program, the program typically prints something called a stack trace, i.e., the list of method calls that resulted in the error. 
+
+# Checklist for Troubleshooting
+If your code doesn't work and you don't know where the error is, these steps will help you get started.
+
+- Indent your code properly and find out if there are any missing parentheses.
+- Verify that the variables used are correctly named.
+- Test the program flow with different inputs and find out the sort of input that causes the program to not work as desired. If you received an error in the tests, the tests may also indicate the input used.
+- Add print commands to the program in which you print out the values of the variables used at various stages of the program's execution.
+- Verify that all variables you are using are initialized. If they aren't, a NullPointerException error will occur.
+- If your program causes an exception, you should definitely pay attention to the stack trace associated with the exception, which is the list of method calls that resulted in the situation that caused the exception.
+- Learn how to use the debugger. 

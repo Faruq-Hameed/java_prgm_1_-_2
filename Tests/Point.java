@@ -1,6 +1,7 @@
 package Tests;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Point {
     private ArrayList<Integer> points;
@@ -57,6 +58,7 @@ public class Point {
         calculatedGrades[1] = oneGrade;
         calculatedGrades[0] = zeroGrade;
         System.out.println("Points calculated.");
+      
     }
 
     // Method to print the stars for each grade with the grade number
