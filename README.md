@@ -93,3 +93,5 @@ Write a test. The programmer decides which program functionality to test and wri
 ● Forces the programmer to think of the functionality before writing the code●Results in maintainable structure, since the program is built in small parts, refactoring steadily. 
 ● The end product contains tests, which makes further development easier: when the code is changed, it’s easy to check if the existing functionality still works.
 ● Fewer bugs in production.
+
+Initializing a variable can be done by adding to the test class a method ‘initialize’.We annotate the ‘initialize’ method with @Before, which guides the program to execute this method before each test.
