@@ -94,4 +94,13 @@ Write a test. The programmer decides which program functionality to test and wri
 ● The end product contains tests, which makes further development easier: when the code is changed, it’s easy to check if the existing functionality still works.
 ● Fewer bugs in production.
 
+The JUnit library offers a method called assertTrue, which demands that the parameter it receives is finally evaluates as true.
 Initializing a variable can be done by adding to the test class a method ‘initialize’.We annotate the ‘initialize’ method with @Before, which guides the program to execute this method before each test.
+In test-driven development the functionality of the program is constructed in small steps. The programmer first writes a test that examines the wished functionality, and then writes the program code that passes that testn
+
+## Complex programs
+
+The core of Dikstra's message is, that the problem areas of a program must be separated from each other — this is exactly what we have been doing with object-oriented programming and by separating the UI from the program logic. Each problem area has been separated into its own part. This can also be viewed through the lens of program responsibilities. In his blog Robert "Uncle Bob" C. Martin describes the term "single responsibility principle":
+Gather together the things that change for the same reasons. Separate those things that change for different reasons.
+
+Proper program structure and following good naming principles leads to clean code.
