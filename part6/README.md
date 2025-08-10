@@ -98,13 +98,15 @@ Write a test. The programmer decides which program functionality to test and wri
 
 - Repair the internal structure of the program. As the size of the program increases, its internal structure is adjusted as needed. Methods that are too long are broken down into multiple parts and classes representing concepts are isolated. The tests are not modified, but are instead used to verify the correctness of the changes made to the program's internal structure - if a change in the program structure changes the functionality of the program, the tests will produce a warning and the programmer can remedy the situation.Refactoring means cleaning the code while maintaining the functionality of the program. Cleaning includes tasks such as improving the readibility  and dividing the program into smaller methods and classes.
 # Advantages
-● Forces the programmer to think of the functionality before writing the code●Results in maintainable structure, since the program is built in small parts, refactoring steadily. 
+● Forces the programmer to think of the functionality before writing the code
+● Results in maintainable structure, since the program is built in small parts, refactoring steadily. 
 ● The end product contains tests, which makes further development easier: when the code is changed, it’s easy to check if the existing functionality still works.
 ● Fewer bugs in production.
 
 The JUnit library offers a method called assertTrue, which demands that the parameter it receives is finally evaluates as true.
 Initializing a variable can be done by adding to the test class a method ‘initialize’.We annotate the ‘initialize’ method with @Before, which guides the program to execute this method before each test.
-In test-driven development the functionality of the program is constructed in small steps. The programmer first writes a test that examines the wished functionality, and then writes the program code that passes that testn
+In test-driven development the functionality of the program is constructed in small steps. The programmer first writes a test that examines the wished functionality, and then writes the program code that passes that test. The program is then tested again, and if the test fails, the programmer corrects the code. The process is repeated until the program is complete. 
+- Each test method should have an "annotation" @ Test. This tells the JUnit test framework that this is an executable test method. The test method assertEquals receives two values as parameters -- the first is the expected value, and the second the value returned by the program i.e the value returned by method that we are testing. If the values are the same, the test passes. 
 
 ## Complex programs
 
