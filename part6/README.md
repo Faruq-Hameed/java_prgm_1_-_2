@@ -3,7 +3,8 @@
 Learning Objectives
 You review the use of lists.
 You know how to use a list as an instance variable.
-et's have a look at objects that contain a list. Examples of objects like these include objects that describe sets, for example playlists.
+Let's have a look at objects that contain a list. Examples of objects like these include objects that describe sets, for example playlists.
+
 When a value is added to an ArrayList, it goes to the end of the list. As such, the most recently added value is in the last index of the list - the size() method provided by the list is useful for finding the last index. You can remove an element from a particular index using the remove method provided by the list.
 Objects in an Instance Variable List
 A list that is an object's instance variable can contain objects other than strings as long as the type of objects in the list is specified when defining the list. 
@@ -36,7 +37,7 @@ Programmers follow these conventions so that programming can be made easier. Fol
 - We should see Objects as a natural part of problem solving
 - We have to separate a distinct concept into a class of its own, All the "dirty details" have been encapsulated neatly inside an object. If we make any changes inside the a class without changing the names of the methods that it uses uses, we don't have to modify other classes that uses the method by a class. The exposed method of a class are called its public interfaces.
 
-Program logic
+# Program logic
 Program logic includes parts that are crucial for the execution of the program, like functionalities that store information. we can separate the parts that store object information. Separating the program logic is a major benefit for the maintenance of the program.
 User interface
 Typically each program has its own user interface. The user interface receives two parameters in its constructor: a object register for storing the object values, and a Scanner object used for reading input.
