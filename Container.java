@@ -23,7 +23,6 @@ public class Container {
         }
 
     }
-
     public void move(int amount) {
         int amountToAdd = moveFromFirst(amount);
         System.out.println("amountToAdd is " + amountToAdd);

@@ -31,3 +31,17 @@ When comparing object-oriented programming with procedural programming, a few es
 If the information (data) giving to a computer, doesn't follow any rules and isn't in order, retrieving that information is taxing for the computer. We need order! Here comes sorting!
 # Selection sort
 Every programmer should be familiar with at least one sorting algorithm (i.e a way to sort an array). We should familiarize ourselves with one "classic" sorting algorithm, the selection sort. 
+To print an array we take use of the toString class method of the class Arrays.
+
+The idea of selection sort is:
+
+Move the smallest number in the array to index 0.
+Move the second smallest number to index 1.
+Move the third smalles number in the array to index 2.
+Etc.
+In other words:
+
+Examine the array starting from index 0. Swap the following two numbers with each other: the number at index 0, and the smallest number in the array starting from index 0.
+Examine the array starting from index 1. Swap the following two numbers with each other: the number at index 1, and the smallest number in the array starting from index 1.
+Examine the array starting from index 2. Swap the following two numbers with each other: the number at index 2, and the smallest number in the array starting from index 2.
+Etc.
