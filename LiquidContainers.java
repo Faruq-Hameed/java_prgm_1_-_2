@@ -1,66 +1,17 @@
+
 import java.util.Scanner;
 
 public class LiquidContainers {
-    private int first;
-    private int second;
-
-    public LiquidContainers() {
-        this.first = 0;
-        this.second = 0;
-    }
-
-    public void add(int amount) {
-        if (this.first + amount <= 100)
-            this.first = this.first + amount;
-    }
-
-    public void move(int amount) {
-        int amountToAdd = moveFromFirst(amount);
-        System.out.println("amountToAdd is " + amountToAdd);
-        if ((this.second + amountToAdd) < 100) {
-            this.second = this.second + amountToAdd;
-            System.out.println("This is new second :" +  this.second);
-        } else {
-            this.second = 100;
-            System.out.println("This is new second again :" +  this.second);
-        }
-        System.out.println("After moving : " + this.second);
-    }
-
-    /** Adjust the first container to the given amount. and set to 0 if negative */
-    public int moveFromFirst(int amount) {
-        int newAmount = this.first - amount;
-        if (newAmount > 0) {
-            this.first = newAmount;
-            return amount;
-        } else {
-            int amountToAdd = this.first;
-            this.first = 0;
-            return amountToAdd;
-        }
-    }
-
-    public void remove(int amount) {
-        // if amount is lesser then remove
-        if (this.second > amount) {
-            this.second -= amount;
-        } else { // else empty th second container
-            this.second = 0;
-        }
-    }
-
-    @Override
-    public String toString() {
-        return "First: " + this.first + "/100" + "\n" +
-                "Second: " + this.second + "/100";
-    }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        LiquidContainers containers = new LiquidContainers();
-        // String input ="add 5 \n" + "add 20 \n" + "";
+        Scanner scan = new Scanner(System.in);
+        int first = 0;
+        int second = 0;
+
         while (true) {
-            String input = scanner.nextLine();
+            System.out.println("First: " + first + "/100");
+            System.out.println("Second: " + second + "/100");
+            String input = scan.nextLine();
             if (input.equals("quit")) {
                 break;
             }
@@ -69,20 +20,45 @@ public class LiquidContainers {
             String command = inputContent[0];
             int amount = Integer.parseInt(inputContent[1]);
 
-            switch (command) {
-                case "add":
-                    containers.add(amount);
-                    System.out.println(containers);
-                    break;
-                case "move":
-                    containers.move(amount);
-                    System.out.println(containers);
-                case "remove":
-                    containers.remove(amount);
-                    System.out.println(containers);
-                default:
-                    continue;
+            if (command.equals("add")) {
+                if (first + amount <= 100 && amount > 0) {
+                    first += amount;
+                } else if (first + amount >= 100) {
+                    first = 100;
+                }
+
+            } else if (command.equals("move")) {
+                int newFirst = first - amount;
+                int newSecond = second + amount;
+
+                if (newFirst > 0) {
+                    first = newFirst;
+                    if (newSecond < 100) {
+                        second = newSecond;
+                    } else {
+                        second = 100;
+                    }
+                } else {
+                    int oldFirst = first;
+                    first = 0;
+                    newSecond = second + oldFirst;
+                    if (newSecond < 100) {
+                        second = newSecond;
+                    } else {
+                        second = 100;
+                    }
+                }
+            } else if (command.equals("remove")) {
+                int newSecond = second - amount;
+                if (newSecond >= 0) {
+                    second = newSecond;
+                } else {
+                    second = 0;
+                }
+
             }
+
         }
     }
+
 }
