@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class LiquidContainers {
     private int first;
     private int second;
@@ -9,16 +11,20 @@ public class LiquidContainers {
 
     public void add(int amount) {
         if (this.first + amount <= 100)
-            this.first = 100;
+            this.first = this.first + amount;
     }
 
     public void move(int amount) {
-      int amountToAdd =  moveFromFirst(amount);
-        if (this.second + amountToAdd <= 100) {
-            this.second += amount;
+        int amountToAdd = moveFromFirst(amount);
+        System.out.println("amountToAdd is " + amountToAdd);
+        if ((this.second + amountToAdd) < 100) {
+            this.second = this.second + amountToAdd;
+            System.out.println("This is new second :" +  this.second);
         } else {
             this.second = 100;
+            System.out.println("This is new second again :" +  this.second);
         }
+        System.out.println("After moving : " + this.second);
     }
 
     /** Adjust the first container to the given amount. and set to 0 if negative */
@@ -28,21 +34,55 @@ public class LiquidContainers {
             this.first = newAmount;
             return amount;
         } else {
+            int amountToAdd = this.first;
             this.first = 0;
-            return 100;
+            return amountToAdd;
         }
     }
 
-    public void remove(int amount){
-        //if amount is lesser then remove
-        if(this.second > amount){
+    public void remove(int amount) {
+        // if amount is lesser then remove
+        if (this.second > amount) {
             this.second -= amount;
-        }
-        else{ //else empty th second container
+        } else { // else empty th second container
             this.second = 0;
         }
     }
+
+    @Override
+    public String toString() {
+        return "First: " + this.first + "/100" + "\n" +
+                "Second: " + this.second + "/100";
+    }
+
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         LiquidContainers containers = new LiquidContainers();
+        // String input ="add 5 \n" + "add 20 \n" + "";
+        while (true) {
+            String input = scanner.nextLine();
+            if (input.equals("quit")) {
+                break;
+            }
+            String[] inputContent = new String[2];
+            inputContent = input.split(" ");
+            String command = inputContent[0];
+            int amount = Integer.parseInt(inputContent[1]);
+
+            switch (command) {
+                case "add":
+                    containers.add(amount);
+                    System.out.println(containers);
+                    break;
+                case "move":
+                    containers.move(amount);
+                    System.out.println(containers);
+                case "remove":
+                    containers.remove(amount);
+                    System.out.println(containers);
+                default:
+                    continue;
+            }
+        }
     }
 }
