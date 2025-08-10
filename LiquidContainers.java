@@ -13,8 +13,8 @@ public class LiquidContainers {
     }
 
     public void move(int amount) {
-        setFirst(amount);
-        if (this.second + amount <= 100) {
+      int amountToAdd =  moveFromFirst(amount);
+        if (this.second + amountToAdd <= 100) {
             this.second += amount;
         } else {
             this.second = 100;
@@ -22,12 +22,27 @@ public class LiquidContainers {
     }
 
     /** Adjust the first container to the given amount. and set to 0 if negative */
-    public void setFirst(int amount) {
+    public int moveFromFirst(int amount) {
         int newAmount = this.first - amount;
         if (newAmount > 0) {
             this.first = newAmount;
+            return amount;
         } else {
             this.first = 0;
+            return 100;
         }
+    }
+
+    public void remove(int amount){
+        //if amount is lesser then remove
+        if(this.second > amount){
+            this.second -= amount;
+        }
+        else{ //else empty th second container
+            this.second = 0;
+        }
+    }
+    public static void main(String[] args) {
+        LiquidContainers containers = new LiquidContainers();
     }
 }
