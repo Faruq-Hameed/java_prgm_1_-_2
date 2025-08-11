@@ -53,3 +53,4 @@ Instance methods are methods that are associated with an object, can process the
 
 ## Built-in sorting algorithms in Java
 Java offers a significant amount of ready to use sorting algorithms. Arrays can be sorted (into their natural order) using the class method sort of the Arrays-class. Lists can be sorted (into their natural order) using the class method sort of the Collections class.
+Java's built-in sorting algorithms work with value type variables and some of Java's built-in reference type variables, like String. In order for our own classes to be sorted, we need to provide Java with some tips on how to do that, because the classes themselves don't contain information on how objects created from them should be ordered. 
