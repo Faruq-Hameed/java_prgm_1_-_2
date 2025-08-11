@@ -67,3 +67,31 @@ E.g Does the array contain number 44? The array has 16 elements i.e index 0 to 1
 - Only works with ordered arrays / lists
 - The execution of binary search begins with the middle value of the array.
 - The index of interest contains 9. 44 is greater than 9, so this index or any lesser index cannot contain it.
+- The binary search continues with the index at the middle of the remaining area (rounding down, if there is no single middle value).
+- The index of interest contains number 31. 44 is greater than 31, so this index or any lesser index cannot contain the searched value.
+- The index of interest contains 45, which is greater than 44. So that index or greater indices cannot contain 44. 
+- The binary search continues with the index at the middle of the remaining area (rounding down, if there is no single middle value).
+- The index we are examining contains 44. This is the value we are searching for, so let’s return the index.(Here I am, at index 12)
+
+ Does the array contain number 2? also 16 element 0 - 15 index 
+- The execution of binary search begins with the middle value of the array. 
+- The examined index contains the value 9 is smaller 9, so this index or any greater index cannot contain number 2
+- The binary search continues with the index at the middle of the remaining area (rounding down, if there is no single middle value)
+- The examined index contains value 0, which is smaller than 2. So number 2 cannot be at this index or any smaller index
+- The binary search continues with the index at the middle of the remaining area (rounding down, if there is no single middle value).
+- The examined index contains value 5, which is greater than 2. Number 2 cannot be at this index or any greater index
+- The binary search continues with the index at the middle of the remaining area (rounding down, if there is no single middle value)
+- The examined index contains value 1, which is smaller than 2. The number 2 cannot be at this index or any smaller index.
+- The binary search continues with the index at the middle of the remaining area (rounding down, if there is no single middle value)
+- There is no remaining space, so the value cannot be found. We’ll return -1 to indicate that there is no index for the number that was searched for
+- Not found, returning -1
+
+Idea of binary search●Data is searched in an ordered array or list.
+● Search begins in the middle. 
+● The the value of the examined middle point is not the value that is searched for, we exclude half of the previous search are and move to examine the middle point of the remaining area.
+● If the examined middle value is the value that is searched for, we return the index of that middle point.
+● If the search area does not exist anymore (every index has been excluded from the list of possibilities), the value of -1 is returned. It indicates that the value in question cannot be found.
+● Halves the search area after each round. 
+● The number of examined places is a logarithmically connected to the size of the array / list; for instance, searching a list of 4294967296 elements can be accomplished by examining 32 indices (log2 4294967296 ~ 32).
+● Also works with strings; in this case the algorithm compares the order of individual characters in a string. Individual characters can be represented as char type numeric values.
+● Your own classes and objects need to be defined an ordering. We’ll return to this issue in the advanced programming course.
