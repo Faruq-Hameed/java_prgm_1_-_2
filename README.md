@@ -54,3 +54,11 @@ Instance methods are methods that are associated with an object, can process the
 ## Built-in sorting algorithms in Java
 Java offers a significant amount of ready to use sorting algorithms. Arrays can be sorted (into their natural order) using the class method sort of the Arrays-class. Lists can be sorted (into their natural order) using the class method sort of the Collections class.
 Java's built-in sorting algorithms work with value type variables and some of Java's built-in reference type variables, like String. In order for our own classes to be sorted, we need to provide Java with some tips on how to do that, because the classes themselves don't contain information on how objects created from them should be ordered. 
+
+## Information retrieval
+Linear search is a search algorithm that searches for information in an array by going through every value in the array one by one.
+When the value that was searched for is found, its index is immediately returned. If the requested value cannot be found, linear search returns the information that the value was not found — typically this means returning -1 instead of a valid index.
+In the worst case scenario, i.e when the value searched for isn't found, the algorithm has to do as many comparisons as there are values in the array. In an array containing, say, 10 million values, this means 10 million comparisons. If we are doing more than one search, it makes sense to try and improve efficiency.
+
+## Binary search (aka half-interval search or logarithmic search )
+When the data searched is in order, searching can be implemented a lot more efficiently than in linear search. The idea behind Binary Search is to start looking for the searched value in the middle index of the array (or list), compare the value found there to the searched value, and if needed (i.e, when the value isn't found there) eliminate half of the search area.
