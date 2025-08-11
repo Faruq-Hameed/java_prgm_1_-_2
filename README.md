@@ -62,3 +62,8 @@ In the worst case scenario, i.e when the value searched for isn't found, the alg
 
 ## Binary search (aka half-interval search or logarithmic search )
 When the data searched is in order, searching can be implemented a lot more efficiently than in linear search. The idea behind Binary Search is to start looking for the searched value in the middle index of the array (or list), compare the value found there to the searched value, and if needed (i.e, when the value isn't found there) eliminate half of the search area.
+The algorithm works by repeatedly dividing the search space in half, until the searched value is found.
+E.g Does the array contain number 44? The array has 16 elements i.e index 0 to 15
+- Only works with ordered arrays / lists
+- The execution of binary search begins with the middle value of the array.
+- The index of interest contains 9. 44 is greater than 9, so this index or any lesser index cannot contain it.
