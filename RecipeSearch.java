@@ -6,35 +6,29 @@ import java.nio.file.Paths;
 
 public class RecipeSearch {
 
-    // private ArrayList<String> recipeNames;
-    // private ArrayList<Integer> cookingTimes;
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("File to read: ");
+        String fileName = scanner.nextLine();
 
-    // public RecipeSearch() {
-    // this.recipeNames = new ArrayList<>();
-    // this.cookingTimes = new ArrayList<>();
+        System.out.println("Commands:");
+        System.out.println("list - lists the recipes");
+        System.out.println("stop - stops the program");
 
-    // }
-
-    public static void reading(String fileName) {
-        try {
-            Scanner scanner = new Scanner(Paths.get(fileName));
-            int rowCounter = 0;
-            while (scanner.hasNextLine()) {
-                String row = scanner.next();
-                if (row.isEmpty()) {
-                    rowCounter++;
-                    continue;
-                } else if (rowCounter == 0) {
-                    System.out.println("");
-                }
-                // System.out.println(row);
+        while (true) {
+            System.out.println("Enter command: ");
+            String command = scanner.nextLine();
+            if (command.equals("list")) {
+                list(fileName);
+            } else if (command.equals("stop")) {
+                break;
+            } else if (command.equals("find name")) {
+                System.out.println("Searched word:");
+                String searchWord = scanner.nextLine();
+                findByName(fileName,searchWord);
             }
-        } catch (Exception e) {
-            System.out.println("Error " + e.getMessage());
         }
-
     }
-    // Commands: list - lists the recipes stop - stops the program
 
     public static void list(String fileName) {
         try {
@@ -57,33 +51,38 @@ public class RecipeSearch {
                     rowCounter++;
                     continue;
                 }
-                // System.out.println(row);
             }
         } catch (Exception e) {
             System.out.println("Error " + e.getMessage());
         }
-
     }
-    // Commands: list - lists the recipes stop - stops the program
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("File to read: ");
-        String fileName = scanner.nextLine();
-
-        System.out.println("Commands:");
-        System.out.println("list - lists the recipes");
-        System.out.println("stop - stops the program");
-
-        while (true) {
-            System.out.println("Enter command: ");
-            String command = scanner.nextLine();
-            if (command.equals("list")) {
-                list(fileName);
+    public static void findByName(String fileName, String searchWord) {
+        try {
+            System.out.println("Recipes:");
+            Scanner scanner = new Scanner(Paths.get(fileName));
+            int rowCounter = 0;
+            while (scanner.hasNextLine()) {
+                String row = scanner.nextLine();
+                if (row.isEmpty()) {
+                    rowCounter = 0;
+                    continue;
+                } else if (rowCounter == 0 && row.contains(searchWord)) {
+                    System.out.print(row + ", ");
+                    rowCounter++;
+                    continue;
+                }
+                if (rowCounter == 1) {
+                    System.out.print("cooking time: " + Integer.valueOf(row));
+                    System.out.println();
+                    rowCounter++;
+                    continue;
+                }
             }
-
+        } catch (Exception e) {
+            System.out.println("Error " + e.getMessage());
         }
-
     }
 
+    
 }
