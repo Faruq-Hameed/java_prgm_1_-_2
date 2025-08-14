@@ -25,8 +25,13 @@ public class RecipeSearch {
             } else if (command.equals("find name")) {
                 System.out.println("Searched word:");
                 String searchWord = scanner.nextLine();
-                findByName(fileName,searchWord);
+                findByName(fileName, searchWord);
+            } else if (command.equals("find cooking time")) {
+                System.out.println("Max cooking time:");
+                int time = Integer.valueOf(scanner.nextLine());
+                findCookingTime(fileName, time);
             }
+
         }
     }
 
@@ -84,5 +89,35 @@ public class RecipeSearch {
         }
     }
 
-    
+    public static void findCookingTime(String fileName, int time) {
+        try {
+            System.out.println("Recipes:");
+            Scanner scanner = new Scanner(Paths.get(fileName));
+            int rowCounter = 0;
+            String foodName = "";
+            while (scanner.hasNextLine()) {
+                String row = scanner.nextLine();
+                if (row.isEmpty()) {
+                    rowCounter = 0;
+                    continue;
+                } else if (rowCounter == 0) {
+                    foodName = row + ", ";
+                    rowCounter++;
+                    continue;
+                }
+                if (rowCounter == 1) {
+                    int cookingTime = Integer.valueOf(row);
+                    if (cookingTime <= time) {
+                        System.out.println(foodName + "cooking time: " + cookingTime);
+                    }
+                    foodName = "";
+                    rowCounter++;
+                    continue;
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Error " + e.getMessage());
+        }
+    }
+
 }
