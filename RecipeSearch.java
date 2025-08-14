@@ -69,25 +69,20 @@ public class RecipeSearch {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("File to read: ");
+        String fileName = scanner.nextLine();
+
         System.out.println("Commands:");
-        //
         System.out.println("list - lists the recipes");
         System.out.println("stop - stops the program");
 
-        System.out.println("Enter command: ");
-        String command = scanner.nextLine();
-        while (condition) {
+        while (true) {
+            System.out.println("Enter command: ");
+            String command = scanner.nextLine();
+            if (command.equals("list")) {
+                list(fileName);
+            }
 
         }
-
-        String fileName = scanner.nextLine();
-        // reading(fileName);
-
-        if (command.equals("list")) {
-            list(fileName);
-        }
-        System.out.println("Enter command: ");
-        command = scanner.nextLine();
 
     }
 
