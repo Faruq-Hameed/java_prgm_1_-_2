@@ -120,4 +120,32 @@ public class RecipeSearch {
         }
     }
 
+    public static void findByIngredient(String fileName, String searchWord) {
+        try {
+            System.out.println("Recipes:");
+            Scanner scanner = new Scanner(Paths.get(fileName));
+            int rowCounter = 0;
+            String foodName = "";
+            String cookingTime = "";
+            while (scanner.hasNextLine()) {
+                String row = scanner.nextLine();
+                if (row.isEmpty()) {
+                    rowCounter = 0;
+                    continue;
+                } else if (rowCounter == 0) {
+                    foodName = row + ", ";
+                    rowCounter++;
+                    continue;
+                }
+                if (rowCounter == 1) {
+                    cookingTime = "cooking time: " + Integer.valueOf(row);
+                    rowCounter++;
+                    continue;
+                }
+            }
+        } catch (Exception e) {
+            System.out.println("Error " + e.getMessage());
+        }
+    }
+
 }
