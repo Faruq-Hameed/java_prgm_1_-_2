@@ -10,8 +10,8 @@ public class RecipeSearch {
     // private ArrayList<Integer> cookingTimes;
 
     // public RecipeSearch() {
-    //     this.recipeNames = new ArrayList<>();
-    //     this.cookingTimes = new ArrayList<>();
+    // this.recipeNames = new ArrayList<>();
+    // this.cookingTimes = new ArrayList<>();
 
     // }
 
@@ -44,7 +44,7 @@ public class RecipeSearch {
             while (scanner.hasNextLine()) {
                 String row = scanner.nextLine();
                 if (row.isEmpty()) {
-                    rowCounter++;
+                    rowCounter = 0;
                     continue;
                 } else if (rowCounter == 0) {
                     System.out.print(row + ", ");
@@ -53,6 +53,7 @@ public class RecipeSearch {
                 }
                 if (rowCounter == 1) {
                     System.out.print("cooking time: " + Integer.valueOf(row));
+                    System.out.println();
                     rowCounter++;
                     continue;
                 }
@@ -68,9 +69,6 @@ public class RecipeSearch {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("File to read: ");
-
-        String fileName = scanner.nextLine();
-        // reading(fileName);
         System.out.println("Commands:");
         //
         System.out.println("list - lists the recipes");
@@ -78,10 +76,18 @@ public class RecipeSearch {
 
         System.out.println("Enter command: ");
         String command = scanner.nextLine();
+        while (condition) {
+
+        }
+
+        String fileName = scanner.nextLine();
+        // reading(fileName);
+
         if (command.equals("list")) {
             list(fileName);
         }
         System.out.println("Enter command: ");
+        command = scanner.nextLine();
 
     }
 
