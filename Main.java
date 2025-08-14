@@ -4,6 +4,8 @@ import java.util.Collections;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("Hello World! :" + args[0]);
+        //    
         int[] arr = { 6, -8, 16, 26, 0, 18, 2, -0, 55, -19 };
         ArrayList<Integer> list = new ArrayList<>();
         list.add(-19);
