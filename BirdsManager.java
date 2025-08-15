@@ -12,19 +12,6 @@ public class BirdsManager {
         this.birds.add(bird);
     }
 
-    public void observe(Bird bird) {
-        // loop through the list of birds
-        // find the bird in the list and call its observe method. Note bird is an object
-        // of Bird class so we are searching for refernce too
-        for (Bird currentBird : birds) {
-            // check if the current and the bird points to the same memory location
-            if (bird.equals(currentBird)) {
-                bird.observe();
-                return;
-            }
-        }
-    }
-
     // print all birds in the list
     // use the toString method of the Bird class
     public void printAll() {
@@ -36,7 +23,6 @@ public class BirdsManager {
     public Bird findBird(String name) {
         for (Bird bird : birds) {
             if (bird.getName().equals(name)) {
-                bird.observe();
                 return bird;
             }
         }
