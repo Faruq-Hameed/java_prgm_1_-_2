@@ -31,6 +31,11 @@ public class RecipeSearch {
                 int time = Integer.valueOf(scanner.nextLine());
                 findCookingTime(fileName, time);
             }
+            else if(command.equals("find ingredient")){
+                System.out.println("Ingredient:");
+                String ingredient = scanner.nextLine();
+                findByIngredient(fileName, ingredient);
+            }
 
         }
     }
@@ -124,24 +129,28 @@ public class RecipeSearch {
         try {
             System.out.println("Recipes:");
             Scanner scanner = new Scanner(Paths.get(fileName));
-            int rowCounter = 0;
-            String foodName = "";
-            String cookingTime = "";
+            boolean found = false;
             while (scanner.hasNextLine()) {
-                String row = scanner.nextLine();
-                if (row.isEmpty()) {
-                    rowCounter = 0;
-                    continue;
-                } else if (rowCounter == 0) {
-                    foodName = row + ", ";
-                    rowCounter++;
-                    continue;
+                String foodName = scanner.nextLine(); // first row is the recipe name
+                int cookingTime = Integer.valueOf(scanner.nextLine()); // cooking time is the second row
+                // get the recipe ingredients (the third row and others)
+                ArrayList<String> ingredients = new ArrayList<>();
+                // loop through the recipe ingredients and break at the end of the recipe
+                // ingredients for new recipe
+                for (int i = 0; scanner.hasNextLine(); i++) {
+                    String ingredient = scanner.nextLine();
+                    if (ingredient.isEmpty()) {
+                        break;
+                    }
+                    // add the ingredient to the list of ingredients (if it is not empty
+                    ingredients.add(ingredient);
                 }
-                if (rowCounter == 1) {
-                    cookingTime = "cooking time: " + Integer.valueOf(row);
-                    rowCounter++;
-                    continue;
+                // check if the ingredient list contains the search word
+                if (ingredients.contains(searchWord)) {
+                    System.out.println(foodName + " " + "cooking time: " + cookingTime);
+                    continue; //i.e go to next recipe
                 }
+
             }
         } catch (Exception e) {
             System.out.println("Error " + e.getMessage());
