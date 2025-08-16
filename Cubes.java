@@ -1,1 +1,3 @@
-public class Cubes {}
+public class Cubes {
+public static void main 
+}
