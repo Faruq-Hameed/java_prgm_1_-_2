@@ -1,3 +1,4 @@
+package part7;
 import java.util.ArrayList;
 
 public class GradeStat {

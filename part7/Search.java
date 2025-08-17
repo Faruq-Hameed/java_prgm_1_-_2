@@ -1,3 +1,4 @@
+package part7;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -5,7 +6,7 @@ import java.util.Scanner;
 public class Search {
 
     public static void main(String[] args) {
-        // The program below is meant for testing the search algorithms you'll write
+        // The program below is meant for testing  algorithms you'll write
         Scanner scanner = new Scanner(System.in);
         ArrayList<Book> books = new ArrayList<>();
         System.out.println("How many books to create?");

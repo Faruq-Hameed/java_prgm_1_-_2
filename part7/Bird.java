@@ -1,3 +1,4 @@
+package part7;
 public class Bird {
     private String name;
     private String latinName;
