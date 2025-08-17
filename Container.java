@@ -1,10 +1,10 @@
+
 public class Container {
+
     private int first;
-    private int second;
 
     public Container() {
         this.first = 0;
-        this.second = 0;
     }
 
     public void add(int amount) {
@@ -24,17 +24,22 @@ public class Container {
         }
         int movableAmount = Math.min(this.first, amount); // only remove what is available if less than amount
         this.first = this.first - movableAmount; // this cannot be -ve again
-        int newSecond = movableAmount;
-        this.second = Math.min(newSecond, 100);
     }
 
     // remove from second
     public void remove(int amount) {
-        if (this.second <= 0) {
+        if (this.first <= 0) {
             return;
         }
-        this.second = this.second - Math.min(this.second, amount);
+        this.first = this.first - Math.min(this.first, amount);
     }
 
-    
+    public int contains() {
+        return this.first;
+    }
+
+    @Override
+    public String toString() {
+        return this.first + "/100";
+    }
 }
