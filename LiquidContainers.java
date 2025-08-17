@@ -8,37 +8,37 @@ public class LiquidContainers {
     }
 
     public void add(int amount) {
-        int newFirst = this.first + amount;
+        int newFirst = first + amount;
         if (newFirst <= 100) {
-            this.first = newFirst;
+            first = newFirst;
         } else {
-            this.first = 100;
+            first = 100;
         }
     }
 
     // method to move water from first to second
     public void move(int amount) {
-        int newFirst = this.first - amount;
-        int newSecond = this.second + amount;
+        int newFirst = first - amount;
+        int newSecond = second + amount;
         if (newFirst > 0) {
-            this.first = 0;
+            first = 0;
         } else {
-            this.first = newFirst;
+            first = newFirst;
         }
         if (newSecond <= 100) {
-            this.second = newSecond;
+            second = newSecond;
         } else {
-            this.second = 100;
+            second = 100;
         }
     }
 
     //remove from second
     public void remove(int amount) {
-        int newSecond = this.second - amount;
+        int newSecond = second - amount;
         if (newSecond > 0) {
-            this.second = 0;
+            second = 0;
         } else {
-            this.second = newSecond;
+            second = newSecond;
         }
     }
 }
