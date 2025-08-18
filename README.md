@@ -13,3 +13,10 @@ Adding to the hash map is done through the put(*key*, *value*) method that has t
 
 Hash Map Keys Correspond to a Single Value at Most
 The hash map has a maximum of one value per key. If a new key-value pair is added to the hash map, but the key has already been associated with some other value stored in the hash map, the old value will vanish from the hash map.
+A Reference Type Variable as a Hash Map Value. HashMap can have reference type (e.g Objects, String, Array and co) as value.
+
+## When Should Hash Maps Be Used?
+
+The hash map is implemented internally in such a way that searching by a key is very fast. The hash map generates a "hash value" from the key, i.e. a piece of code, which is used to store the value of a specific location. When a key is used to retrieve information from a hash map, this particular code identifies the location where the value associated with the key is. In practice, it's not necessary to go through all the key-value pairs in the hash map when searching for a key; the set that's checked is significantly smaller. We'll be taking a deeper look into the implementation of a hash map in the Advanced Programming and Data Structures and Algorithms courses. Unlike List that search would happen by iterating over the list. 
+
+onsider the performance of the program. Java's System.nanoTime() method returns the time of the computer in nanoseconds.
