@@ -10,3 +10,6 @@ Using a hash map requires the import java.util.HashMap; statement at the beginni
 
 Two type parameters are required when creating a hash map - the type of the key and the type of the value added. If the keys of the hash map are of type string, and the values of type integer, e.g the hash map is created with the following statement HashMap<String, Integer> hashmap = new HashMap<>();
 Adding to the hash map is done through the put(*key*, *value*) method that has two parameters, one for the key, the other for the value. Retrieving from a hash map happens with the help of the get(*key*) method that is passed the key as a parameter and returns a value.
+
+Hash Map Keys Correspond to a Single Value at Most
+The hash map has a maximum of one value per key. If a new key-value pair is added to the hash map, but the key has already been associated with some other value stored in the hash map, the old value will vanish from the hash map.
