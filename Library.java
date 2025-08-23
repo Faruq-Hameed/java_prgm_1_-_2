@@ -7,8 +7,9 @@ public class Library {
         this.books = new HashMap<>();
     }
 
-    public Book getBook(String title) {
-        return books.get(title);
+    public Book getBook(String bookName) {
+         bookName = sensitizedString(bookName);
+        return books.get(bookName);
     }
 
     public void addBook(Book book) {
@@ -29,6 +30,10 @@ public class Library {
         return name;
     }
 
+    public void removeBook(String bookName){
+        bookName = sensitizedString(bookName);
+        books.remove(bookName);
+    }
     // @Override
     // public String toString() {
     // return books;
