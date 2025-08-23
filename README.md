@@ -23,3 +23,15 @@ Consider the performance of the program. Java's System.nanoTime() method returns
 With ten million books, it takes almost a second to find two books. Of course, the way in which the list is ordered has an effect. If the book being searched was first on the list, the program would be faster. On the other hand, if the book were not on the list, the program would have to go through all of the books in the list before determining that such book does not exist.
 It took about 0.4 milliseconds to search for two books out of ten million books with the hash map. The difference in performance in our example is over a thousandfold.
 The difference in performance is due to the fact that when a book is searched for in a list, the worst-case scenario involves going through all the books in the list. In a hash map, it isn't necessary to check all of the books as the key determines the location of a given book in a hash map. The difference in performance depends on the number of books - for example, the performance differences are negligible for 10 books. However, for millions of books, the performance differences are clearly visible.
+Hash maps work well when we know exactly what we are looking for. If we wanted to identify books whose title 
+
+contains a particular string(When the title is used as key), the hash map would be of little use.
+The hash maps also have no internal order, and it is not possible to search the hash map based on the indexes. The items in a list are in the order they were added to the list. Reason why we can use for lopp, while and other loop with list and also get item at index.
+Hash maps are used when we want to identify items based on a key.
+Typically, hash maps and lists are used together. The hash map provides quick access to a specific key or keys, while the list is used, for instance, to maintain order.
+
+Hashmap can also be used as an Instance Variable for a class
+
+Sometimes searching with string can be problematic e.g in that the book's spelling format must be remembered accurately. Someone may search for a book with a lowercase letter, while another may, for example, enter a space to begin typing a name. We make use of the tools provided by the String-class to handle strings. The toLowerCase() method returns a new string with all letters converted to lowercase. We also have the trim() method, on the other hand, creates a new string where empty characters such as spaces at the beginning and end have been removed.
+
+The containsKey method of the hash map is being used above to check for the existence of a key. The method returns true if any value has been added to the hash map with the given key. Otherwise, the method returns false.

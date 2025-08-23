@@ -1,0 +1,40 @@
+Task
+Your task is to develop a real-time chat application backend using Node.js, Express, Socket.IO, TypeScript, and MySQL.
+The application should include the following features:
+User Authentication
+Implement registration and login with JWT-based authentication.
+Passwords must be hashed securely (e.g., bcrypt).
+Chat Rooms
+Users can create chat rooms (public or private).
+Users can join existing rooms with an invitation link or room ID.
+Maintain a list of rooms a user belongs to.
+Real-Time Messaging
+Implement real-time communication with Socket.IO.
+Users in the same room should be able to exchange messages instantly.
+Store all messages in MySQL with sender, room, timestamp.
+Socket.IO Events (minimum required)
+join_room – when a user joins a chat room.
+send_message – when a user sends a message to a room.
+receive_message – to broadcast messages to all users in the room.
+typing – notify when a user is typing.
+user_status – track when a user goes online/offline (presence system).
+User Presence Tracking
+Show online/offline status of each user in a room.
+Store last seen timestamp for offline users.
+Rate Limiting & Security
+Implement a basic message rate-limiter (e.g., max 5 messages in 10 seconds).
+Validate incoming requests (e.g., avoid empty messages).
+Ensure room access control (private rooms should require authentication/invite).
+Database
+Use MySQL to persist users, rooms, and messages.
+Suggested tables: users, rooms, room_members, messages.
+Optional (Bonus Points)
+Implement unit tests or integration test for message delivery.
+Add message delivery receipts (delivered/read status).
+Implement pagination or lazy loading for chat history.
+# Use Docker for containerization.
+Technology Stack
+Backend Framework: Node.js (Express)
+Real-time Communication: Socket.IO
+Language: TypeScript
+Database: MySQL (Prisma ORM or Sequelize recommended)
