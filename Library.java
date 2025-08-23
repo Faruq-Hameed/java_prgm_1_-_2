@@ -8,7 +8,7 @@ public class Library {
     }
 
     public Book getBook(String bookName) {
-         bookName = sensitizedString(bookName);
+        bookName = sensitizedString(bookName);
         return books.get(bookName);
     }
 
@@ -30,9 +30,13 @@ public class Library {
         return name;
     }
 
-    public void removeBook(String bookName){
+    public void removeBook(String bookName) {
         bookName = sensitizedString(bookName);
-        books.remove(bookName);
+        if (books.containsKey(bookName)) {
+            books.remove(bookName);
+        } else {
+            System.out.println("Book was not found, cannot be removed!");
+        }
     }
     // @Override
     // public String toString() {
