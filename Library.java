@@ -12,11 +12,7 @@ public class Library {
     }
 
     public void addBook(Book book) {
-        String name = book.getName();
-        if (name == null) {
-            name = "";
-        }
-        name = name.trim().toLowerCase();
+        String name = sensitizedString(book.getName());
         if (books.containsKey(name)) {
             System.out.println("Book is already in the library!");
         } else {
@@ -25,8 +21,16 @@ public class Library {
 
     }
 
-    @Override
-    public String toString() {
-        return books;
+    public String sensitizedString(String name) {
+        if (name == null) {
+            return "";
+        }
+        name = name.trim().toLowerCase();
+        return name;
     }
+
+    // @Override
+    // public String toString() {
+    // return books;
+    // }
 }
