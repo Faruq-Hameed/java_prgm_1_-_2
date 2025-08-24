@@ -17,8 +17,12 @@ public class Program {
         }
     }
 
-    /**Prints the values in the given hashmap which s keys contain the given string. */
+    /**Prints the values in the given hashmap which is keys contain the given string. */
     public static void printValuesOfKeysWhere(HashMap<String,String> hashmap, String text){
-
+        for (String key : hashmap.keySet()) {
+            if(key.contains(text)){
+                hashmap.get(key);
+            }
+        }
     }
 }
