@@ -16,7 +16,7 @@ public class Mapping {
         }
         for (String bookName : bookMap.keySet()) {
             Book book = bookMap.get(bookName);
-            if (book.getName().contains("3"))
+            if (book.getName().contains("7"))
                 System.out.println(book);
         }
     }
