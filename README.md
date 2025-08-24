@@ -37,3 +37,6 @@ Sometimes searching with string can be problematic e.g in that the book's spelli
 The containsKey method of the hash map is being used above to check for the existence of a key. The method returns true if any value has been added to the hash map with the given key. Otherwise, the method returns false.
 
 In programming we should try and adhered to the DRY (Don't Repeat Yourself) principle according to which code duplication should be avoided. Repetitive code is often not noticed until it has already been written, which means that it almost always makes its way into the code. There's nothing wrong with that - the important thing is that the code is cleaned up so that places that require tidying up are noticed.
+
+## SEARCHING IN HASHMAP
+The get method in the hash map is not applicable in this case as it's used to search by a specific key. We can go through the values ​​of a hash map by using a for-each loop on the set returned by the keySet() method of the hash map.keySet() returns a Set<K> containing all the keys in the ma

@@ -34,7 +34,6 @@ public class Book {
     }
 
     public String toString() {
-        return "Name: " + this.name + " (" + this.published + ")\n"
-            + "Content: " + this.content;
+        return "Name: " + this.name + " (" + this.published + ")" + "Content: " + this.content;
     }
 }

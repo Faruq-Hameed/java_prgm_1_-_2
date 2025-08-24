@@ -20,7 +20,7 @@ public class UserInterface {
             if (command.equals("add")) {
                 System.out.println("To add:");
                 String task = scanner.nextLine();
-                list.add(task);
+                // list.add(task);
             }
             if (command.equals("list")) {
                 list.print();

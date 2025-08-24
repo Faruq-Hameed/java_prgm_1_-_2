@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Library {
@@ -38,6 +39,15 @@ public class Library {
             System.out.println("Book was not found, cannot be removed!");
         }
     }
+    
+    public ArrayList<Book> grtBookByPart(String part) {
+        ArrayList<Book> booksByPart = new ArrayList<>();
+        // for (Book book : books.keySet()) {
+            
+        // }
+        return booksByPart;
+    }
+
     // @Override
     // public String toString() {
     // return books;
