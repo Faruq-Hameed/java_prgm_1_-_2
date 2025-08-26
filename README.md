@@ -39,4 +39,17 @@ The containsKey method of the hash map is being used above to check for the exis
 In programming we should try and adhered to the DRY (Don't Repeat Yourself) principle according to which code duplication should be avoided. Repetitive code is often not noticed until it has already been written, which means that it almost always makes its way into the code. There's nothing wrong with that - the important thing is that the code is cleaned up so that places that require tidying up are noticed.
 
 ## SEARCHING IN HASHMAP
-The get method in the hash map is not applicable in this case as it's used to search by a specific key. We can go through the values ​​of a hash map by using a for-each loop on the set returned by the keySet() method of the hash map.keySet() returns a Set<K> containing all the keys in the map. This way, however, we lose the speed advantage that comes with the hash map. The hash map is implemented in such a way that searching by a single key is extremely fast. But with the when looking for the existence of a single will make it to go through the entire map
+The get method in the hash map is not applicable in this case as it's used to search by a specific key. We can go through the values ​​of a hash map by using a for-each loop on the set returned by the keySet() method of the hash map.keySet() returns a Set<K> containing all the keys in the map. This way, however, we lose the speed advantage that comes with the hash map. The hash map is implemented in such a way that searching by a single key is extremely fast. But with the when looking for the existence of a single will make it to go through the entire map.
+Going Through A Hash map's Values
+The preceding functionality could also be implemented by going through the hash map's values. The set of values can be retrieved with the hash map's values​​() method. This set of values can also be iterated over ​​with a for-each loop.
+
+Primitive Variables In Hash Maps
+A hash map expects that only reference-variables are added to it (in the same way that ArrayList does). Java converts primitive variables to their corresponding reference-types when using any Java's built in data structures (such as ArrayList and HashMap). Although the value 1 can be represented as a value of the primitive int variable, its type should be defined as Integer when using ArrayLists and HashMaps.
+Note key in hashmap is not a primitive type but a reference type and can be of the reference tye e.g Integer, String, Array and so on. A hash map's key and the object to be stored are always reference-type variables. If you want to use a primitive variable as a key or value, there exists a reference-type version for each one.
+Primitive	Reference-type Equivalent
+int	       Integer
+double	   Double
+char	   Character
+
+Java converts primitive variables to reference-types automatically as they are added to either a HashMap or an ArrayList. This automatic conversion to a reference-type variable is termed auto-boxing in Java, i.e. putting something in a box automatically. The automatic conversion is also possible in the other direction.
+here is, however, some risk in type conversions. If we attempt to convert a null reference - i.e key not in HashMap, for instance - to an integer, we witness a java.lang.reflect.InvocationTargetException error. When performing automatic conversion, we should ensure that the value to be converted is not null.The getOrDefault method of the HashMap searches for the key passed to it as a parameter from the HashMap. If the key is not found, it returns the value of the second parameter passed to it. 

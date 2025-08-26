@@ -21,7 +21,7 @@ public class Program {
     public static void printValuesOfKeysWhere(HashMap<String,String> hashmap, String text){
         for (String key : hashmap.keySet()) {
             if(key.contains(text)){
-                hashmap.get(key);
+               System.out.println(hashmap.get(key)); 
             }
         }
     }
