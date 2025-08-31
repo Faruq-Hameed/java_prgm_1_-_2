@@ -3,6 +3,8 @@ package part7;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import Tesr.Book;
+
 public class Search {
 
     public static void main(String[] args) {
@@ -12,7 +14,7 @@ public class Search {
         System.out.println("How many books to create?");
         int numberOfBooks = Integer.valueOf(scanner.nextLine());
         for (int i = 0; i < numberOfBooks; i++) {
-            books.add(new Book(i, "name for the book " + i));
+            // books.add(new Book(i, "name for the book " + i));
         }
 
         System.out.println("Id of the book to search for?");
@@ -47,9 +49,9 @@ public class Search {
     public static int linearSearch(ArrayList<Book> books, int searchedId) {
         for (int i = 0; i < books.size(); i++) {
             Book book = books.get(i);
-            if (book.getId() == searchedId) {
-                return i;
-            }
+            // if (book.getId() == searchedId) {
+            //     return i;
+            // }
         }
         return -1;
     }
@@ -63,15 +65,15 @@ public class Search {
 
             Book bookAtMid = books.get(listSizeAverageIndex);
 
-            if (bookAtMid.getId() == searchedId) { //if the mid index is what we need
-                return listSizeAverageIndex;
-            }
+            // if (bookAtMid.getId() == searchedId) { //if the mid index is what we need
+            //     return listSizeAverageIndex;
+            // }
 
-            if (bookAtMid.getId() < searchedId) {
-                beginIndex = listSizeAverageIndex + 1; // move right
-            } else {
-                lastIndex = listSizeAverageIndex - 1; // move left
-            }
+            // if (bookAtMid.getId() < searchedId) {
+            //     beginIndex = listSizeAverageIndex + 1; // move right
+            // } else {
+            //     lastIndex = listSizeAverageIndex - 1; // move left
+            // }
 
         }
         return -1;
