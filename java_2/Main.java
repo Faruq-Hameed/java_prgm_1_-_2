@@ -9,12 +9,15 @@ public class Main {
         System.out.println(faruq.equals(faruq2));
         System.out.println(faruq.equals(aseda));
         System.out.println(faruq.getClass());
+        // System.out.println("-------------------");
+        // System.out.println("-------------------");
+        // compareBooks();
+        // System.out.println("------------Testing for list-------");
+        // System.out.println("-------------------");
+        // checksForArrayList();
+               System.out.println("------------Testing for list-------");
         System.out.println("-------------------");
-        System.out.println("-------------------");
-        compareBooks();
-        System.out.println("------------Testing for list-------");
-        System.out.println("-------------------");
-        checksForArrayList();
+        testWithHashCode();
     }
 
     public static void compareBooks() {
@@ -56,5 +59,17 @@ public class Main {
         books.set(0, bookObject);
         System.out.println("books is : " + books);
 
+    }
+
+    public static void testWithHashCode(){
+        Book book1 = new Book("Rome", 2000, "lorem ipsum");
+        Book book2 = new Book("Rome", 2000, "lorem ipsum");
+        Book book3 = book1;
+        System.out.println(book1.hashCode());
+        System.out.println(book2.hashCode());
+        System.out.println(book3.hashCode());
+        String nameA = "Faruq";
+        String nameB = "Faruq";
+        System.out.println(nameA.hashCode() + " " + nameB.hashCode());
     }
 }
