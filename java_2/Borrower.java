@@ -11,6 +11,10 @@ public class Borrower {
     // System.out.println(borrowers);
     // System.out.println("get book1 : " + borrowers.get(boo1));
     borrowers.put(new Book ("Tale of forest", 2001, "lorem ipsum"), "Aseda");
+    borrowers.put(new Book ("Tale of forest", 2001, "lorem ipsum"), "Aseda");
+    borrowers.put(new Book ("Tale of forest", 2001, "lorem ipsum"), "Aseda");
+    borrowers.put(new Book ("Tale of forest", 2001, "lorem ipsum"), "Aseda5");
+
     System.out.println(borrowers);
     }
 }

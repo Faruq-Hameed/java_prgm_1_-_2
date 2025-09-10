@@ -29,13 +29,21 @@ public class Book {
         return this.content;
     }
 
+    @Override
+    public int hashCode() {
+        if (this.name == null) {
+            return this.published;
+        }
+        return this.published + this.name.hashCode();
+    }
+
     public void setContent(String content) {
         this.content = content;
     }
 
     public String toString() {
-        return "Name: " + this.name + " (" + this.published +   ")\n"
-            + "Content: " + this.content;
+        return "Name: " + this.name + " (" + this.published + ")\n"
+                + "Content: " + this.content;
     }
 
     @Override
@@ -53,10 +61,11 @@ public class Book {
         // let's convert the object to a Book-object
         Book comparedBook = (Book) comparedObject;
 
-        // if the instance variables of the objects are the same, so are the objects(though the address may be differ)
+        // if the instance variables of the objects are the same, so are the
+        // objects(though the address may be differ)
         if (this.name.equals(comparedBook.name) &&
-            this.published == comparedBook.published &&
-            this.content.equals(comparedBook.content)) {
+                this.published == comparedBook.published &&
+                this.content.equals(comparedBook.content)) {
             return true;
         }
 
