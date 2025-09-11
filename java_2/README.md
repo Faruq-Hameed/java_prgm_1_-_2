@@ -16,3 +16,15 @@ when searching by the exact same book but with a different object, a borrower is
 For the HashMap to work in the way we want it to, that is, to return the borrower when given an object with the correct content (not necessarily the same object as the original key), the class that the key belongs to must overwrite the hashCode method in addition to the equals method. The method must be overwritten so that it gives the same numerical result for all objects with the same content. Also, some objects with different contents may get the same result from the hashCode method. However, with the HashMap's performance in mind, it is essential that objects with different contents get the same hash value as rarely as possible.
 
 We've previously used String objects as HashMap keys, so we can deduce that the String class has a well-functioning hashCode implementation of its own. We'll delegate, i.e., transfer the computational responsibility to the String object.
+
+## Grouping data using hash maps
+- You know how to use a list as a hash map's value
+- You know how to categorize data using a hash map
+
+A hash map has at most one value per each key. What if we wanted to assign multiple values ​​to a single key?Since keys and values ​​in a hash map can be any variable, it is also possible to use lists as values in a hash map. You can add more values ​​to a single key by attaching a list to the key. Each key of the hash map now has a list attached to i like this HashMap<String, ArrayList<String>> phoneNumbers = new HashMap<>();
+We define the type of the phone number as HashMap<String, ArrayList<String>>. This refers to a hash map that uses a string as a key and a list containing strings as its value. As such, the values added to the hash map are concrete lists.
+
+## Fast data fetching and grouping information
+In the eighth part we recapped the content from parts 1-7 and learned how to use hash maps. HashMap and ArrayList are some of the most used data structures in programming. The benefit of HashMaps is that looking up information by key is really fast — this efficiency is really important for good user experience.
+
+Hash maps are widely used in different kind of programs. For example, phonebook programs that can be used to look up information by phone numbers use Hash maps or Hash map like data structures for storing data and for efficient fetching of the data. Similarly, searching for user's bank account information when using a credit card is based on a data structure that is similar to hash maps.
