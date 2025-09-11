@@ -1,3 +1,4 @@
+package part_8;
 public class Book {
     private String name;
     private String content;

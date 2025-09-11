@@ -1,3 +1,4 @@
+package part_8;
 public class TestMain {
     public static void main(String[] args) {
         LicensePlate li1 = new LicensePlate("FI", "ABC-123");

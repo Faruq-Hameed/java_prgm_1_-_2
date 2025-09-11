@@ -1,0 +1,30 @@
+## Method to Test For Equality - "equals"
+The equals method checks by default whether the object given as a parameter has the same reference as the object it is being compared to. In other words, the default behaviour checks whether the two objects are the same. If the reference is the same, the method returns true, and false otherwise.
+If a class does not have its own implementation of the equals method,  it falls back on the default implementation provided by Java when the equals method is invoked. The default implementation of the equals method checks just like the toString method does, whether the two objects have the same reference.
+Even though if the variables of two object have the same values, equals works as expected in that it declares two strings identical in content to be 'equal' even if they are two separate objects. The String class has replaced the default equals with its own implementation.
+If we want to compare our own classes using the equals method, then it must be defined inside the class. The method created accepts an Object-type reference as a parameter, which can be any object. The comparison first looks at the references. This is followed by checking the parameter object's type with the instanceof operation - if the object type does not match the type of our class, the object cannot be the same. We then create a version of the object that is of the same type as our class, after which the object variables are compared against each other.
+The ArrayList also uses the equals method in its internal implementation. If we don't define the equals method in our objects, the contains method of the ArrayList does not work properly.
+
+This reliance on default methods such as equals is actually the reason why Java demands that variables added to ArrayList and HashMap are of reference type. Each reference type variable comes with default methods, such as equals, which means that you don't need to change the internal implementation of the ArrayList class when adding variables of different types. Primitive variables do not have such default methods.
+
+## Approximate Comparison With HashMap 
+In addition to equals, the hashCode method can also be used for approximate comparison of objects. 
+The method creates from the object a "hash code", i.e, a number, that tells a bit about the object's content. If two objects have the same hash value, they may be equal. On the other hand, if two objects have different hash values, they are certainly unequal.
+Hash codes are used in HashMaps, for instance. HashMap's internal behavior is based on the fact that key-value pairs are stored in an array of lists based on the key's hash value. Each array index points to a list.
+when searching by the exact same book but with a different object, a borrower isn't found, and we get the null reference instead. The reason lies in the default implementation of the hashCode method in the Object class. The default implementation creates a hashCode value based on the object's reference, which means that books having the same content that are nonetheless different objects get different results from the hashCode method. As such, the object is not being searched for in the right place.
+
+For the HashMap to work in the way we want it to, that is, to return the borrower when given an object with the correct content (not necessarily the same object as the original key), the class that the key belongs to must overwrite the hashCode method in addition to the equals method. The method must be overwritten so that it gives the same numerical result for all objects with the same content. Also, some objects with different contents may get the same result from the hashCode method. However, with the HashMap's performance in mind, it is essential that objects with different contents get the same hash value as rarely as possible.
+
+We've previously used String objects as HashMap keys, so we can deduce that the String class has a well-functioning hashCode implementation of its own. We'll delegate, i.e., transfer the computational responsibility to the String object.
+
+## Grouping data using hash maps
+- You know how to use a list as a hash map's value
+- You know how to categorize data using a hash map
+
+A hash map has at most one value per each key. What if we wanted to assign multiple values ​​to a single key?Since keys and values ​​in a hash map can be any variable, it is also possible to use lists as values in a hash map. You can add more values ​​to a single key by attaching a list to the key. Each key of the hash map now has a list attached to i like this HashMap<String, ArrayList<String>> phoneNumbers = new HashMap<>();
+We define the type of the phone number as HashMap<String, ArrayList<String>>. This refers to a hash map that uses a string as a key and a list containing strings as its value. As such, the values added to the hash map are concrete lists.
+
+## Fast data fetching and grouping information
+In the eighth part we recapped the content from parts 1-7 and learned how to use hash maps. HashMap and ArrayList are some of the most used data structures in programming. The benefit of HashMaps is that looking up information by key is really fast — this efficiency is really important for good user experience.
+
+Hash maps are widely used in different kind of programs. For example, phonebook programs that can be used to look up information by phone numbers use Hash maps or Hash map like data structures for storing data and for efficient fetching of the data. Similarly, searching for user's bank account information when using a credit card is based on a data structure that is similar to hash maps.
