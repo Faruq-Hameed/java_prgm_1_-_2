@@ -36,3 +36,11 @@ You can call the methods defined in the superclass by prefixing the call with su
 @Override
 public String toString() {
     return super.toString() + "\n  And let's add my own message to it!";}
+
+### Polymorphism
+Regardless of the type of the variable, the method that is executed is always chosen based on the actual type of the object. Objects are polymorphic, which means that they can be used via many different variable types. The executed method always relates to the actual type of the object. This phenomenon is called polymorphism.
+# The actual type of an object dictates which method is executed
+An object's type decides what the methods provided by the object are. For instance, we implemented the class Student earlier. If a reference to a Student type object is stored in a Person type variable, only the methods defined in the Person class (and its superclass and interfaces) are available
+So an object has at its disposal the methods that relate to its type, and also to its superclasses and interfaces. The Student object above offers the methods defined in the classes Person and Object. So if an object(a subclass) method is accessed, the methods in the subclass i.e the current object is first used and in it absence the superclass methods is used i.e even the subclass methods will override the methods of superclass if both subclass and super has the methods defined in each. Even if we type cast either upcast or downcast between a subclass to it super class, the methods of the subclass will always override those in the superclass.
+The method to be executed is chosen based on the actual type of the object, which means the class whose constructor is called when the object is created. If the method has no definition in that class, the version of the method is chosen from the class that is closest to the actual type in the inheritance hierarchy. The actual class of the object is permanent even if we used it as a variable to another object or casting it. This make the object to always try in retaining it methods if possible.
+In the last exercise we wrote a new toString implementation for Student to override the method that it inherits from Person. The class Person had already overridden the toString method it inherited from the class Object
