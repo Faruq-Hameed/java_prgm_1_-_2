@@ -41,7 +41,6 @@ public class Student extends Person {
     //     // return name;
     //     return "name from student is : " + name;
     // }
-
     public void setName(String name) {
         this.name = name;
     }
