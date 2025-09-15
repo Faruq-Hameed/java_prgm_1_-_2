@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -14,5 +16,17 @@ public class Main {
         System.out.println(studentFaruq);
         Object obj = (Object) studentFaruq; // upcasting is always possible
         System.out.println(obj + " is of type " + obj.getClass().getName());
+        System.out.println("========================");
+        System.out.println("========================");
+        ArrayList<Point> points = new ArrayList<>();
+        points.add(new Point(4, 8));
+        points.add(new ColorPoint(1, 1, "green"));
+        points.add(new ColorPoint(2, 5, "blue"));
+        points.add(new Point(0, 0));
+        points.add((Point) new ColorPoint(3, 3, "red")); // upcasting is always possible
+
+        for (Point p: points) {
+            System.out.println(p);
+        }
     }
 }

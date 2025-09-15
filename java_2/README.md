@@ -44,3 +44,26 @@ An object's type decides what the methods provided by the object are. For instan
 So an object has at its disposal the methods that relate to its type, and also to its superclasses and interfaces. The Student object above offers the methods defined in the classes Person and Object. So if an object(a subclass) method is accessed, the methods in the subclass i.e the current object is first used and in it absence the superclass methods is used i.e even the subclass methods will override the methods of superclass if both subclass and super has the methods defined in each. Even if we type cast either upcast or downcast between a subclass to it super class, the methods of the subclass will always override those in the superclass.
 The method to be executed is chosen based on the actual type of the object, which means the class whose constructor is called when the object is created. If the method has no definition in that class, the version of the method is chosen from the class that is closest to the actual type in the inheritance hierarchy. The actual class of the object is permanent even if we used it as a variable to another object or casting it. This make the object to always try in retaining it methods if possible.
 In the last exercise we wrote a new toString implementation for Student to override the method that it inherits from Person. The class Person had already overridden the toString method it inherited from the class Object
+ Manhattan distance means the distance between two points if you can only travel in the direction of the coordinate axes. It is used in many navigation algorithms, for example.
+ As we can see, the sequence of events caused by the method call has multiple steps. The principle, however, is clear: The definition for the method is first searched for in the class definition of the actual type of the object. If it is not found, we next examine the superclass. If the definition cannot be found there, either, we move on to the superclass of this superclass, etc...
+
+ ## When is inheritance worth using?
+ Inheritance is a tool for building and specializing hierarchies of concepts; a subclass is always a special case of the superclass. If the class to be created is a special case of an existing class, this new class could be created by extending the existing class. For example, in the previously discussed car part scenario an engine is a part, but an engine has extra functionality that not all parts have.
+ When inheriting, the subclass receives the functionality of the superclass. If the subclass doesn't need or use some of the inherited functionality, inheritance is not justifiable. Classes that inherit will inherit all the methods and interfaces from the superclass, so the subclass can be used in place of the superclass wherever the superclass is used. It's a good idea to keep the inheritance hierarchy shallow, since maintaining and further developing the hierarchy becomes more difficult as it grows larger. Generally speaking, if your inheritance hierarchy is more than 2 or 3 levels deep, the structure of the program could probably be improved.
+ Inheritance is not useful in every scenario. For instance, extending the class Car with the class Part (or Engine) would be incorrect. A car includes an engine and parts, but an engine or a part is not a car. More generally, if an object owns or is composed of other objects, inheritance should not be used.
+
+ _When using inheritance, you should take care to ensure that the Single Responsibility Principle holds true. There should only be one reason for each class to change. If you notice that inheriting adds more responsibilities to a class, you should form multiple classes of the class._
+
+ ch = new ChangeHistory();
+ch.toString();
+
+ChangeHistory ch = new ChangeHistory();
+ch.add(99);
+ch.minValue();
+ expected:<99.0> but was:<0.0>
+ 
+ StackOverflowError, in call toString(). ChangeHistory ch = new ChangeHistory();
+ch.add(3);
+ch.add(5);
+ch.add(1);
+ch.maxValue();
