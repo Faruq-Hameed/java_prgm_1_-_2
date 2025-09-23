@@ -1,32 +1,27 @@
 import java.util.ArrayList;
 
 public class Main {
-
     public static void main(String[] args) {
-        Engine newEngine = new Engine("V8", "1234", "BMW", "A very good engine");
-        Person faruq = new Student("Faruq", "ibadan , oyo state");
-        System.out.println(faruq);
-        System.out.println(faruq + " is of type " + faruq.getClass().getName());
+        TextMessage message = new TextMessage("Faruq", "hello world");
+        message.read();
 
-        System.out.println(faruq.getName());
-        Student studentFaruq = (Student) faruq; // downcasting is possible here because faruq was created from a student reference originally         System.out.println(studentFaruq.getName());
-        studentFaruq.study();
-        Person per = new Person("Mr. Smith", "123 Main St");
-        // Student stu = (Student) per; // This will throw a ClassCastException at runtime because per is not a Student or it reference and Student is a subclass of Person
-        System.out.println(studentFaruq);
-        Object obj = (Object) studentFaruq; // upcasting is always possible
-        System.out.println(obj + " is of type " + obj.getClass().getName());
-        System.out.println("========================");
-        System.out.println("========================");
-        ArrayList<Point> points = new ArrayList<>();
-        points.add(new Point(4, 8));
-        points.add(new ColorPoint(1, 1, "green"));
-        points.add(new ColorPoint(2, 5, "blue"));
-        points.add(new Point(0, 0));
-        points.add((Point) new ColorPoint(3, 3, "red")); // upcasting is always possible
+        ArrayList<TextMessage> messages = new ArrayList<>();
+        messages.add(message);
 
-        for (Point p: points) {
-            System.out.println(p);
+        ArrayList<String> pages = new ArrayList<>();
+        pages.add("First page");
+        pages.add("Second page");
+        pages.add("Third page");
+        pages.add("Fourth page");
+
+        Ebook ebooks = new Ebook("test book", pages);
+
+        int page = 0;
+        while (page < ebooks.pages()) {
+            System.out.println(ebooks.read());
+            page += 1;
+
         }
+
     }
 }

@@ -1,3 +1,4 @@
+package part_9;
 import java.util.Scanner;
 
 public class Test {

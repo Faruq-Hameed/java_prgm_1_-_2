@@ -79,3 +79,54 @@ We can have an abstract class without any abstract method.
 If the Child class is unable to provide implementation to all abstract methods of the Parent class then we should declare that Child class as abstract so that the next level Child class should provide implementation to the remaining abstract method.
 if a/an (abstract or non) class as an abstract methods so every class that inherits it, must implement it or they must be declared abstract
 if a class inherits abstract methods, it must either implement them or remain abstract. Java enforces this rule strictly to ensure that all method contracts are fulfilled before an object can be created.
+
+### Interfaces
+
+An Interface in Java programming language is defined as an abstract type used to specify the behaviour of a class. An interface in Java is a blueprint of a behaviour. A Java interface contains static constants and abstract methods.
+Note: In Java, the abstract keyword applies only to classes and methods, indicating that they cannot be instantiated directly and must be implemented. When we decide on a type of entity by its behaviour and not via attribute we should define it as an interface.
+To declare an interface, use the interface keyword. It is used to provide total abstraction. That means all the methods in an interface are declared with an empty body and are public and all fields are public, static and final by default. A class that implements an interface must implement all the methods declared in the interface. To implement the interface, use the implements keyword.
+![alt text](image.png)
+
+# When to Use Class and Interface?
+Use a Class when:
+
+Use a class when you need to represent a real-world entity with attributes (fields) and behaviors (methods).
+Use a class when you need to create objects that hold state and perform actions
+Classes are used for defining templates for objects with specific functionality and properties.
+Use a Interface when:
+
+Use an interface when you need to define a contract for behavior that multiple classes can implement.
+Interface is ideal for achieving abstraction and multiple inheritance.
+
+# Multiple Inheritance in Java Using Interface
+Java does not support multiple inheritance with classes to avoid ambiguity, but it supports multiple inheritance using interfaces.
+
+# New Features Added in Interfaces in JDK 8
+There are certain features added to Interfaces in JDK 8 update mentioned below:
+
+1. Default Methods
+Interfaces can define methods with default implementations.
+Useful for adding new methods to interfaces without breaking existing implementations.
+
+# 2. Static Methods
+Interfaces can now include static methods.
+These methods are called directly using the interface name and are not inherited by implementing classes.
+Another feature that was added in JDK 8 is that we can now define static methods in interfaces that can be called independently without an object. These methods are not inherited.
+
+We can use interfaces to define behavior that's required from a class, i.e., its methods. They're defined the same way that regular Java classes are, but "public interface ..." is used instead of "public class ... " at the beginning of the class. Interfaces define behavior through method names and their return values. However, they don't always include the actual implementations of the methods. A visibility attribute on interfaces is not marked explicitly as they're always public.
+The classes that implement the interface decide how the methods defined in the interface are implemented. A class implements the interface by adding the keyword implements after the class name followed by the name of the interface being implemented.
+Implementations of methods defined in the interface must always have public as their visibility attribute.
+
+# An Interface Is a Contract of Behaviour
+When a class implements an interface, it signs an agreement. The agreement dictates that the class will implement the methods defined by the interface. If those methods are not implemented in the class, the program will not function.
+The interface defines only the names, parameters, and return values ​​of the required methods. The interface, however, does not have a say on the internal implementation of its methods. It is the responsibility of the programmer to define the internal functionality for the methods.
+Objects can be instantiated from interface-implementing classes just like with normal classes. They're also used in the same way, for instance, as an ArrayList's type.
+## Interface as Variable Type
+The type of a variable is always stated as its introduced. There are two kinds of type, the primitive-type variables (int, double, ...) and reference-type variables (all objects).An object's type can be other than its class. For example, the type of the Ebook class that implements the Readable interface is both Ebook and Readable. Similarly, the text message also has multiple types. Because the TextMessage class implements the Readable interface, it has a Readable type in addition to the TextMessage type. If an object implement an interface, apart from it own class, it still another class for the interface it is implementing from i.e also has behavior of the interface.
+Because an interface can be used as a type, it's possible to create a list that contains objects of the interface's type. Note; interface cannot be instantiated so in the case of what we are saying here, objects that is also a class of the interface are the values we are going to passed where the interface is expected.
+_Note that although the Ebook class that inherits the Readable interface class is always of the interface's type, not all classes that implement the Readable interface are of type Ebook. You can assign an object created from the Ebook class to a Readable-type variable, but it does not work the other way without a separate type conversion._
+
+_Readable readable = new TextMessage("ope", "TextMessage is Readable!"); // works_
+_TextMessage message = readable; // doesn't work_
+
+_TextMessage castMessage = (TextMessage) readable; // works if, and only if, readable is of text message t_
