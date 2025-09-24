@@ -130,3 +130,9 @@ _Readable readable = new TextMessage("ope", "TextMessage is Readable!"); // work
 _TextMessage message = readable; // doesn't work_
 
 _TextMessage castMessage = (TextMessage) readable; // works if, and only if, readable is of text message t_
+
+Type conversion succeeds if, and only if, the variable is of the type that it's being converted to. Type conversion is not considered good practice, and one of the few situation where it's use is appropriate is in the implementation of the equals method.
+Because an interface can be used as a type, it's possible to create a list that contains objects of the interface's type.
+
+# Interfaces as Method Parameters
+The true benefits of interfaces are reaped when they are used as the type of parameter provided to a method. Since an interface can be used as a variable's type, it can also be used as a parameter type in method calls. The value of the parameter method of the class lies in the fact that it can be given any class that implements the interface as a parameter. Were we to call the method with any object instantiated from a class that inherits the interface, the method would function as desired.
