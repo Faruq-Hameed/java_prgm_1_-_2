@@ -136,3 +136,14 @@ Because an interface can be used as a type, it's possible to create a list that 
 
 # Interfaces as Method Parameters
 The true benefits of interfaces are reaped when they are used as the type of parameter provided to a method. Since an interface can be used as a variable's type, it can also be used as a parameter type in method calls. The value of the parameter method of the class lies in the fact that it can be given any class that implements the interface as a parameter. Were we to call the method with any object instantiated from a class that inherits the interface, the method would function as desired.
+
+# Interface as a return type of a method
+Interfaces can be used as return types in methods — just like regular variable types. In the next example is a class Factory that can be asked to construct different objects that implement the Packable interface.
+
+ Note that there is no need to write an empty constructor without
+  parameters if the class doesn't have other constructors.
+  In these cases Java automatically creates a default constructor for
+  the class which is an empty constructor without parameters.
+
+# Reducing the dependencies between classes
+Using interfaces in programming enables reducing dependencies between classes. In the previous example the Packer does not depend on the classes that implement the Packable interface. Instead, it just depends on the interface. This makes possible to add new classes that implement the interface without changing the Packer class. What is more, adding new Packable classes doesn't affect the classes that use the Packer class.
