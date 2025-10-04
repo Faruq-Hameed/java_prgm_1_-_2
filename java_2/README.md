@@ -8,7 +8,7 @@ Learning Objectives
 - You can assess when to use inheritance, and you can come up with an example that is ill-suited for inheritance
 
 Classes are used to clarify the concepts of the problem domain in object-oriented programming. Every class we create adds functionality to the programming language. This functionality is needed to solve the problems that we encounter. An essential idea behind object-oriented programming is that solutions rise from the interactions between objects which are created from classes.An object in object-oriented programming is an independent unit that has a state, which can be modified by using the methods that the object provides. Objects are used in cooperation; each has its own area of responsibility. For instance, our user interface classes have so far made use of Scanner objects.
-Every Java class extends the class Object, which means that every class we create has at its disposal all the methods defined in the Object class. If we want to change how these methods are defined in Object function, they must be overriden by defining a new implementation for them in the newly created class. The objects we create receive the methods equals and hashCode, among others, from the Object class.
+Every Java class extends the class Object, which means that every class we create has at its disposal all the methods defined in the Object class. If we want to change how these methods are defined in Object function, they must be overridden by defining a new implementation for them in the newly created class. The objects we create receive the methods equals and hashCode, among others, from the Object class.
 Every class derives from Object, but it's also possible to derive from other classes. When we examine the API (Application Programming Interface) of Java's ArrayList, we notice that ArrayList has the superclass AbstractList. AbstractList, in turn, has the class Object as its superclass.
 
   java.lang.Object
@@ -53,20 +53,6 @@ In the last exercise we wrote a new toString implementation for Student to overr
  Inheritance is not useful in every scenario. For instance, extending the class Car with the class Part (or Engine) would be incorrect. A car includes an engine and parts, but an engine or a part is not a car. More generally, if an object owns or is composed of other objects, inheritance should not be used.
 
  _When using inheritance, you should take care to ensure that the Single Responsibility Principle holds true. There should only be one reason for each class to change. If you notice that inheriting adds more responsibilities to a class, you should form multiple classes of the class._
-
- ch = new ChangeHistory();
-ch.toString();
-
-ChangeHistory ch = new ChangeHistory();
-ch.add(99);
-ch.minValue();
- expected:<99.0> but was:<0.0>
- 
- StackOverflowError, in call toString(). ChangeHistory ch = new ChangeHistory();
-ch.add(3);
-ch.add(5);
-ch.add(1);
-ch.maxValue();
 
 ## Abstract classes
 Sometimes, when planning a hierarchy of inheritance, there are cases when there exists a clear concept, but that concept is not a good candidate for an object in itself. The concept would be beneficial from the point of view of inheritance, since it includes variables and functionality that are shared by all the classes that would inherit it. On the other hand, you should not be able to create instances of the concept itself.
