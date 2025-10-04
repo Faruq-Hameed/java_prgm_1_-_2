@@ -6,7 +6,6 @@ public class Book {
         String lastName = "Hameed";
         System.out.println("is first equals last = " + firstName.equals(lastName));
         ArrayList<String> strings = new ArrayList<>();
-
         strings.add(lastName);
         strings.add(firstName);
 
