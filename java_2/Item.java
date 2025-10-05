@@ -22,4 +22,14 @@ public class Item {
         return product + ": " + qty;
     }
 
+    public static void main(String[] args) {
+        Object name = "faruq";
+
+        Object nameb = name;
+
+        name= "akna";
+
+        System.out.println(nameb);
+    }
+
 }
