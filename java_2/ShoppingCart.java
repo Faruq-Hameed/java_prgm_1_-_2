@@ -7,14 +7,15 @@ public class ShoppingCart {
     public ShoppingCart() {
         this.items = new HashMap<>();
     }
-public void add(String product, int price){
-    Item item = items.get(product);
-    if(item == null){
-        item = new Item(product, 0, 0);
+
+    public void add(String product, int price) {
+        Item item = items.get(product);
+        if (item == null) {
+            item = new Item(product, 0, 0);
+        }
+        item.increaseQuantity();
+        items.put(product, new Item(product, item.qty(), price));
     }
-    item.increaseQuantity();
-    items
-}
 
     public int price() {
         int totalPrice = 0;

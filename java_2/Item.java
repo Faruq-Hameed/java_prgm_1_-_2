@@ -13,6 +13,10 @@ public class Item {
         return this.unitPrice * this.qty;
     }
 
+    public int qty() {
+        return this.qty;
+    }
+
     public void increaseQuantity() {
         this.qty += 1;
     }
@@ -23,13 +27,11 @@ public class Item {
     }
 
     public static void main(String[] args) {
-        Object name = "faruq";
+        Item item = new Item("food", 0, 0);
+        Item itemB = item;
+        item = new Item("rice", 10, 0);
 
-        Object nameb = name;
-
-        name= "akna";
-
-        System.out.println(nameb);
+        System.out.println(itemB);
     }
 
 }
