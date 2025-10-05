@@ -1,14 +1,10 @@
 public class Test {
 
     public static void main(String[] args) {
-        Warehouse warehouse = new Warehouse();
-        warehouse.addProduct("milk", 3, 10);
-        warehouse.addProduct("coffee", 5, 7);
-
-        System.out.println("prices:");
-        System.out.println("milk: " + warehouse.price("milk"));
-        System.out.println("coffee: " + warehouse.price("coffee"));
-        System.out.println("sugar: " + warehouse.price("sugar"));
+        Warehouse w = new Warehouse();
+        w.addProduct("milk", 3, 10);
+        w.addProduct("coffee", 5, 7);
+        System.out.println(w.stock("milk"));
     }
 
 }
