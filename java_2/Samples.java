@@ -21,8 +21,8 @@ public record Samples() {
         System.out.println(namesB);
         System.out.println(names == namesB);
         System.out.println(names.equals(namesB));
-        System.out.println(names.hashCode()  + " " + namesB.hashCode());
-        
+        System.out.println(names.hashCode() + " " + namesB.hashCode());
+
         Map<String, Integer> scores = new HashMap<>();
 
         String name = "faruq";
@@ -39,16 +39,15 @@ public record Samples() {
         scoresB.put("forth", 10);
         scoresB.put("sixth", 5);
 
-
         // System.out.println(scores);
         System.out.println(scoresB);
         // for(String key: scoresB.keySet()){
-        //     System.out.println(key);
-        //     System.out.println(key + " : " + scoresB.get(key));
+        // System.out.println(key);
+        // System.out.println(key + " : " + scoresB.get(key));
         // }
         // System.out.println("printing values");
         // for (Integer score: scoresB.values()){
-        //     System.out.println(score);
+        // System.out.println(score);
         // }
 
         Set<String> sets = new HashSet<>();
@@ -62,9 +61,20 @@ public record Samples() {
 
         for (Integer score : scoresB.values()) {
             cleanedScores.add(score);
-            
+
         }
         System.out.println(cleanedScores);
+
+        List<String> namesD = new ArrayList<>();
+        names.add("Ada");
+        names.add("Chidi");
+
+        Set<String> uniqueNames = new HashSet<>();
+        System.out.println(uniqueNames);
+
+        uniqueNames.add("Ajibola");
+        System.out.println(uniqueNames);
+
     }
 
 }
