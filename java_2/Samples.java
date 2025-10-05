@@ -40,23 +40,23 @@ public record Samples() {
         scoresB.put("sixth", 5);
 
 
-        System.out.println(scores);
+        // System.out.println(scores);
         System.out.println(scoresB);
-        for(String key: scoresB.keySet()){
-            System.out.println(key);
-            System.out.println(key + " : " + scoresB.get(key));
-        }
-        System.out.println("printing values");
-        for (Integer score: scoresB.values()){
-            System.out.println(score);
-        }
+        // for(String key: scoresB.keySet()){
+        //     System.out.println(key);
+        //     System.out.println(key + " : " + scoresB.get(key));
+        // }
+        // System.out.println("printing values");
+        // for (Integer score: scoresB.values()){
+        //     System.out.println(score);
+        // }
 
         Set<String> sets = new HashSet<>();
         sets.add("faruq");
         sets.add("faryq");
         sets.add("farjq");
         sets.add("faruq");
-        System.out.println(sets);
+        // System.out.println(sets);
         // System.out.println(scores.equals(scoresB));
         Set<Integer> cleanedScores = new HashSet<>();
 
