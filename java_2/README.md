@@ -143,3 +143,37 @@ From the perspective of the user, both implementations of the List interface wor
 ArrayList saves objects to an array where fetching an object with a specific index is very fast. On the other hand LinkedList constructs a list where each element contains a reference to the next element in the list. When one searches for an object by index in a linked list, one has to go though the list from the beginning until the index.
 One can see noticeable performance differences between list implementations if the lists are big enough. The strength of a linked list is that adding to it is always fast. ArrayList, on the other hand, is backed by an array, which needs to be resized each time it gets full. Resizing the array requires creating a new array and copying the values from the old array to the new one. On the other hand, searching objects by index is much faster in an array list compared to a linked list.
 _For the problems that you encounter during this course you should almost always choose ArrayList. However, "interface programming" is beneficial: implement your programs so that you'll use the data structures through the interfaces._
+
+# The Map Interface
+The Map interface in Java is a powerful part of the Collections Framework that allows you to store key-value pairs — like a dictionary or lookup table. It’s ideal when you want to associate one object (the key) with another (the value), and retrieve values efficiently based on their keys. The Map interface s what defines the basic behavior associated with hash tables. Because the HashMap class implements the Map interface, it can also be accessed through the Map interface.
+
+🗺️ Overview of the Map Interface
+Map<KeyType, ValueType> map = new HashMap<>();
+
+
+- Key: Must be unique. Duplicate keys overwrite the previous value.
+- Value: Can be duplicated.
+ Common Implementations:
+- HashMap – Fast, unsorted, allows null keys/values.
+- TreeMap – Sorted by keys (natural order or custom comparator).
+- LinkedHashMap – Maintains insertion order.
+- Hashtable – Legacy, synchronized, no null keys/values.
+- ConcurrentHashMap – Thread-safe for concurrent access.
+
+
+🧪 Example
+Map<String, Integer> scores = new HashMap<>();
+scores.put("Alice", 90);
+scores.put("Bob", 85);
+scores.put("Charlie", 92);
+
+System.out.println(scores.get("Bob")); // Output: 85
+
+
+
+🧠 Why Use Map?
+- Fast lookups: Ideal for caching, indexing, and associative data.
+- Flexible: Can store any object types as keys and values.
+- Powerful iteration: Use entrySet() to loop through key-value pairs.
+
+The keys to the hash table are obtained using the keySet method.
