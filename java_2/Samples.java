@@ -58,7 +58,13 @@ public record Samples() {
         sets.add("faruq");
         System.out.println(sets);
         // System.out.println(scores.equals(scoresB));
+        Set<Integer> cleanedScores = new HashSet<>();
 
+        for (Integer score : scoresB.values()) {
+            cleanedScores.add(score);
+            
+        }
+        System.out.println(cleanedScores);
     }
 
 }
