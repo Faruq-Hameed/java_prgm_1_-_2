@@ -177,3 +177,20 @@ System.out.println(scores.get("Bob")); // Output: 85
 - Powerful iteration: Use entrySet() to loop through key-value pairs.
 
 The keys to the hash table are obtained using the keySet method.
+he keySet() method of a Map returns a Set containing all the keys in the map.
+You can use a for-each loop to iterate through this set.
+The values() method returns a Collection containing all the values in the map.
+This collection may include duplicate values, and it can also be looped through using a for-each loop.
+The returned key set implements the Set interface, and the values collection implements the Collection interface.
+
+# The Set Interface
+The Set interface in Java is part of the Collections Framework, and it represents a collection of unique elements — meaning it does not allow duplicates. If you try to add the same element twice, the second attempt will be ignored.
+🧩 Key Characteristics of Set
+- No duplicates: Each element must be unique.
+- Unordered (in most implementations): The order of elements is not guaranteed.
+- Implements Collection: So it inherits methods like add(), remove(), size(), etc.
+🧠 When to Use Set
+- You want to avoid duplicates (e.g., storing unique usernames).
+- You need fast lookups without caring about order (HashSet).
+- You want to preserve insertion order (LinkedHashSet).
+- You need sorted elements (TreeSet).
