@@ -194,3 +194,4 @@ The Set interface in Java is part of the Collections Framework, and it represent
 - You need fast lookups without caring about order (HashSet).
 - You want to preserve insertion order (LinkedHashSet).
 - You need sorted elements (TreeSet).
+The Set interface describes functionality related to sets. In Java, sets always contain either 0 or 1 amounts of any given object. I.e an elements can only has zero or one occurrence in the set. As an example, the set interface is implemented by HashSet. Here's how to go through the elements of a set.
