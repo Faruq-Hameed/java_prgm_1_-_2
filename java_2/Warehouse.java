@@ -2,38 +2,23 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Warehouse {
-    private Map<String, Product> products;
+    private Map<String, Integer> prices;
+    private Map<String, Integer> stocks;
 
     public Warehouse() {
-        this.products = new HashMap<>();
+        this.prices = new HashMap<>();
+        this.stocks = new HashMap<>();
     }
 
     public void addProduct(String product, int price, int stock) {
-        Product newProduct = new Product(price, stock);
-
-        products.put(product, newProduct);
+        prices.put(product, price);
     }
 
     public int price(String product) {
-        Product foundProduct = products.get(product);
-        if (foundProduct == null) {
+        if (!prices.containsKey(product)) {
             return -99;
         }
-        return foundProduct.getPrice();
+        return prices.get(product);
     }
 
-    public int stock(String product) {
-        Product foundProduct = products.get(product);
-
-        if (foundProduct == null) {
-            return -99;
-        }
-        return foundProduct.getPrice();
-    }
-
-    private void instantiateProduct() {
-        if (this.products == null) {
-            this.products = new HashMap<>();
-        }
-    }
 }
