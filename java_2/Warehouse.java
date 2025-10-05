@@ -1,13 +1,17 @@
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 public class Warehouse {
     private Map<String, Integer> prices;
     private Map<String, Integer> stocks;
+    // private Set<String> products;
 
     public Warehouse() {
         this.prices = new HashMap<>();
         this.stocks = new HashMap<>();
+        // this.products = new HashSet<>();
     }
 
     public void addProduct(String product, int price, int stock) {
@@ -38,11 +42,7 @@ public class Warehouse {
         return stocks.get(product);
     }
 
-    public static void main(String[] args) {
-        Warehouse w = new Warehouse();
-        w.addProduct("milk", 3, 10);
-        w.addProduct("coffee", 5, 7);
-        System.out.println(w.stock("milk"));
+    public Set<String> products() {
+        return prices.keySet();
     }
-
 }
