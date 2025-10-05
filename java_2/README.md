@@ -63,13 +63,13 @@ An abstract class is a class that can not be initiated by itself, it needs to be
 An abstract class can be created using "abstract" keywords.
 We can have an abstract class without any abstract method.
 If the Child class is unable to provide implementation to all abstract methods of the Parent class then we should declare that Child class as abstract so that the next level Child class should provide implementation to the remaining abstract method.
-if a/an (abstract or non) class as an abstract methods so every class that inherits it, must implement it or they must be declared abstract
+if a/an (abstract or non) class as an abstract methods so every class that inherits it, must implement it or they must be declared abstract and the class itself i.e the superclass must be declared abstract. The abstract methods can only be defined by an abstract class. And Abstract methods do not specify a body
 if a class inherits abstract methods, it must either implement them or remain abstract. Java enforces this rule strictly to ensure that all method contracts are fulfilled before an object can be created.
 
 ### Interfaces
 
-An Interface in Java programming language is defined as an abstract type used to specify the behaviour of a class. An interface in Java is a blueprint of a behaviour. A Java interface contains static constants and abstract methods.
-Note: In Java, the abstract keyword applies only to classes and methods, indicating that they cannot be instantiated directly and must be implemented. When we decide on a type of entity by its behaviour and not via attribute we should define it as an interface.
+An Interface in Java programming language is defined as an abstract type used to specify the behavior of a class. An interface in Java is a blueprint of a behavior. A Java interface contains static constants and abstract methods.
+Note: In Java, the abstract keyword applies only to classes and methods, indicating that they cannot be instantiated directly and must be implemented. When we decide on a type of entity by its behavior and not via attribute we should define it as an interface.
 To declare an interface, use the interface keyword. It is used to provide total abstraction. That means all the methods in an interface are declared with an empty body and are public and all fields are public, static and final by default. A class that implements an interface must implement all the methods declared in the interface. To implement the interface, use the implements keyword.
 ![alt text](image.png)
 
@@ -103,7 +103,7 @@ We can use interfaces to define behavior that's required from a class, i.e., its
 The classes that implement the interface decide how the methods defined in the interface are implemented. A class implements the interface by adding the keyword implements after the class name followed by the name of the interface being implemented.
 Implementations of methods defined in the interface must always have public as their visibility attribute.
 
-# An Interface Is a Contract of Behaviour
+# An Interface Is a Contract of Behavior
 When a class implements an interface, it signs an agreement. The agreement dictates that the class will implement the methods defined by the interface. If those methods are not implemented in the class, the program will not function.
 The interface defines only the names, parameters, and return values ​​of the required methods. The interface, however, does not have a say on the internal implementation of its methods. It is the responsibility of the programmer to define the internal functionality for the methods.
 Objects can be instantiated from interface-implementing classes just like with normal classes. They're also used in the same way, for instance, as an ArrayList's type.
