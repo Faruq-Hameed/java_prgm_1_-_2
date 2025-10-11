@@ -1,27 +1,16 @@
-import java.util.ArrayList;
-
 public class Main {
+    
     public static void main(String[] args) {
-        TextMessage message = new TextMessage("Faruq", "hello world");
-        message.read();
+        // You can test your classes here
+        String greeting = "Hello world";
+        System.out.println("greeting is: " + greeting);
 
-        ArrayList<TextMessage> messages = new ArrayList<>();
-        messages.add(message);
+        Object greeting2 = "I am fine";
 
-        ArrayList<String> pages = new ArrayList<>();
-        pages.add("First page");
-        pages.add("Second page");
-        pages.add("Third page");
-        pages.add("Fourth page");
+        // greeting=greeting2;
+        greeting=(String) greeting2;
+        System.out.println("greeting is: " + greeting);
 
-        Ebook ebooks = new Ebook("test book", pages);
-
-        int page = 0;
-        while (page < ebooks.pages()) {
-            System.out.println(ebooks.read());
-            page += 1;
-
-        }
 
     }
 }

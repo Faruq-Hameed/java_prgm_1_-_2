@@ -212,3 +212,7 @@ Think of it as the foundation for working with groups of objects.
 - Queue<E> — ordered for processing (FIFO, LIFO, etc).
 The Collection interface describes functionality related to collections. Among other things, lists and sets are categorized as collections in Java — both the List and Set interfaces implement the Collection interface. The Collection interface provides, for instance, methods for checking the existence of an item (the method contains) and determining the size of a collection (the method size).
 The Collection interface also determines how the collection is iterated over. Any class that implements the Collection interface, either directly or indirectly, inherits the functionality required for a for-each loop.
+
+
+### Object polymorphism
+We've encountered situations where reference-type variables have other types besides their own one. For example, all objects are of type Object, i.e., any given object can be represented as a Object-type variable in addition to its own type.

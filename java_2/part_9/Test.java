@@ -1,12 +1,16 @@
 package part_9;
-import java.util.Scanner;
-
 public class Test {
-    // private UserInterface userInterface;
-    public static void main(String[] args) {
-        UserInterface userInterfaceD = new UserInterface(new Scanner(System.in));
-        userInterfaceD.addOperation(new PlusOperation());
 
-        userInterfaceD.start();
+    public static void main(String[] args) {
+        Warehouse w = new Warehouse();
+        w.addProduct("milk", 3, 10);
+        w.addProduct("coffee", 5, 7);
+        System.out.println(w.stock("milk"));
+
+        for (String key : w.products()) {
+            System.out.println(key);
+            
+        }
     }
+
 }

@@ -1,3 +1,4 @@
+package part_9;
 public class Product {
     // private String name;
     private int price;

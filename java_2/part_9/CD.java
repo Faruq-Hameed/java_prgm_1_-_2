@@ -1,3 +1,4 @@
+package part_9;
 public class CD implements Packable {
     private String artist;
     private String name;

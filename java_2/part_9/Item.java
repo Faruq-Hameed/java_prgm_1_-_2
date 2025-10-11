@@ -1,44 +1,38 @@
 package part_9;
-
 public class Item {
+    private String product;
+    private int qty;
+    private int unitPrice;
 
-    private String name;
-    private int weight;
-
-    public Item(String name, int weight) {
-        this.name = name;
-        this.weight = weight;
+    public Item(String product, int qty, int unitPrice) {
+        this.product = product;
+        this.qty = qty;
+        this.unitPrice = unitPrice;
     }
 
-    public Item(String name) {
-        this(name, 0);
+    public int price() {
+        return this.unitPrice * this.qty;
     }
 
-    public String getName() {
-        return name;
+    public int qty() {
+        return this.qty;
     }
 
-    public int getWeight() {
-        return weight;
-    }
-
-    @Override
-    public int hashCode() {
-        return this.name.hashCode();
+    public void increaseQuantity() {
+        this.qty += 1;
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public String toString() {
+        return product + ": " + qty;
+    }
 
-        if (obj == null || obj.getClass().getName() != this.getClass().getName()) {
-            return false;
-        }
-        Item objItem = (Item) obj;
-        if (obj.hashCode() == this.hashCode()) { //i,e true if name is equal
-            return true;
-        }
-        return false;
+    public static void main(String[] args) {
+        Item item = new Item("food", 0, 0);
+        Item itemB = item;
+        item = new Item("rice", 10, 0);
 
+        System.out.println(itemB);
     }
 
 }

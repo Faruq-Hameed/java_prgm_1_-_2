@@ -1,59 +1,49 @@
 package part_9;
-
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 public class Warehouse {
+    private Map<String, Integer> prices;
+    private Map<String, Integer> stocks;
+    // private Set<String> products;
 
-    private double capacity;
-    private double balance;
+    public Warehouse() {
+        this.prices = new HashMap<>();
+        this.stocks = new HashMap<>();
+        // this.products = new HashSet<>();
+    }
 
-    public Warehouse(double capacity) {
-        if (capacity > 0.0) {
-            this.capacity = capacity;
-        } else {
-            this.capacity = 0.0;
+    public void addProduct(String product, int price, int stock) {
+        prices.put(product, price);
+        stocks.put(product, stock);
+    }
+
+    public int price(String product) {
+        if (!prices.containsKey(product)) {
+            return -99;
         }
-
-        this.balance = 0.0;
+        return prices.get(product);
     }
 
-    public double getBalance() {
-        return this.balance;
-    }
-
-    public double getCapacity() {
-        return this.capacity;
-    }
-
-    public double howMuchSpaceLeft() {
-        return this.capacity - this.balance;
-    }
-
-    public void addToWarehouse(double amount) {
-        if (amount < 0) {
-            return;
+    public boolean take(String product) {
+        int currentStock = this.stock(product);
+        if (currentStock == 0) {
+            return false;
         }
-        if (amount <= howMuchSpaceLeft()) {
-            this.balance = this.balance + amount;
-        } else {
-            this.balance = this.capacity;
-        }
+        stocks.put(product, (currentStock - 1));
+        return true;
     }
 
-    public double takeFromWarehouse(double amount) {
-        if (amount < 0) {
-            return 0.0;
+    public int stock(String product) {
+        if (!stocks.containsKey(product)) {
+            return 0;
         }
-        if (amount > this.balance) {
-            double allThatWeCan = this.balance;
-            this.balance = 0.0;
-            return allThatWeCan;
-        }
-
-        this.balance = this.balance - amount;
-        return amount;
+        return stocks.get(product);
     }
 
-    public String toString() {
-        return "balance = " + this.balance + ", space left " + howMuchSpaceLeft();
+    public Set<String> products() {
+        return prices.keySet();
     }
 }
