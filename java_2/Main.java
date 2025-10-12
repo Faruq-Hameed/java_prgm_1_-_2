@@ -16,7 +16,7 @@ public class Main {
         String name2 = name.substring(0, 3);
 
         System.out.println(name2);
-        name =new String(null);
+        // name =new String(null);
         System.out.println(name);
     }
 }
