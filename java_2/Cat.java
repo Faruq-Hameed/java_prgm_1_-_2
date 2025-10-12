@@ -1,4 +1,4 @@
-public class Cat extends Animal {
+public class Cat extends Animal implements NoiseCapable {
 
     public Cat() {
         super("Cat");
