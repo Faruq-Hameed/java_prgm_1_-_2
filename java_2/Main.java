@@ -1,3 +1,5 @@
+import java.io.Serializable;
+
 public class Main {
     
     public static void main(String[] args) {
@@ -18,5 +20,11 @@ public class Main {
         System.out.println(name2);
         // name =new String(null);
         System.out.println(name);
+        Serializable nameB = "name";
+        System.out.println(nameB);
+        CharSequence charSequence = "charSeq";
+        System.out.println(charSequence);
+        Comparable<Integer> com = 8;
+       System.out.println( com.compareTo(4));;
     }
 }

@@ -228,3 +228,16 @@ The inheritance hierarchy lists all the classes that the given class has inherit
 
 The inheritance hierarchy can also be thought of as a list of the different types that the class implements.
 Knowledge of the fact that objects can be of many different types — of type Object, for instance — makes programming simpler. If we only need methods defined in the Object class, such as toString, equals and hashCode in a method, we can simply use Object as the type of the method parameter
+
+Let's continue to look at the API description of the String class. The inheritance hierarchy in the description is followed by a list of interfaces implemented by the class.
+
+  All Implemented Interfaces:
+  Serializable, CharSequence, Comparable<String>
+The String class implements the Serializable, CharSequence, and Comparable <String> interfaces. An interface is also a type. According to the class' API description, the following interfaces can be set as the type of a String object.
+
+Serializable serializableString = "string";
+CharSequence charSequenceString = "string";
+Comparable<String> comparableString = "string";
+
+Since we're able to define the type of a method's parameter, we can declare methods that receive an object that implements a specific interface. When a method's parameter is an interface, any object that implements that interface can be passed to it as an argument.
+The printCharacters method can be passed any object that implements the CharSequence interface. These include String as well as StringBuilder, which is often more functional for building strings than String
