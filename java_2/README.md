@@ -216,3 +216,15 @@ The Collection interface also determines how the collection is iterated over. An
 
 ### Object polymorphism
 We've encountered situations where reference-type variables have other types besides their own one. For example, all objects are of type Object, i.e., any given object can be represented as a Object-type variable in addition to its own type.
+In the examples above, a string variable is represented as both a String type and an Object type. Also, a String-type variable is assigned to an Object-type variable. However, assignment in the other direction, i.e., setting an Object-type variable to a String type, will not work. This is because Object-type variables are not of type String. - String is a subclass of Object.
+- That means every String is an Object, but not every Object is a String.
+Even though obj actually holds a String, the compiler only sees it as an Object. To assign it to a String, you need to cast. If obj is not a String, this will throw a ClassCastException at runtime.
+🔍 Why the Cast Is Needed
+Java is statically typed, meaning type checks happen at compile time. The compiler can't guarantee that an Object is a String unless you explicitly tell it so. This protects you from runtime errors.
+
+In addition to each variable's original type, each variable can also be represented by the types of interfaces it implements and classes that it inherits. The String class inherits the Object class and, as such, String objects are always of type Object. The Object class does not inherit a String class, so Object-type variables are not automatically of type String.
+The API documentation for the String class begins with a generic header followed by the class' package (java.lang). After the package details, the name of the class (Class String) is followed by the inheritance hierarchy of the class.
+The inheritance hierarchy lists all the classes that the given class has inherited. Inherited classes are listed in the order of inheritance, with class being inspected always at the bottom. In the inheritance hierarchy of the String class, we see that the String class inherits the Object class. In java each class can inherit one class at most i.e a class can only have one superclass however, a superclass can also inherit from another class i.e a super class can be a subclass of another class. With this a class can indirectly inherit more than a single class(because it also inherit the class of it super class which is super class too inherit from her superclass note only private members are not inherited).
+
+The inheritance hierarchy can also be thought of as a list of the different types that the class implements.
+Knowledge of the fact that objects can be of many different types — of type Object, for instance — makes programming simpler. If we only need methods defined in the Object class, such as toString, equals and hashCode in a method, we can simply use Object as the type of the method parameter
