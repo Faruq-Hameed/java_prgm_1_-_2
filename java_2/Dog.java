@@ -1,11 +1,15 @@
 public class Dog extends Animal {
-    
-    public Dog (){
+
+    public Dog() {
         super("Dog");
     }
 
-    public void bark(){
+    public Dog(String name) {
+        super(name);
+    }
+
+    public void bark() {
         System.out.println(this.name + " barks");
     }
-    
+
 }
