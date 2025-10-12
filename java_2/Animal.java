@@ -6,11 +6,11 @@ abstract class Animal {
     }
 
     public void eat() {
-        System.out.println("(" + this.name + ") eats");
+        System.out.println(this.name + " eats");
     }
 
     public void sleep() {
-        System.out.println("(" + this.name + ") sleeps");
+        System.out.println(this.name + " sleeps");
     }
 
     public String getName() {
