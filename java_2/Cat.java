@@ -9,6 +9,10 @@ public class Cat extends Animal implements NoiseCapable {
     }
 
     public void purr() {
-        System.out.println(this.name + " purrs");
+        System.out.println(getName() + " purrs");
+    }
+
+    public void makeNoise() {
+        this.purr();
     }
 }
