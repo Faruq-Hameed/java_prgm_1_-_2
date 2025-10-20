@@ -1,3 +1,4 @@
+package part_9;
 public class Organism implements Movable {
     private int x;
     private int y;

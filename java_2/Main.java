@@ -1,30 +1,13 @@
-import java.io.Serializable;
-
+import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 public class Main {
     
     public static void main(String[] args) {
-        // You can test your classes here
-        String greeting = "Hello world";
-        System.out.println("greeting is: " + greeting);
-
-        Object greeting2 = "I am fine";
-
-        // greeting=greeting2;
-        greeting=(String) greeting2;
-        System.out.println("greeting is: " + greeting);
-
-        String name = "faruq";
-        name="hameed";
-        String name2 = name.substring(0, 3);
-
-        System.out.println(name2);
-        // name =new String(null);
-        System.out.println(name);
-        Serializable nameB = "name";
-        System.out.println(nameB);
-        CharSequence charSequence = "charSeq";
-        System.out.println(charSequence);
-        Comparable<Integer> com = 8;
-       System.out.println( com.compareTo(4));;
+        List<Integer> listOfNumb = new ArrayList<>();
+        System.out.println("Add a number");
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        System.out.println("You inputed : " + input );
     }
 }

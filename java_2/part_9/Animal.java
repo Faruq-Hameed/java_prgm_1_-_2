@@ -1,5 +1,9 @@
-abstract class Animal {
-    protected String name;
+package part_9;
+// Animal.java
+
+public abstract class Animal {
+
+    private String name; // use private instead of protected for encapsulation
 
     public Animal(String name) {
         this.name = name;
@@ -14,6 +18,6 @@ abstract class Animal {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 }

@@ -1,3 +1,4 @@
+package part_9;
 public class MainB {
     public static void main(String[] args) {
         Herd herd = new Herd();
