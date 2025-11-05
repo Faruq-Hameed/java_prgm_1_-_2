@@ -33,4 +33,12 @@ public class PositiveNumbers {
         long result = numbers.stream().count();
         return result;
     }
+
+    public static void simplePrinter(List<Integer> numbers) {
+        numbers.stream().filter(num -> num > 2).forEach(num -> {
+            System.out.println("current number is: " + num);
+            return;
+        });
+
+    }
 }

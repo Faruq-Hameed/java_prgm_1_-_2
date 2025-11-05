@@ -36,5 +36,7 @@ Stream methods can be roughly divided into two categories: (1) intermediate oper
 
 # Terminal Operations
 Common terminal operations: the count method for counting the number of values on a list, the forEach method for going a through list values, the collect method for gathering the list values ​​into a data structure, and the reduce method for combining the list items.
-The count method informs us of the number of values in the stream as a long-type variable.
+- The count method informs us of the number of values in the stream as a long-type variable.
 
+- The forEach method defines what is done to each list value and terminates the stream processing.
+- You can use the collect method to collect stream values into another collection. The example below creates a new list containing only positive values. The collect method is given as a parameter to the Collectors object to which the stream values ​​are collected - for example, calling Collectors.toCollection(ArrayList::new) creates a new ArrayList object that holds the collected values.
