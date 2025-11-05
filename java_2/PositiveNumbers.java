@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class PositiveNumbers {
 
@@ -21,5 +22,15 @@ public class PositiveNumbers {
 
     public static boolean isPositive(int number) {
         return number > 0;
+    }
+
+    public static long counting() {
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(7);
+        numbers.add(17);
+        numbers.add(8);
+        numbers.add(0);
+        long result = numbers.stream().count();
+        return result;
     }
 }

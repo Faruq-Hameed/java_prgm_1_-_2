@@ -34,4 +34,7 @@ Stream methods can be roughly divided into two categories: (1) intermediate oper
  - collect() is a terminal operation that transforms a stream into a collection or summary result.
 - It uses Collectors — utility methods from java.util.stream.Collectors — to define how the stream should be collected.
 
+# Terminal Operations
+Common terminal operations: the count method for counting the number of values on a list, the forEach method for going a through list values, the collect method for gathering the list values ​​into a data structure, and the reduce method for combining the list items.
+The count method informs us of the number of values in the stream as a long-type variable.
 
