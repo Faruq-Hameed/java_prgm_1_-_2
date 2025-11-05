@@ -40,3 +40,4 @@ Common terminal operations: the count method for counting the number of values o
 
 - The forEach method defines what is done to each list value and terminates the stream processing.
 - You can use the collect method to collect stream values into another collection. The example below creates a new list containing only positive values. The collect method is given as a parameter to the Collectors object to which the stream values ​​are collected - for example, calling Collectors.toCollection(ArrayList::new) creates a new ArrayList object that holds the collected values.
+- The reduce method is useful when you want to combine stream elements to some other form. The parameters accepted by the method have the following format: reduce(*initialState*, (*previous*, *object*) -> *actions on the object*).
