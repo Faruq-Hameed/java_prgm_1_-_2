@@ -42,5 +42,11 @@ public class Person {
                 .distinct()
                 .sorted()
                 .forEach(name -> System.out.println(name));
+
+        people.stream()
+        .mapToInt(person -> person.getBirthYear())
+        .average()
+        .getAsDouble();
+        
     }
 }

@@ -48,3 +48,10 @@ Intermediate stream operations are methods that return a stream. Since the value
 - distinct-method, that returns a stream that only contains unique values
 - The method sorted, which sorts the strings.
 The distinct-method described above uses the equals-method that is in all objects for comparing whether two strings are the same. The sorted-method on the other hand is able to sort objects that contain some kind of order — examples of this kind of objects are for example numbers and strings.
+
+# Objects and Stream
+Handling objects using stream methods is natural. Each stream method that deals with the stream's values ​​also enables you to call methods related to values.
+Streams can also be used to build more complex string representations. 
+
+# Files and Streams
+Stream methods make the reading of files that are of predefined format relatively straightforward.
