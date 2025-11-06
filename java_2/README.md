@@ -34,6 +34,7 @@ Stream methods can be roughly divided into two categories: (1) intermediate oper
  - collect() is a terminal operation that transforms a stream into a collection or summary result.
 - It uses Collectors — utility methods from java.util.stream.Collectors — to define how the stream should be collected.
 
+
 # Terminal Operations
 Common terminal operations: the count method for counting the number of values on a list, the forEach method for going a through list values, the collect method for gathering the list values ​​into a data structure, and the reduce method for combining the list items.
 - The count method informs us of the number of values in the stream as a long-type variable.
@@ -41,3 +42,9 @@ Common terminal operations: the count method for counting the number of values o
 - The forEach method defines what is done to each list value and terminates the stream processing.
 - You can use the collect method to collect stream values into another collection. The example below creates a new list containing only positive values. The collect method is given as a parameter to the Collectors object to which the stream values ​​are collected - for example, calling Collectors.toCollection(ArrayList::new) creates a new ArrayList object that holds the collected values.
 - The reduce method is useful when you want to combine stream elements to some other form. The parameters accepted by the method have the following format: reduce(*initialState*, (*previous*, *object*) -> *actions on the object*).
+
+# Intermediate Operations
+Intermediate stream operations are methods that return a stream. Since the value returned is a stream, we can call intermediate operations sequentially. Typical intermediate operations include converting a value from one form to another using map and its more specific form mapToInt used for converting a stream to an integer stream. Other ones include filtering values with filter, identifying unique values with distinct, and arranging values with sorted (if possible).
+- distinct-method, that returns a stream that only contains unique values
+- The method sorted, which sorts the strings.
+The distinct-method described above uses the equals-method that is in all objects for comparing whether two strings are the same. The sorted-method on the other hand is able to sort objects that contain some kind of order — examples of this kind of objects are for example numbers and strings.
