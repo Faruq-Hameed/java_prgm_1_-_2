@@ -11,6 +11,7 @@ public class ReadingFilesPerLine {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         // test the method here
+        readAll();
 
     }
 
@@ -43,4 +44,6 @@ public class ReadingFilesPerLine {
             System.out.println("Error: " + e.getMessage());
         }
     }
+
+   
 }
