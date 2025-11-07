@@ -64,3 +64,4 @@ ALso returning a negative number from compareTo() is enough if the this object i
 Since the implementing class implements the Comparable interface, it is possible to sort the list by using the sorted method. In fact, objects of any class that implement the Comparable interface can be sorted using the sorted method. Be aware, however, _that a stream does not sort the original list - only the items in the stream are sorted._
 
 If a programmer wants to organize the original list, the sort method of the Collections class should be used. This, of course, assumes that the objects on the list implement the Comparable interface.
+String.compareTo() also treats letters according to their size, while the compareToIgnoreCase method of the same class ignores the capitalization completely.
