@@ -65,3 +65,27 @@ Since the implementing class implements the Comparable interface, it is possible
 
 If a programmer wants to organize the original list, the sort method of the Collections class should be used. This, of course, assumes that the objects on the list implement the Comparable interface.
 String.compareTo() also treats letters according to their size, while the compareToIgnoreCase method of the same class ignores the capitalization completely.
+
+# Implementing Multiple Interfaces
+A class can implement multiple interfaces. Multiple interfaces are implemented by separating the implemented interfaces with commas (public class ... implements *FirstInterface*, *SecondInterface* ...). Implementing multiple interfaces requires us to implement all of the methods for which implementations are required by the interfaces.
+
+# Sorting Method as a Lambda Expression
+We can sort a list without having to implement the Comparable interface.
+Both the sort method of the Collections class and the stream's sorted method accept a lambda expression as a parameter that defines the sorting criteria. More specifically, both methods can be provided with an object that implements the Comparator interface, which defines the desired order - the lambda expression is used to create this object.
+this will sort;
+persons.stream().sorted((p1, p2) -> {
+    return p1.getBirthYear() - p2.getBirthYear(); //this will handle the sorting in ascending order
+}).forEach(p -> System.out.println(p.getName())); //the item will printed in sorted order here in ascending order
+Collections.sort(persons, (p1, p2) -> p1.getBirthYear() - p2.getBirthYear()); //this will sort and mutate original list
+
+When comparing strings, we can use the compareTo method provided by the String class. The method returns an integer that describes the order of both the string given to it as a parameter and the string that's calling it.
+persons.stream().sorted((p1, p2) -> {
+    return p1.getName().compareTo(p2.getName());
+}).forEach(p -> System.out.println(p.getName()));
+WE use Double.compare to sort double - Safe: Avoids precision loss and overflow issues.
+- Handles NaN and -0.0/+0.0 correctly.
+- Returns:
+- Negative if this.literacyPercent < other.literacyPercent
+- Zero if equal
+- Positive if greater
+If you're sorting in descending order, just reverse the arguments:

@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Person {
     private String firstName;
@@ -44,9 +45,29 @@ public class Person {
                 .forEach(name -> System.out.println(name));
 
         people.stream()
-        .mapToInt(person -> person.getBirthYear())
-        .average()
-        .getAsDouble();
-        
+                .mapToInt(person -> person.getBirthYear())
+                .average()
+                .getAsDouble();
+
+        // another
+        ArrayList<Person> persons = new ArrayList<>();
+        persons.add(new Person("Ada Lovelace", "hello", 1815));
+        persons.add(new Person("Irma Wyman", "hello", 1928));
+        persons.add(new Person("Grace Hopper", "hello", 1906));
+        persons.add(new Person("Mary Coombs", "hello", 1929));
+
+        persons.stream().sorted((p1, p2) -> { //this does not mutate original list but returns a sorted stream
+            return p1.getBirthYear() - p2.getBirthYear();
+        }).forEach(p -> System.out.println(p.getFirstName())); //print sorted stream
+
+        System.out.println();
+
+        persons.stream().forEach(p -> System.out.println(p.getFirstName())); //original list
+
+        System.out.println();
+
+        Collections.sort(persons, (p1, p2) -> p1.getBirthYear() - p2.getBirthYear()); //sort original list
+
+        persons.stream().forEach(p -> System.out.println(p.getFirstName())); //sorted original list
     }
 }
