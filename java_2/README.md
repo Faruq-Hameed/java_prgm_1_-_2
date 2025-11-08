@@ -88,4 +88,21 @@ WE use Double.compare to sort double - Safe: Avoids precision loss and overflow 
 - Negative if this.literacyPercent < other.literacyPercent
 - Zero if equal
 - Positive if greater
-If you're sorting in descending order, just reverse the arguments:
+If you're sorting in descending order, just reverse the arguments
+
+# Sorting By Multiple Criteria
+We sometimes want to sort items based on a number of things. We can make use of Java's Comparator class here, which offers us the functionality required for sorting.
+The Comparator class provides two essential methods for sorting: comparing and thenComparing. The comparing method is passed the value to be compared first, and the thenComparing method is the next value to be compared. The thenComparing method can be used many times by chaining methods, which allows virtually unlimited values ​​to be used for comparison.
+When we sort objects, the comparing and thenComparing methods are given a reference to the object's type - the method is called in order and the values ​​returned by the method are compared. The method reference is given as Class::method.
+🥇 Primary Comparator Takes Precedence
+- The first comparator passed to Comparator.comparing() is the most important.
+- It defines the primary sort order.
+- If two elements are equal according to this comparator, then the next comparator in the chain (thenComparing) is used.
+
+📐 Order of thenComparing() Matters
+- The sequence of thenComparing() calls defines the tie-breaking hierarchy.
+- Each subsequent comparator is only used if all previous ones result in equality.
+- Changing the order of these calls can completely change the sort result.
+
+### StringBuilder
+String creation - although unnoticeable at a small scale - is not a quick operation. Space is allocated in memory for each string where the string is then placed. If the string is only needed as part of creating a larger string, performance should be improved.

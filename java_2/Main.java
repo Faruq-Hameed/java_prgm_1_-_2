@@ -20,6 +20,7 @@ public class Main {
     .filter(Main::isGreaterThan10)
     .average().getAsDouble(); // get the average and get it as double
 
+    
     }
 
     public static boolean isGreaterThan10(int num) {
