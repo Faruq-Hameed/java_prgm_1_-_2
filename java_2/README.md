@@ -110,3 +110,50 @@ Java's ready-made StringBuilder class provides a way to concatenate strings with
 
 ## Regular Expressions
 A regular expression defines a set of strings in a compact form. Regular expressions are used, among other things, to verify the correctness of strings. We can assess whether or not a string is in the desired form by using a regular expression that defines the strings considered correct.
+Checking correctness with the help of regular expressions is done by first defining a suitable regular expression. We can then use the matches method of the String class, which checks whether the string matches the regular expression given as a parameter
+
+# most common characters used in regular expressions
+The most common characters used in regular expressions include metacharacters like ., *, +, ?, [], (), ^, $, and |, which help define powerful search patterns.
+Here’s a breakdown of the most frequently used regex characters and their meanings:
+🔤 Character Classes
+- . — Matches any single character except newline.
+- \d — Matches any digit (equivalent to [0-9]).
+- \w — Matches any word character (letters, digits, underscore).
+- \s — Matches any whitespace character (space, tab, newline).
+- \D, \W, \S — Negations of the above.
+🔁 Quantifiers
+- * — Matches 0 or more of the preceding element.
+- + — Matches 1 or more of the preceding element.
+- ? — Matches 0 or 1 of the preceding element.
+- {n} — Matches exactly n occurrences.
+- {n,} — Matches n or more occurrences.
+- {n,m} — Matches between n and m occurrences.
+🧱 Anchors
+- ^ — Matches the start of a string.
+- $ — Matches the end of a string.
+🧩 Grouping and Alternation
+- () — Groups expressions and captures matched text.
+- | — Acts like a logical OR (e.g., cat|dog matches either).
+🔣 Character Sets
+- [] — Matches any one character inside the brackets.
+- [a-z] — Matches any lowercase letter.
+- [^a-z] — Matches any character not in the range.
+🔐 Escape Character
+- \ — Escapes a metacharacter to treat it as a literal (e.g., \. matches a period).
+# Alternation (Vertical Line)
+A vertical line indicates that parts of a regular expressions are optional. For example, 00|111|0000 defines the strings 00, 111 and 0000. The respond method returns true if the string matches any one of the specified group of alternatives. The regular expression 00|111|0000 demands that the string is exactly it specifies it to be - there is no "contains" functionality i.e it must be exactly one of the union.
+
+# Affecting Part of a String (Parentheses)
+You can use parentheses to determine which part of a regular expression is affected by the rules inside the parentheses. Say we want to allow the strings 00000 and 00001. We can do that by placing a vertical bar in between them this way 00000|00001. Parentheses allow us to limit the option to a specific part of the string. The expression 0000(0|1) specifies the strings 00000 and 00001.
+
+Similarly, the regular expression car(|s|) defines the singular (car) and plural (cars) forms of the word car.
+
+# Quantifiers
+What is often desired is that a particular sub-string is repeated in a string. The following expressions are available in regular expressions:
+- The quantifier * repeats 0 ... times, str.matches(trolo(lo)*) i.e the lo appears from 0 to many times after trolo
+- The quantifier + repeats 1 ... times  i.e can be repeated from i times upward
+- The quantifier ? repeats 0 or 1 times i.e can be repeated either zero or one time
+- The quantifier {a} repeats a times i.e repeated in the a times
+- The quantifier {a,b} repeats a ... b i.e b repeated btw a to b times
+-  The quantifier {a,} repeats a ... times, i.e repeated from a times upward
+You can use more than one quantifier in a single regular expression. For example, the regular expression 5{3}(1|0)*5{3} defines strings that begin and end with three fives. An unlimited number of ones and zeros are allowed in between.
