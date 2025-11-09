@@ -161,3 +161,85 @@ You can use more than one quantifier in a single regular expression. For example
 # Character Classes (Square Brackets)
 A character class can be used to specify a set of characters in a compact way. Characters are enclosed in square brackets, and a range is indicated with a dash. For example, [145] means (1|4|5) and [2-36-9] means (2|3|6|7|8|9). Similarly, the entry [a-c]* defines a regular expression that requires the string to contain only a, b and c.
 Regular expressions come in handy in certain situations. In some cases the expressions become too complex, and the "correctness" of the string is best checked with some other style. Or it could be beneficial to use regular expressions for only some part of the check.
+
+_Almost all programming languages ​​support regular expressions nowadays. The theory of regular expressions is one of the topics considered in the course Computational Models (TKT-20005). You can find more regular expressions by googling regular expressions java, for instance._
+
+## Enumerated Type - Enum
+An enumerated type, or enum, is a special data type that enables a variable to be a set of predefined constants. Enums are commonly used when a variable (especially a method parameter or return value) can only take one out of a small set of possible values. If we know the possible values ​​of a variable in advance, we can use a class of type enum, i.e., enumerated type to represent the values. Enumerated types are their own type in addition to being normal classes and interfaces. An enumerated type is defined by the keyword enum. For example, the following Suit enum class defines four constant values: DIAMOND, SPADE, CLUB and HEART.
+In its simplest form, enum lists the constant values ​​it declares, separated by a comma. Enum types, i.e., constants, are conventionally written with capital letters.
+An Enum is (usually) written in its own file, much like a class or interface. In NetBeans, you can create an Enum by selecting new/other/java/java enum from project.
+
+# Comparing Enums
+Each enum field gets a unique number code, and they can be compared using the equals sign. Just as other classes in Java, these values also inherit the Object class and its equals method. The equals method compares this numeric identifier in enum types too.
+The numeric identifier of an enum field value can be found with ordinal(). The method actually returns an order number - if the enum value is presented first, its order number is 0. If its second, the order number is 1, and so on. - Every enum constant (like MONDAY, TUESDAY, etc.) has a position in the enum declaration.
+- This position is called the ordinal, and it's a number starting from 0
+🧮 Comparing Enums
+- You can compare enums using:
+- == → checks if two enum references point to the same constant (fast and safe).
+- .equals() → checks if two enum objects are equal (also safe, but more general).
+- 
+- 
+- .equals() compares the reference identity, not the ordinal.
+- The ordinal is just a number you can retrieve, not something used in equality checks.
+
+# Object References In Enums
+Enums in Java aren't just limited to simple constants — they can also hold object references, making them powerful tools for modeling complex data. Here's how that works:
+Each enum constant can be associated with fields, including references to other objects. This allows enums to behave like full-fledged classes.
+
+📦 Example: Enum with Object References
+Suppose you have a Card class and want each Suit enum to hold a reference to a color object:
+class Color {
+    String name;
+    public Color(String name) {
+        this.name = name;
+    }
+}
+
+public enum Suit {
+    DIAMOND(new Color("Red")),
+    CLUB(new Color("Black")),
+    HEART(new Color("Red")),
+    SPADE(new Color("Black"));
+
+    private final Color color;
+
+    Suit(Color color) {
+        this.color = color;
+    }
+
+    public Color getColor() {
+        return color;
+    }
+}
+
+
+🧪 Usage
+System.out.println(Suit.HEART.getColor().name); // Output: Red
+
+
+
+🔍 Why Use Object References in Enums?
+- Encapsulation: Bundle related data with the enum constant.
+- Cleaner code: Avoids external mapping structures like Map<Suit, Color>.
+- Behavior-rich enums: You can add methods that operate on the associated objects.
+
+⚠️ Things to Watch Out For
+- Enum constants are static and final, so their associated objects should be immutable or used carefully.
+- Avoid heavy object creation inside enum constructors unless necessary — it can affect performance and memory.
+Would you like to see an example where enums hold references to strategy objects or database configurations?
+Enumerated types may contain object reference variables. The values ​​of the reference variables should be set in an internal constructor of the class defining the enumerated type, i.e., within a constructor having a private access modifier. Enum type classes cannot have a public constructor.
+
+# Iterator
+ArrayList and other "object containers" that implement the Collection interface implement the Iterable interface, and they can also be iterated over with the help of an iterator - an object specifically designed to go through a particular type of object collection.
+The iterator is requested from the cards list containing cards. The iterator can be thought of as a "finger" that always points to a particular object inside the list. Initially it points to the first item, then to the next, and so on... until all the objects have been gone through with the help of the "finger".
+
+The iterator offers a few methods. The hasNext() method is used to ask if there are any objects still to be iterated over. If there are, the next object in line can be requested from the iterator using the next() method. This method returns the next object in line to be processed and moves the iterator, or "finger", to point to the following object in the collection.
+
+The object reference returned by the iterator's next method can of course also be stored in a variable. 
+If you want to remove some of the objects from the list during a traversal, you can do so using an iterator. Calling the remove method of the iterator object neatly removes form the list the item returned by the iterator with the previous next call. As modification of a list in a forEach stream not possible.
+
+- iterator.next() moves the cursor forward and returns the current item.
+- By storing it in a variable (current), you can:
+- Inspect it (current.getKey(), current.getValue())
+- Modify it (current.setValue(...))
+- Remove it (iterator.remove() — which removes the last item returned by next())
