@@ -157,3 +157,6 @@ What is often desired is that a particular sub-string is repeated in a string. T
 - The quantifier {a,b} repeats a ... b i.e b repeated btw a to b times
 -  The quantifier {a,} repeats a ... times, i.e repeated from a times upward
 You can use more than one quantifier in a single regular expression. For example, the regular expression 5{3}(1|0)*5{3} defines strings that begin and end with three fives. An unlimited number of ones and zeros are allowed in between.
+
+# Character Classes (Square Brackets)
+A character class can be used to specify a set of characters in a compact way. Characters are enclosed in square brackets, and a range is indicated with a dash. For example, [145] means (1|4|5) and [2-36-9] means (2|3|6|7|8|9). Similarly, the entry [a-c]* defines a regular expression that requires the string to contain only a, b and c.
