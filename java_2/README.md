@@ -18,3 +18,9 @@ In a class diagram, class attributes are written "attributeName: attributeType".
 # Describing class constructor
 In a class diagram, we list the constructor (and all other methods) below the attributes.
 A line below the attributes list separates it from the method list.  Methods are written with +/- (depending on the visibility of the method), method name, parameters, and their types. The constructor above is written +Person(initialName:String). The parameters are written the same way class attributes are — "parameterName: parameterType".
+# Describing class methods
+In a class diagram, we list all class methods including the constructors; constructors are listed first and then all class methods. We also write the return type of a method in the class diagram.
+A class diagram describes classes, constructors and methods
+A class diagram describes classes and their attributes, constructors and methods as well as the connections between classes. However a class diagram tells us nothing about the implementation of the constructors or the methods. Therefore a class diagram describes the structure of an object but not its functionality.
+
+For example the method printPerson uses the class attributes name and age, but this cannot be seen from the class diagram.
