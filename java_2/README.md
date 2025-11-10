@@ -31,3 +31,9 @@ In a class diagram variables which refer to other objects are not written with t
 The arrow shows the direction of the connection. The connection above shows that a Book knows its author but a Person does not know about books they are the author of. We can also add a label to the arrow to describe the connection. In the above diagram the arrow has an accompanying label telling us that a Book has an author.
 If a book has multiple authors, the authors are saved to a list.
 In a class diagram, this situation is described by adding a star to the end of the arrow showing the connection between the classes. The star tells us that a book can have between 0 and unlimited number of authors. Below we have not amended the label to describe the multiplicity of the connection, but it would be a good idea for the sake of clarity.
+If there is no arrowhead in a connection, both classes know about each other. Below is an example where a book knows about its author and a person knows about a book they have written.
+
+[Person|-name:String;-age:int|+Person(initialName:String);+printPerson():void;+getName():String][Book|-name:String;-publisher:String|+getAuthors():ArrayList;+addAuthor(author:Person)][Book]-*[Person]
+As you can see, by default — if there is no star on the connection — the connection is singular. The classes above are interesting, because a Person can only have one book.
+
+If a person can have multiple books and a book can have multiple authors, we add a star to both ends of the connection:
