@@ -1,3 +1,4 @@
+package part_10;
 public class Literature {
     private String name;
     private int age;

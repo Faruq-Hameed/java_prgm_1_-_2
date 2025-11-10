@@ -1,3 +1,4 @@
+package part_10;
 import java.util.Comparator;
 
 public class BySuitInValueOrder implements Comparator<Card> {

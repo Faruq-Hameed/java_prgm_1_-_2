@@ -1,3 +1,4 @@
+package part_10;
 public enum Colors {
     // constructor parameters are defined as
     // the constants are enumerated
