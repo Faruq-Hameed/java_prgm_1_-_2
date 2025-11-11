@@ -37,3 +37,8 @@ If there is no arrowhead in a connection, both classes know about each other. Be
 As you can see, by default — if there is no star on the connection — the connection is singular. The classes above are interesting, because a Person can only have one book.
 
 If a person can have multiple books and a book can have multiple authors, we add a star to both ends of the connection:
+
+# Describing inheritance
+In a class diagram inheritance is described by an arrow with a Triangle head. The Triangle points to the class being inherited from. In the example below, the Engine inherits the class Part.
+In the example below, the class diagram describes the classes from the Product Warehouse exercise. The ProductWarehouseWithHistory class inherits the ProductWarehouse class, which, in turn, inherits the Warehouse class. ChangeHistory is a separate class connected to the ProductWarehouse. ProductWarehouseWithHistory knows about the ChangeHistory but the ChangeHistory does not know about the ProductWarehouseWithHistory.
+Inheritance of abstract classes is described almost the same way as regular classes. However we add the description <<abstract>>above the name of the class. The name of the class and its abstract methods are also written in cursive.
