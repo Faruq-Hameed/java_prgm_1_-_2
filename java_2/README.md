@@ -42,3 +42,31 @@ If a person can have multiple books and a book can have multiple authors, we add
 In a class diagram inheritance is described by an arrow with a Triangle head. The Triangle points to the class being inherited from. In the example below, the Engine inherits the class Part.
 In the example below, the class diagram describes the classes from the Product Warehouse exercise. The ProductWarehouseWithHistory class inherits the ProductWarehouse class, which, in turn, inherits the Warehouse class. ChangeHistory is a separate class connected to the ProductWarehouse. ProductWarehouseWithHistory knows about the ChangeHistory but the ChangeHistory does not know about the ProductWarehouseWithHistory.
 Inheritance of abstract classes is described almost the same way as regular classes. However we add the description <<abstract>>above the name of the class. The name of the class and its abstract methods are also written in cursive.
+
+# Describing interfaces
+In class diagrams, interfaces are written <<interface>>NameOfTheInterface. Below we describe an interface Readable.
+Methods are described just like they are for a class.
+
+Implementing an interface is shown as a dashed arrow with a Triangle arrowhead. Below, we describe a situation where Book implements interface Readable.
+
+## How should these be drawn?
+Class diagrams are an excellent way to describe a problem and a problem-domain to others. They are particularly useful when a programmer is designing a program with multiple classes.
+
+Often a class diagram is drawn on a whiteboard or a large sheet of paper during the design phase. Class diagrams should be thought of as helpful tools to build a program, which can be thrown away afterwards. You should not use too much energy to think about the correctness and details of the modeling language. Class diagrams should also be drawn in a suitable level of abstraction. For example, if you have tens of classes, it might not be worth describing each attribute and each method of each class; getting a good overview of the program structure is the most important.
+
+The class diagrams here have been drawn using yUML , Creately , and draw.io. NetBeans also has tools for drawing class diagrams; for example, easyUML draws class diagrams from the source code.
+
+## Packages
+Learning Objectives
+- You know what packages are and can place classes in them
+- You know what the import statement used in Java is composed of
+As the number of classes implemented for the program grows, remembering all the functionality and methods becomes more difficult. What helps is naming the classes in a sensible manner and planning them so that each class has one clear responsibility. In addition to these measures, it's wise to divide the classes into packages. Classes in one package might share functionality, purpose, or some other logical property.
+
+Packages are practically directories in which the source code files are organised.
+
+IDEs offer existing tools for package management. Up until this point, we have only created classes and interfaces in the default package of the Source Packages folder of the project. You can create a new package in NetBeans by right-clicking on the Source Packages section (which contains the project's packages), and then selecting New -> Java Package....
+You can create classes inside a package in the same way you can in the default package. Below we create the class Program in the newly created package library.
+
+The package of a class (the package in which the class is stored) is noted at the beginning of the source code file with the statement package *name-of-package*;. Below, the class Program is in the package library.
+
+Every package, including the default package, may contain other packages. For instance, in the package definition package library.domain the package domain is inside the package library. The word domain is often used to refer to the storage space of the classes that represent the concepts of the problem domain. For example, the class Book could be inside the package library.domain, since it represents a concept in the library application.
