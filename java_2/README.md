@@ -70,3 +70,44 @@ You can create classes inside a package in the same way you can in the default p
 The package of a class (the package in which the class is stored) is noted at the beginning of the source code file with the statement package *name-of-package*;. Below, the class Program is in the package library.
 
 Every package, including the default package, may contain other packages. For instance, in the package definition package library.domain the package domain is inside the package library. The word domain is often used to refer to the storage space of the classes that represent the concepts of the problem domain. For example, the class Book could be inside the package library.domain, since it represents a concept in the library application.
+
+## Directory structure in a file system
+Every project you see in NetBeans is in your computer's file system or on a centralized server.
+For NetBeans, the project directory src/main/java contains the source code files of the program. If the package of a class is library, that class is stored inside the src/main/java/libary folder of the source code directory. You can also check the concrete project structure in NetBeans in the Files tab, which is normally next to the Project tab. If you cannot see the Files tab, you can make it appear by choosing the option Files from the dropdown menu Window.
+
+Application development is normally done in the Projects tab, where NetBeans hides unimportant files from the programmer.
+
+# Packages and access modifiers
+In Java, packages organize classes into namespaces, while access modifiers control visibility and accessibility of classes, methods, and variables across those packages. Together, they define the structure and security of your code.
+
+📦 Java Packages
+Packages are containers for classes and interfaces. They help group related code and avoid naming conflicts.
+Types of Packages:
+- Built-in packages: Provided by Java (e.g., java.util, java.io)
+- User-defined packages: Created by developer
+
+Until now, we've used two access modifiers. The modifier private is used to define variables (and methods) that are only visible inside the class where they are defined. They cannot be used from outside that class. The methods and variables defined with public, on the other hand, are available for everyone to use.
+1. public
+- Accessible from anywhere
+public class MyClass { }
+
+2. protected
+- Accessible within the same package and subclasses
+- 
+protected void show() { }
+
+
+3. Default (no modifier)
+- Accessible only within the same package
+void display() { }
+
+4. private
+- Accessible only within the same class
+private int age;
+
+- A public class in a package can be accessed from other packages.
+- A protected method in a superclass can be accessed by subclasses in different packages.
+- A private method is invisible outside its class—even to other classes in the same package.
+- When no access modifier is specified in Java, the member (method, variable, or even class) has package-private or default access. This means: classes in the same package can access default/package-private members. 
+
+
