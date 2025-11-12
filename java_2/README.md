@@ -110,4 +110,8 @@ private int age;
 - A private method is invisible outside its class—even to other classes in the same package.
 - When no access modifier is specified in Java, the member (method, variable, or even class) has package-private or default access. This means: classes in the same package can access default/package-private members. 
 
+# Classes that represent concepts of the problem domain
+The classes that represent concepts of the problem domain are often placed inside a package called domain. Since the entirety of the application is inside the package flightControl, let's place the package domain inside the package flightControl. Concepts of the problem domain are represented by the classes Place, Airplane, and Flight.
 
+# Application logic
+The application logic is typically kept separate from the classes that represents concepts of the problem domain. In our example, the application logic is stored in the package logic. Application logic includes the functionality to add airplanes and flights, and to list them.
