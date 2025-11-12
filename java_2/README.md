@@ -115,3 +115,6 @@ The classes that represent concepts of the problem domain are often placed insid
 
 # Application logic
 The application logic is typically kept separate from the classes that represents concepts of the problem domain. In our example, the application logic is stored in the package logic. Application logic includes the functionality to add airplanes and flights, and to list them.
+
+# Text user interface
+The user interface is separate from the application logic and the classes that represent the problem domain. Separate classes are used for the ui and it will be inside the ui package.
