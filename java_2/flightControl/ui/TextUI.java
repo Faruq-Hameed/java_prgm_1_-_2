@@ -48,8 +48,12 @@ public class TextUI {
                 addAirplane();
             } else if (action.equals("2")) {
                 addFlight();
-            } else {
+            } else if (action.equals("x")) {
+                continue;
+            } else if (action.equals("x")) {
                 break;
+            } else {
+                continue;
             }
         }
 
@@ -96,8 +100,10 @@ public class TextUI {
                 printFlights();
             } else if (action.equals("3")) {
                 printPlane();
-            } else {
+            } else if (action.equals("x")) {
                 break;
+            } else {
+                continue;
             }
 
         }

@@ -5,7 +5,7 @@ import java.util.Scanner;
 import flightControl.logic.FlightControl;
 import flightControl.ui.TextUI;
 
-public class main {
+public class Main {
     public static void main(String[] args) {
         System.out.println("Program started ...");
         Scanner scanner = new Scanner(System.in);

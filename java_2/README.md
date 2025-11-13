@@ -118,3 +118,34 @@ The application logic is typically kept separate from the classes that represent
 
 # Text user interface
 The user interface is separate from the application logic and the classes that represent the problem domain. Separate classes are used for the ui and it will be inside the ui package.
+
+### Exceptions
+When program execution ends with an error, an exception is thrown. For example, a program might call a method with a null reference and throw a NullPointerException, or the program might try to refer to an element outside an array and result in an IndexOutOfBoundsException, and so on.
+Some exceptions we have to always prepare for, such as errors when reading from a file or errors related to problems with a network connection. We do not have to prepare for runtime exceptions, such as the NullPointerException, beforehand. Java will always let you know if your code has a statement or an expression which can throw an error you have to prepare for.
+
+# Handling exceptions
+Java Exception Handling is a mechanism to handle runtime errors, allowing a program to continue operating or terminate gracefully. It separates error-handling code from regular code, enhancing readability and maintainability. Without proper exception handling, an error can cause the entire application to crash, leading to a poor user experience.
+We use the try {} catch (Exception e) {} block structure to handle exceptions. The keyword try starts a block containing the code which might throw an exception. the block starting with the keyword catch defines what happens if an exception is thrown in the try block. The keyword catch is followed by the type of the exception handled by that block, for example "all exceptions" catch (Exception e).
+
+We use the keyword catch, because causing an exception is referred to as throwing an exception.
+
+As mentioned above, we do not have to prepare for runtime exceptions such as the NullPointerException. We do not have to handle these kinds of exceptions, so the program execution stops if an error causes the exception to be thrown. Next, we will look at one such situation, parsing strings to integers.
+We wrap the call that might throw an exception into a try block, and the code executed if the exception is thrown into a catch block.
+The code in the catch block is executed immediately if the code in the try block throws an exception.
+the code within the catch block is executed only if an exception is thrown from the try block.
+
+# Exceptions and resources
+There is separate exception handling for reading operating system resources such as files. With so called try-with-resources exception handling, the resource to be opened is added to a non-compulsory part of the try block declaration in brackets.
+The try-with-resources approach is useful for handling resources, because the program closes the used resources automatically. Now references to files can "disappear", because we do not need them anymore. If the resources are not closed, the operating system sees them as being in use until the program is closed.
+
+# Shifting the responsibility
+Methods and constructors can throw exceptions. There are roughly two categories of exceptions. There are exceptions we have to handle, and exceptions we do not have to handle. We can handle exceptions by wrapping the code into a try-catch block or throwing them out of the method.
+Reading a file can throw an exception — for example, the file might not exist or the program does not have read rights to the file. This kind of exception has to be handled. We handle the exception by wrapping the code into a try-catch block.
+A programmer can also leave the exception unhandled and shift the responsibility for handling it to whomever calls the method. We can shift the responsibility of handling an exception forward by throwing the exception out of a method, and adding notice of this to the declaration of the method. Notice on throwing an exception forward throws *ExceptionType* is added before the opening bracket of a method.
+Now the method calling the method which can throw error method has to either handle the exception in a try-catch block or shift the responsibility yet forward. Sometimes the responsibility of handling exceptions is avoided until the end, and even the main method can throw an exception to the caller:
+Now the exception is thrown to the program executor, or the Java virtual machine. It stops the program execution when an error causing an exception to be thrown occurs.
+
+# Throwing exceptions
+The throw command throws an exception. For example a NumberFormatException can be done with command throw new NumberFormatException(). The following code always throws an exception.
+One exception that the user does not have to prepare for is IllegalArgumentException. The IllegalArgumentException tells the user that the values given to a method or a constructor as parameters are wrong. It can be used when we want to ensure certain parameter values.
+If an exception is a runtime exception, e.g. IllegalArgumentException, we do not have to warn about throwing it on the method declaration.
