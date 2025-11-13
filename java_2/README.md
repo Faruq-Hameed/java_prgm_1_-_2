@@ -190,3 +190,66 @@ In the example above, we write to the file "file.txt" the string "Hello file!", 
 The constructor of the PrintWriter class might throw an exception that must be either handled or thrown so that it is the responsibility of the calling method.
 If the file already exists, the earlier contents are erased when we store the new text.
 It is also possible to handle files in a way that adds the new text after the existing content. In that case, you might want to use the FileWriter class.
+# PrintWriter and FileWriter 
+are both Java classes for writing character data to files, but they differ in formatting capabilities, error handling, and intended use cases. Here's a complete summary of their official documentation.
+🖨️ PrintWriter — Formatted Text Output
+Purpose: Writes formatted representations of objects to a text-output stream.
+Key Features:
+- Extends Writer and implements Closeable, Flushable, Appendable, and AutoCloseable.
+- Supports print(), println(), printf(), and format() methods for formatted output.
+- Uses platform-specific line separators (not just \n).
+- Can wrap other writers like FileWriter or BufferedWriter.
+- Does not throw IOException during write operations; instead, use checkError() to detect issues.
+- - Supports automatic flushing when using println, printf, or format.
+Common Constructors:
+PrintWriter(String fileName)
+PrintWriter(String fileName, String charsetName)
+PrintWriter(File file)
+PrintWriter(File file, String charsetName)
+PrintWriter(OutputStream out)
+PrintWriter(Writer out)
+PrintWriter(Writer out, boolean autoFlush)
+PrintWriter and FileWriter are both Java classes for writing character data to files, but they differ in formatting capabilities, error handling, and intended use cases. Here's a complete summary of their official documentation.
+
+🖨️ PrintWriter — Formatted Text Output
+Purpose: Writes formatted representations of objects to a text-output stream.
+Key Features:
+- Extends Writer and implements Closeable, Flushable, Appendable, and AutoCloseable.
+- Supports print(), println(), printf(), and format() methods for formatted output.
+- Uses platform-specific line separators (not just \n).
+- Can wrap other writers like FileWriter or BufferedWriter.
+- Does not throw IOException during write operations; instead, use checkError() to detect issues.
+- Supports automatic flushing when using println, printf, or format.
+Common Constructors:
+PrintWriter(String fileName)
+PrintWriter(String fileName, String charsetName)
+PrintWriter(File file)
+PrintWriter(File file, String charsetName)
+PrintWriter(OutputStream out)
+PrintWriter(Writer out)
+PrintWriter(Writer out, boolean autoFlush)
+
+
+Typical Usage:
+PrintWriter pw = new PrintWriter(new FileWriter("output.txt", true)); // append mode
+pw.println("Hello, formatted world!");
+pw.close();
+📝 FileWriter — Raw Character Output
+Purpose: Writes character data directly to files.
+Key Features:
+- Extends OutputStreamWriter, which extends Writer.
+- Designed for writing raw character streams.
+- Does not support formatted output methods like print() or println() — use write() instead.
+- Can be wrapped with BufferedWriter or PrintWriter for enhanced functionality.
+- Throws IOException during write operations.
+Common Constructors:
+FileWriter(String fileName)
+FileWriter(String fileName, boolean append)
+FileWriter(File file)
+FileWriter(File file, boolean append)
+
+
+Typical Usage:
+FileWriter fw = new FileWriter("output.txt", true); // append mode
+fw.write("Hello, raw world!\n");
+fw.close();
