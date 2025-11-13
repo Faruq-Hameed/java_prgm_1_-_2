@@ -1,7 +1,11 @@
 package dictionary;
 
+import java.io.PrintWriter;
+import java.nio.file.Paths;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Scanner;
 
 public class SaveableDictionary {
     private Map<String, String> dictionary;
@@ -17,13 +21,17 @@ public class SaveableDictionary {
     }
 
     public boolean load() {
-      try {
-          // code to load the dictionary from the file
-          
-          return true;
-      } catch (Exception e) {
-          return false;
-      }
+        try (Scanner reader = new Scanner(Paths.get(this.file))) {
+            // code to load the dictionary from the file
+            while (reader.hasNextLine()) {
+                String[] row = reader.nextLine().split(":");// e.g ekaro:morning
+                this.add(row[1], row[0]); // add(morning, ekaro)
+            }
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     public void add(String words, String translation) {
@@ -33,7 +41,43 @@ public class SaveableDictionary {
     }
 
     public String translate(String word) {
-        return this.dictionary.get(word);
+        if (dictionary.containsKey(word)) {
+            return dictionary.get(word);
+        }
+
+        return dictionary.entrySet()//this make MAp streamable
+                .stream()
+                .filter(entry -> entry.getValue().equals(word))
+                .map(Map.Entry::getKey)
+                .findFirst()
+                .orElse(null);
+
+    }
+
+    public void delete(String word) {
+        dictionary.remove(word); // remove the word and its transalation from the dictionary
+    }
+
+    public void printDictionary() {
+        for (String word : dictionary.keySet()) {
+            System.out.println(word + " : " + dictionary.get(word));
+        }
+    }
+
+    public boolean save() {
+        try (PrintWriter writer = new PrintWriter(this.file)) {
+
+            for (String word : this.dictionary.keySet()) {
+                String row = word + ":" + dictionary.get(word);
+                writer.println(row);
+
+            }
+            return true;
+        } catch (Exception e) {
+            return false;
+            // TODO: handle exception
+        }
+
     }
 
 }
