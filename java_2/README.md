@@ -149,3 +149,30 @@ Now the exception is thrown to the program executor, or the Java virtual machine
 The throw command throws an exception. For example a NumberFormatException can be done with command throw new NumberFormatException(). The following code always throws an exception.
 One exception that the user does not have to prepare for is IllegalArgumentException. The IllegalArgumentException tells the user that the values given to a method or a constructor as parameters are wrong. It can be used when we want to ensure certain parameter values.
 If an exception is a runtime exception, e.g. IllegalArgumentException, we do not have to warn about throwing it on the method declaration.
+
+# Types of exceptions
+We said "there are roughly two categories of exceptions: exceptions which must be handled, and exceptions which do not have to be handled."
+
+Exceptions which must be handled are exceptions which are checked for during compilation. Due to this, some exceptions have to be prepared for with a try-catch block or by throwing them out of a method with a throws attribute in a method declaration. For example, exceptions related to handling files, including IOException and FileNotFoundException, are this kind of exception.
+
+Some exceptions are not checked for during compilation. They can be thrown during execution. These kinds of exceptions do not have to be handled with a try-catch block. For example, IllegalArgumentException and NullPointerException are this kind of exception.
+
+# Exceptions and Interfaces
+An Interface can have methods which throw an exception. For example the classes implementing the following FileServer interface might throw an exception from the methods load or save.
+
+public interface FileServer {
+    String load(String fileName) throws Exception;
+    void save(String fileName, String textToSave) throws Exception;
+}
+
+If an interface declares a throws Exception attribute to a method, so that these methods might throw an exception, the class implementing this interface must also have this attribute. However the class does not have to throw an error, but must tell the method calling it to implement the throw error by having throws Exception in its declaration.
+
+# Details of the exception
+A catch block defines which exception to prepare for with catch (Exception e). The details of the exception are saved to the e variable or any variable name given to it.
+The Exception class has some useful methods. For example printStackTrace() prints the stack trace, which shows how we ended up with an exception. Below is a stack trace printed by the printStackTrace() method.
+
+Sample output
+Exception in thread "main" java.lang.NullPointerException
+at package.Class.print(Class.java:43)
+at package.Class.main(Class.java:29)
+We read a stack trace from the bottom up. At the bottom is the first call, so the execution of the program has begun from the main() method of the Class class. Line 29 of the main method of the Class class calls the print() method. Line 43 of the print method has thrown a NullPointerException exception. The details of an exception are very useful when trying to pinpoint where an error happens.
