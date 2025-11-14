@@ -21,7 +21,7 @@ In the class diagram, the variables associated with the class are defined as "va
 Instance variables are referred to with the prefix this. All of the object's variables are visible and available from within the method.
 
 ## Defining a Constructor
-We want to set an initial state for an object that's created. Custom objects are created the same way as objects from pre-made Java classes, such as ArrayList, using the newkeyword.This is achieved by defining the method that creates the object, ie, its constructor. The constructor is defined after the instance variables. 
+We want to set an initial state for an object that's created. Custom objects are created the same way as objects from pre-made Java classes, such as ArrayList, using the new keyword.This is achieved by defining the method that creates the object, ie, its constructor. The constructor is defined after the instance variables. 
 The constructor's name is always the same as the class name.
 Objects are always created using a constructor.
 If the programmer does not define a constructor for a class, Java automatically creates a default one for it
@@ -48,6 +48,44 @@ Reading From a File
 Reading a file is done using the Scanner-class. When we want to read a file using the Scanner-class, we give the path for the file we want to read as a parameter to the constructor of the class. The path to the file can be acquired using Java's Paths.get command, which is given the file's name in string format as a parameter: Paths.get("filename.extension").
 
 When the Scanner-object that reads the file has been created, the file can be read using a while-loop. The reading proceeds until all the lines of the file have been read, i.e., until the scanner finds no more lines to read. Reading a file may result in an error, and it's for this reason that the process requires separate blocks - one for the try, and another to catch potential errors.
+
+
+Here's a breakdown of the most easy, most conventional, best, and least computational cost approaches:
+
+🟢 1. Most Easy Way
+✅ Read: Scanner
+Scanner scanner = new Scanner(new File("file.txt"));
+while (scanner.hasNextLine()) {
+    System.out.println(scanner.nextLine());
+}
+scanner.close();
+
+
+✅ Write: FileWriter
+FileWriter writer = new FileWriter("file.txt");
+writer.write("Hello World");
+writer.close();
+
+
+🔵 2. Most Conventional Way
+✅ Read: BufferedReader
+BufferedReader reader = new BufferedReader(new FileReader("file.txt"));
+String line;
+while ((line = reader.readLine()) != null) {
+    System.out.println(line);
+}
+reader.close();
+
+
+✅ Write: BufferedWriter
+BufferedWriter writer = new BufferedWriter(new FileWriter("file.txt"));
+writer.write("Hello World");
+writer.newLine();
+writer.write("Another line");
+writer.close();
+
+- Why conventional? Widely used in production code, handles l
+We can absolutely append to a file using BufferedWriter or FileWriter — you just need to pass a second argument true to the FileWriter constructor to enable append mode.
 
 -----------------------------------------
 
