@@ -253,3 +253,39 @@ Typical Usage:
 FileWriter fw = new FileWriter("output.txt", true); // append mode
 fw.write("Hello, raw world!\n");
 fw.close();
+
+t PrintWriter is considered less modern and less flexible compared to newer I/O approaches in Java. Here's why:
+🔴 Limitations of PrintWriter
+- No built-in support for character encoding (defaults to platform encoding unless you wrap it).
+- Less intuitive for structured data or large-scale I/O.
+- Doesn't integrate well with Java Streams or NIO features.
+- No buffering unless explicitly wrapped.
+
+✅ Modern Alternatives
+1. BufferedWriter
+- Offers buffering for performance.
+- Can be wrapped around FileWriter or OutputStreamWriter.
+- More control over encoding and flushing.
+BufferedWriter writer = new BufferedWriter(new FileWriter("file.txt"));
+
+
+2. Files.write() (Java NIO)
+- Clean, concise, and modern.
+- Supports encoding, atomic operations, and integrates with Path.
+Files.write(Paths.get("file.txt"), List.of("line1", "line2"));
+
+
+3. PrintStream
+- Similar to PrintWriter but works with byte streams.
+- Often used for logging or console output.
+
+🧠 When Is PrintWriter Still Useful?
+- Quick text output with println() style.
+- Writing to console or simple files without encoding concerns.
+- Educational or legacy codebases.
+
+🧭 Recommendation
+For modern Java development, especially with files:
+- Prefer BufferedWriter or Files.write() for writing.
+- Use BufferedReader or Files.readAllLines() for reading.
+Would you like a side-by-side comparison of all these options in a table?

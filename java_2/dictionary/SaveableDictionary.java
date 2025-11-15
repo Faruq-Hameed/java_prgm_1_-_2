@@ -45,7 +45,7 @@ public class SaveableDictionary {
             return dictionary.get(word);
         }
 
-        return dictionary.entrySet()//this make MAp streamable
+        return dictionary.entrySet()// this make MAp streamable
                 .stream()
                 .filter(entry -> entry.getValue().equals(word))
                 .map(Map.Entry::getKey)
@@ -55,7 +55,16 @@ public class SaveableDictionary {
     }
 
     public void delete(String word) {
-        dictionary.remove(word); // remove the word and its transalation from the dictionary
+        if (dictionary.containsKey(word)) { //if the key is there remove straight
+            dictionary.remove(word);
+        } else if (dictionary.containsValue(word)) //since the translation has to be ones then
+            for (Map.Entry<String, String> e : dictionary.entrySet()) {
+                if (e.getValue().equals(word)) { //
+                    dictionary.remove(e.getKey());// remove safely
+                    break;
+                }
+
+            }
     }
 
     public void printDictionary() {

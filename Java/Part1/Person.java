@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import java_2.Person;
+
 public class Person {
     private String name;
     private String nick;
@@ -8,7 +10,6 @@ public class Person {
     public Person(String name, String nick) {
         this.name = name;
         this.nick = nick;
-
     }
 
     public String getName() {
