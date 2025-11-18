@@ -18,7 +18,14 @@ If you wanted, you could also use the existing ArrayList class to implement the 
 ArrayList and HashMap are commonly used data structures in programming. We are now going to take a look at their actual implementation. First we'll remind ourselves of how to use an array, after which we're going to build a data structure called List, imitating ArrayList. Then we'll make use of the List to implement the data structure HashTable.
 
 ## A brief recap of arrays
-An array is an object that contains a limited number of places for values. The length (or size) of an array is the number of places in it; in other words, how many values can be stored in the array. The size of an array is always predetermined: it is chosen when the array is created, and cannot be changed later.
+- An array is an object that contains a limited number of places for values. The length (or size) of an array is the number of places in it; in other words, how many values can be stored in the array. The size of an array is always predetermined: it is chosen when the array is created, and cannot be changed later.
 
-The array type is defined with square brackets preceded by the type of the elements in the array (typeOfElements[]). An array is created with the new call, followed by the type of the elements in that array, square brackets, and the number of elements in the array places inside the square brackets.
+- The array type is defined with square brackets preceded by the type of the elements in the array (typeOfElements[]). An array is created with the new call, followed by the type of the elements in that array, square brackets, and the number of elements in the array places inside the square brackets.
 - The elements of the array are referred to by the indexes.
+
+- Setting a single value to a certain position is done similarly to setting a value to a regular variable, just that when placing the value in an array, you use the index to indicate the position.
+
+- To discover the size of an array you can use the public object variable length that arrays have.
+- Arrays can be used in the exact same manner as other variables, so they can be object variables, method parameters, return values of methods, and so on.
+
+- A significant portion of generally used data structures use arrays in their internal implementation.
