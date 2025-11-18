@@ -1,44 +1,24 @@
-# Hi there, I’m **Faruq Hameed** 👋  
-**Mobile & Backend Developer** | React Native • Node.js • TypeScript • FinTech 🚀  
+### Type parameters
+Since we began using lists, we have given data structures the type of the values that we want them to store. For example, a list that stores strings has been defined as ArrayList<String>, and a hash map that stores keys and values as Strings has been defined as HashMap<String, String>. How on Earth can you implement a class that can contain objects of a given type?
 
-I’m a software engineer based in Ibadan, Nigeria, with 4+ years of experience in **mobile-first** app development and scalable backend systems.  I specialize in building React Native mobile apps and designing secure APIs (Node.js, NestJS) for fintech and full-stack projects:contentReference[oaicite:24]{index=24}:contentReference[oaicite:25]{index=25}. I’m passionate about clean code, modern architectures, and collaborating on innovative solutions.  
+Generics relates to how classes that store objects can store objects of a freely chosen type. The choice is based on the generic type parameter in the definition of the classes, which makes it possible to choose the type(s) at the moment of the object's creation. Using generics is done in the following manner: after the name of the class, follow it with a chosen number of type parameters. Each of them is placed between the 'smaller than' and 'greater than' signs, like this: public class Class<TypeParameter1, TypeParameter2, ...>. The type parameters are usually defined with a single character.
+The definition public class Locker<T> indicates that the Locker class must be given a type parameter in its constructor. After the constructor call is executed, all the variables stored in that object are going to be of the type that was given with the constructor.
+There is no maximum on the number of type parameters, it's all dependent on the implementation. The programmer could implement the following Pair class that is able to store two objects of specified types.
+A significant portion of the Java data structures use type parameters, which enables them to handle different types of variables. ArrayList, for instance, receives a single type parameter, while HashMap receives two.
+List<String> strings = new ArrayList<>();
+Map<String, String> keyValuePairs = new HashMap<>();
+From here on out when you see the type ArrayList<String>, you know that its internal implementation uses a generic type parameter. The same principle holds true for the interface Comparable, for example.
 
-## Tech Stack & Tools  
-<p align="left">  
-  <!-- Mobile/Frontend -->  
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" width="30" height="30"/> 
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native" width="30" height="30"/> 
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg" alt="Redux" width="30" height="30"/>  
-  <!-- Backend -->  
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" width="30" height="30"/> 
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg" alt="NestJS" width="30" height="30"/> 
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" alt="Express" width="30" height="30"/>  
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" width="30" height="30"/>  
-  <!-- Databases -->  
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="30" height="30"/> 
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="30" height="30"/>  
-  <!-- Tools -->  
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" width="30" height="30"/> 
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="30" height="30"/>  
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" alt="Jira" width="30" height="30"/>  
-</p>  
+Creating generic interfaces is very similar to creating generic classes. Below you can study the generic interface List (our own definition, which is not as extensive as the existing Java List).
+There are two ways for a class to implement a generic interface. One is to decide the type parameter in the definition of the class, and the other is to define the implementing class with a type parameter as well. Below, the class MovieList defines the type parameter when it implements List. The MovieList is meant only for handling movies.
+The alternative is to use a type parameter in the class definition, in which case the parameter is passed along to the interface. Now this concrete implementation of the interface remains generic.
+If you wanted, you could also use the existing ArrayList class to implement the GeneralList.
 
-## GitHub Stats & Activity  
-[![GitHub Streak](https://streak-stats.demolab.com/?user=Faruq-Hameed&theme=tokyonight)](https://git.io/streak-stats) **Contributions Streak**:contentReference[oaicite:26]{index=26}  
-[![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Faruq-Hameed&show_icons=true&theme=radical)](https://github.com/Faruq-Hameed) **Total Activity**:contentReference[oaicite:27]{index=27}  
-[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Faruq-Hameed&layout=compact&theme=radical)](https://github.com/Faruq-Hameed) **Top Languages**:contentReference[oaicite:28]{index=28}  
+### ArrayList and hash table
+ArrayList and HashMap are commonly used data structures in programming. We are now going to take a look at their actual implementation. First we'll remind ourselves of how to use an array, after which we're going to build a data structure called List, imitating ArrayList. Then we'll make use of the List to implement the data structure HashTable.
 
-## Selected Projects  
-- 🔧 **Carpool-Nest-Backend:** TypeScript API (NestJS) for a carpooling service (migrated from Express/MongoDB to NestJS/Postgres):contentReference[oaicite:29]{index=29}. Includes features like user auth, ride-matching, and RBAC.  
-- 📱 **Carpool-Frontend:** React Native app for the above carpool service (working on UI/UX and integration with the backend).  
-- 🏘 **House-Share:** React Native prototype for property listings. Implements basic CRUD for listings and search (a learning project).  
-- 🎓 **Citrone:** Collaborative EdTech LMS (Forked project). I led the **backend development** (Node.js/Express) and worked with teammates on the full stack:contentReference[oaicite:30]{index=30}.  
-*(Each project above includes a clear README, demo screenshots, and usage instructions as recommended:contentReference[oaicite:31]{index=31}.)*  
+## A brief recap of arrays
+An array is an object that contains a limited number of places for values. The length (or size) of an array is the number of places in it; in other words, how many values can be stored in the array. The size of an array is always predetermined: it is chosen when the array is created, and cannot be changed later.
 
-## Connect with Me  
-- LinkedIn: [linkedin.com/in/faruq-hameed-2ab121129](https://linkedin.com/in/faruq-hameed-2ab121129)  
-- Twitter/X: [@King_Flourish](https://twitter.com/King_Flourish)  
-- GitHub: [github.com/Faruq-Hameed](https://github.com/Faruq-Hameed)  
-- Email: faruqhameed1@gmail.com  
-
- Feel free to reach out for collaborations or opportunities. I’m always open to discussing new projects in **mobile dev, fintech, or full-stack engineering**!
+The array type is defined with square brackets preceded by the type of the elements in the array (typeOfElements[]). An array is created with the new call, followed by the type of the elements in that array, square brackets, and the number of elements in the array places inside the square brackets.
+- The elements of the array are referred to by the indexes.
