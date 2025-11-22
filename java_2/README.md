@@ -46,6 +46,7 @@ Let's add the functionality for increasing the size of the List. The size of the
 
 The size of the array is determined in Java with the formula oldSize + oldSize / 2. Let's use the same formula in our implementation. We'll create a new method growfor increasing the size of the array. The method is available only for other methods in the class (it is private).
 The implementation creates a new array whose size is 1.5 times the size of the old array. After this all the elements of the old array are copied into the new one, and finally the value of the object variable valuesis set to the new array. The automatic Java garbage Collector removes the old array at some point, now that there are no longer any References to it.
+Now we can add almost Unlimited amount of elements to the List.
 
 # On the effectiveness of this method
 The method described above copies every element from the old array to the new array. If we would have for example two million elements in an array, we must go through two million elements while copying them.
