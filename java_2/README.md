@@ -29,3 +29,25 @@ ArrayList and HashMap are commonly used data structures in programming. We are n
 - Arrays can be used in the exact same manner as other variables, so they can be object variables, method parameters, return values of methods, and so on.
 
 - A significant portion of generally used data structures use arrays in their internal implementation.
+
+## List
+Let's examine one way to implement the Java ArrayList data structure. Java ArrayList uses an array. The type of the elements in the array is defined by the type parameter given to the ArrayList. Due to this we can add nearly any type of data to a list. Java List offers multiple methods, but right now add, contains, remove and get are most relevant for us.
+
+# Creating a new list
+Let's create class List. The List has a generic array — the type of the elements in the array is defined on run time using type parameters. Let's set the size of the array to 10. The array is created as type object, and changed to type generic with (A[]) new Object[10]; — this is done because Java does not support the call new A[10]; for now.
+
+List encapsulates an array. In the beginning, every element in the array contains a null-reference.
+
+# Adding values to the list
+The size of the list does not grow. One of the benefits of the ArrayListclass is, that it grows as needed — Programmers do not have to worry about the list getting full.
+The size of the list does not grow. One of the benefits of the ArrayListclass is, that it grows as needed — Programmers do not have to worry about the list getting full.
+
+Let's add the functionality for increasing the size of the List. The size of the List increases if the user tries to add a value to a full list. The size of the List is increased by creating a new, larger, array to which the values ​​from the old array are copied to. After this the old array is Abandoned and the List starts to use the new array.
+
+The size of the array is determined in Java with the formula oldSize + oldSize / 2. Let's use the same formula in our implementation. We'll create a new method growfor increasing the size of the array. The method is available only for other methods in the class (it is private).
+The implementation creates a new array whose size is 1.5 times the size of the old array. After this all the elements of the old array are copied into the new one, and finally the value of the object variable valuesis set to the new array. The automatic Java garbage Collector removes the old array at some point, now that there are no longer any References to it.
+
+# On the effectiveness of this method
+The method described above copies every element from the old array to the new array. If we would have for example two million elements in an array, we must go through two million elements while copying them.
+
+We will discuss the effectiveness of this method — and ways to make it more effective — in the courses Datastructures and Algorithms and Design and analysis of algorithms.
