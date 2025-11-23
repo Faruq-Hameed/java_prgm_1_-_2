@@ -121,3 +121,10 @@ A hash map contains an array of lists. Each value on the list is a pair (describ
 
 # Retrieving a value
 Let's implement a method called public V get(K key). It can be used to search for a value based on a key.
+
+# Why not implement hash map as a list?
+The main principle of the hash map is that the key-value pairs are divided into small sets with the help of hash values. In this case a search based on key demands only going through a very small number of key-value pairs — assuming that the hash values are calculated in a sensible manner.
+
+If the hash value is always the same — e.g. 1 — the internal implementation of a hash map is similar to a list — all the values are on the same list. If the hash values are sufficiently random, the different values are as evenly distributed to the different lists as possible.
+
+Hash maps also grow the size of their internal array if the number of values becomes large enough (typically 75% of the size of the array). Typically a hash map that contains millions of key-value pairs only contains a few key-value pairs in each index. The practical consequence is that discovering if a key-value pair exists, we only need to calculate the hash value and examine a few objects — this is very significantly faster than going through a single list that contains the entirety of stored values.
