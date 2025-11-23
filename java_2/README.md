@@ -52,3 +52,72 @@ Now we can add almost Unlimited amount of elements to the List.
 The method described above copies every element from the old array to the new array. If we would have for example two million elements in an array, we must go through two million elements while copying them.
 
 We will discuss the effectiveness of this method — and ways to make it more effective — in the courses Datastructures and Algorithms and Design and analysis of algorithms.
+
+# Checking the existence of a value
+Next we'll create the method public boolean contains(Type value), which we use to check whether the List contains a value or not. We will make use of the fact that each Java object — no matter its type — inherits the Object class (or is type Object). Due to this, each object has the method public boolean equals(Object object), which we can use to check equality.
+
+The variable firstFreeIndexcontains the number of elements in the array. We can implement the containsmethod so, that it only checks the Indexes in the array which contain a value.
+
+public boolean contains(Type value) {
+    for (int i = 0; i < this.firstFreeIndex; i++) {
+        if (this.values[i].equals(value)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+We can now inspect the elements in the List.
+
+List<String> myList = new List<>();
+System.out.println(myList.contains("hello"));
+myList.add("hello");
+System.out.println(myList.contains("hello"));
+Sample output
+false true
+
+The method above assumes, that the user will not add a nullreference to the list, and that the equals method checks that the value given to it as a parameter is not null.
+
+# Removing a value
+We can now add values to the List, and check if the List contains a value. Now we will implement the functionality for removing a value from the List. Let's implement the method public void remove(Type value), which removes one value type value.
+The above implementation is however problematic, because it leaves "empty" slots to the List, which would lead to the contains method not working.
+We are not really satisfied with the solution above, because it does too many things at the same time. The method looks for an element and moves elements around. We will split the functionality into two methods: private int indexOfValue(Type value), which searches for the index of the value given to it as a parameter, and private void moveToTheLeft(int fromIndex), which moves the elements above the given index to the left.
+
+First let's implement the method private int indexOfValue(Type value), which searches for the index of the given value. The method returns -1 if the value is not found.
+Then we will implement the method private void moveToTheLeft(int fromIndex), which moves values from the given index one place to the left.
+
+private void moveToTheLeft(int fromIndex) {
+    for (int i = fromIndex; i < this.firstFreeIndex - 1; i++) {
+        this.values[i] = this.values[i + 1];
+    }
+}
+
+# On the effectiveness of the method
+The method describes above copies each element after the removed element one place to the left. Think about the effectiveness of this method when the List is used as a queue.
+
+We will discuss the effectiveness of this method — and ways to make it more effective — in the courses Data structures and algorithms and Design and analysis of algorithms.
+The class List now contains some repeated code. The method contains is very similiar to the method indexOfValue. Let's modify the method contains so that it uses the method indexOfValue.
+
+public boolean contains(Type value) {
+    return indexOfValue(value) >= 0;
+}
+Now we have a List, which has the methods add, contains, and remove. The List also grows in size when needed. The implementation of the List could of course be improved by for example adding functionality for decreasing the size of the List if the number of values in it decreases.
+
+# Size of the List
+Lastly we will add a method for checking the size of the List. The size of the list can be determined by the variable firstFreeIndex.
+
+### Hash map
+Hash map is implemented as an array, in which every element includes a list. The lists contain (key, value) pairs. The user can search from the hash map based on the key, and they can also add new key-value pairs into it. Each key can appear at most once in the hash map.
+
+The functioning of the hash map is based on the hash value of the key. When a new (key, value) pair is stored in a hash map, we calculate a hash value based on the key to be stored. The hash value decides the index of the internal array that will be used for storing. The (key, value) pair is stored in the list that can be found at that index.
+
+## Key-value pair
+The Pair class contains a key and a value, as well as the related get methods. The generic types K and V are named so after the words 'key' and 'value'.
+Creating key-value pairs is straightforward.
+Pair<String, Integer> pair = new Pair<>("one", 1);
+
+## Creating a hash map
+A hash map contains an array of lists. Each value on the list is a pair (described in the previous section) that contains a key and a value. A hash map also knows the number of the values. Here we have at our disposal the previously created class List.
+
+# Retrieving a value
+Let's implement a method called public V get(K key). It can be used to search for a value based on a key.
