@@ -128,3 +128,30 @@ The main principle of the hash map is that the key-value pairs are divided into 
 If the hash value is always the same — e.g. 1 — the internal implementation of a hash map is similar to a list — all the values are on the same list. If the hash values are sufficiently random, the different values are as evenly distributed to the different lists as possible.
 
 Hash maps also grow the size of their internal array if the number of values becomes large enough (typically 75% of the size of the array). Typically a hash map that contains millions of key-value pairs only contains a few key-value pairs in each index. The practical consequence is that discovering if a key-value pair exists, we only need to calculate the hash value and examine a few objects — this is very significantly faster than going through a single list that contains the entirety of stored values.
+
+# Adding to hash map
+Let's implement the first version of the method public void add(K key, V value), which is used to add values to the hash map. In this version we are not going to increase the size of the internal array when new values are added to the hash map.
+
+The method first calculates the hash value for the key, and uses it to determine the suitable index in the internal array. If there is no value in that index, we create a list into that index. After this the method goes through the list at the index, and looks for a key-value pair whose key matches the key of the key-value pair to be added. If the matching key is found, the value related to it is updated to match the new value. Otherwise the method adds a new key-value pair in the list — in which case the number of stored values is also incremented by one.
+
+# Adding to hash table, part 2
+The way of adding to a hash table that was described above works partly. The greatest fault in the functionality is that the size of the internal array is not increased when the number of values grows too large. Let's add a growing functionality to the program that doubles the size of the internal array of the hash map. The growing operation should also place each value in the hash map into the newly created bigger array.
+
+Let's sketch the beginning of the growing functionality. The responsible method should create a new array whose size is double that of the old array. After this it goes through the old array, index by index. The encountered key-value pairs are copied into the new array. Finally, the old array is replaced with the new one.
+private void grow() {
+    // crete a new array
+    List<Pair<K, V>>[] newValues = new List[this.values.length * 2];
+
+    for (int i = 0; i < this.values.length; i++) {
+        // copy the values of the old array into the new one
+
+    }
+
+    // replace the old array with the new one
+    this.values = newValues;
+}
+
+# Remove
+The removal functionality returns null if the value cannot be found, and otherwise it will remove the value that is paired with the key to be removed.
+
+We can take advantage of the method we've already implemented in the removing method. Explain to yourself (out loud) how the method described below concretely works.
