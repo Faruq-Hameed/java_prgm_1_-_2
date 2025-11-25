@@ -159,3 +159,12 @@ We can take advantage of the method we've already implemented in the removing me
 # On search performance
 Let's compare the performance of searching from a list or a hash map. To evaluate performance we can use the System.nanotime() method and the value it returns, which represents the time as nanoseconds. The program first creates a hash map and a list, each containing a million elements, after which a thousand randomly chosen values are chosen from both. Roughly 50 % of the values are found with both structures.
 The list and hash map that are described in this chapter do have some differences from the readymade tools we use elsewhere in the course. The data structures offered by the programming language have more different kinds of optimizations — other courses go more in detail with these specifics. For the purposes of this course it's enough to know how to use the data structures and to have some idea of the performance differences and when they are suitable to use.
+
+# Randomness
+Encryption algorithms, machine learning and making computer games less predictable all require randomness. We can model randomness using random numbers. Java offers ready-made Random class for creating random numbers. 
+Above we create an instance of the Randomclass. It has nextInt method, which gets an integer as a parameter. The method returns a random number between [0, integer[ or 0..(integer -1).
+We can use the nextInt method to create diverse randomness. For example, we might need a program to give us a temperature between [-30,50]. We can do this by first creating random a number between 0 and 80 and then subtracting 30 from it.
+
+Random weatherMan = new Random();
+int temperature = weatherMan.nextInt(81) - 30;
+System.out.println(temperature);

@@ -25,7 +25,7 @@ long listSearchEndTime = System.nanoTime();
 
 long hashMapSearchStartTime = System.nanoTime();
 for (int i = 0; i < elements.size(); i++) {
-    hashMap.(elements.value(i));
+    hashMap.getHashValue(elements.value(i));
 }
 long hashMapSearchEndTime = System.nanoTime();
 
