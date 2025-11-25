@@ -155,3 +155,7 @@ private void grow() {
 The removal functionality returns null if the value cannot be found, and otherwise it will remove the value that is paired with the key to be removed.
 
 We can take advantage of the method we've already implemented in the removing method. Explain to yourself (out loud) how the method described below concretely works.
+
+# On search performance
+Let's compare the performance of searching from a list or a hash map. To evaluate performance we can use the System.nanotime() method and the value it returns, which represents the time as nanoseconds. The program first creates a hash map and a list, each containing a million elements, after which a thousand randomly chosen values are chosen from both. Roughly 50 % of the values are found with both structures.
+The list and hash map that are described in this chapter do have some differences from the readymade tools we use elsewhere in the course. The data structures offered by the programming language have more different kinds of optimizations — other courses go more in detail with these specifics. For the purposes of this course it's enough to know how to use the data structures and to have some idea of the performance differences and when they are suitable to use.
