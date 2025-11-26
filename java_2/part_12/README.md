@@ -199,3 +199,4 @@ We can iterate over a two dimensional array using two nested for loops.
 - Arrays.deepToString(array) → works for multidimensional arrays. It recursively prints all elements, e.g. [[0, 0, 0], [0, 0, 0]].
 We can see that the default value of variables type int is 0.
 
+## Array vs. Hash table

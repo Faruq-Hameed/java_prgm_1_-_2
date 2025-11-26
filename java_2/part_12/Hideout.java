@@ -1,3 +1,4 @@
+package part_12;
 public class Hideout<T> {
     private T toHide;
 

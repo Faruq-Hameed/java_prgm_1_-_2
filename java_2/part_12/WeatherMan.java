@@ -1,3 +1,4 @@
+package part_12;
 import java.util.Random;
 
 public class WeatherMan {

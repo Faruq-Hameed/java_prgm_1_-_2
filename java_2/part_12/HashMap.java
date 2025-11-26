@@ -1,3 +1,4 @@
+package part_12;
 public class HashMap<K, V> {
     private List<Pair<K, V>>[] values;
     private int nextFreeIndex;
