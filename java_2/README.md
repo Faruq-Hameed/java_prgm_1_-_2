@@ -194,4 +194,8 @@ In Java, multidimensional data is represented using multidimensional arrays, whi
 - The most common type is the two-dimensional (2D) array, which resembles a matrix or table.
 - You can also create 3D arrays or more, though they are less commonly used.
 Previously we have used one dimensional arrays, where the index tells us the location of a value in the only dimension. We can also create multidimensional arrays. Then we need the indexes of a value in each dimension to access the value. This comes handy when our data is multidimensional, for example when dealing with coordinates.
-A two dimensional array with two rows and three columns can be created like so:
+A two dimensional array with two rows and three columns can be created like so
+We can iterate over a two dimensional array using two nested for loops.
+- Arrays.deepToString(array) → works for multidimensional arrays. It recursively prints all elements, e.g. [[0, 0, 0], [0, 0, 0]].
+We can see that the default value of variables type int is 0.
+
