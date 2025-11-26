@@ -187,3 +187,11 @@ Random numbers used by computer programs are typically pseudorandom. They seem l
 All randomness in computer programs is not pseudorandom. Programs aiming for stronger randomness use, among other things, real life random phenomena to generate random numbers. For example space radiation or lava lamps are thought to be random phenomena.
 
 You can read more about randomness from https://www.random.org/randomness/
+
+### Multidimensional data
+In Java, multidimensional data is represented using multidimensional arrays, which are essentially arrays of arrays. They allow you to store data in a table-like structure (rows and columns) or even higher dimensions like 3D arrays.
+- A multidimensional array is an array that contains other arrays as its elements.
+- The most common type is the two-dimensional (2D) array, which resembles a matrix or table.
+- You can also create 3D arrays or more, though they are less commonly used.
+Previously we have used one dimensional arrays, where the index tells us the location of a value in the only dimension. We can also create multidimensional arrays. Then we need the indexes of a value in each dimension to access the value. This comes handy when our data is multidimensional, for example when dealing with coordinates.
+A two dimensional array with two rows and three columns can be created like so:
