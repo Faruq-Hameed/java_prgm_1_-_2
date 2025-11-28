@@ -59,3 +59,24 @@ There is a considerable amount of different UI components. Using online material
 As you become more familiar with the various components, using them becomes more straightforward. What's common to almost all of the components is the way that they're added to an interface - once you know how to add one, you can add almost any component to your interface.
 
 The biggest difference in adding components is where they're placed on the interface. You'll soon learn more about the lay these components out.
+
+As you become more familiar with the various components, using them becomes more straightforward. What's common to almost all of the components is the way that they're added to an interface - once you know how to add one, you can add almost any component to your interface.
+
+The biggest difference in adding components is where they're placed on the interface. You'll soon learn more about the lay these components out.
+
+The text field can be implemented using the TextField class
+# UI Component Layout
+Each UI component has its place on the interface. The location of a component is determined by the class used to layout the components.
+
+In previous examples, we used a class called FlowPane to set up our front-end components. With FlowPane, components that you add to the interface are placed side-by-side. If the size of Window is reduced so that the components no longer fit next to eahch other, the components will be automatically aligned. In the image below, the application resulting from the previous example has been narrowed so that the components are automatically aligned.
+
+# BorderPane
+The BorderPane class lets you lay out components in five different primary positions: top, right, bottom, left and center. Traditional applications such as the web browser you are using take advantage of this layout. There's a menu and address bar at the top, and in the middle is the content of the page.
+BorderPane layout = new BorderPane();
+        layout.setTop(new Label("top"));
+        layout.setRight(new Label("right"));
+        layout.setBottom(new Label("bottom"));
+        layout.setLeft(new Label("left"));
+        layout.setCenter(new Label("center"));
+
+# HBox
